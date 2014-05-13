@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="HealthClinic" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\Projects;Initial Catalog=HealthClinic;Integrated Security=True" SettingsObjectName="HealthClinic.Properties.Settings" SettingsPropertyName="HealthClinicConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Badanie" Member="Badanies">
+    <Type Name="Badanie">
+      <Column Name="ID_bad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dt_zle" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Dt_wyk_anul" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Wynik" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Uwagi" Type="System.String" DbType="NVarChar(254)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Dt_zatw_anul" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Kod" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_lab" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_Klab" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_wiz" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Kierownik_Laboratorium_Badanie" Member="Kierownik_Laboratorium" ThisKey="ID_Klab" OtherKey="ID_Klab" Type="Kierownik_Laboratorium" IsForeignKey="true" />
+      <Association Name="Laborant_Badanie" Member="Laborant" ThisKey="ID_lab" OtherKey="ID_lab" Type="Laborant" IsForeignKey="true" />
+      <Association Name="Slownik_badan_Badanie" Member="Slownik_badan" ThisKey="Kod" OtherKey="Kod" Type="Slownik_badan" IsForeignKey="true" />
+      <Association Name="Wizyta_Badanie" Member="Wizyta" ThisKey="ID_wiz" OtherKey="ID_wiz" Type="Wizyta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Kierownik_Laboratorium" Member="Kierownik_Laboratoriums">
+    <Type Name="Kierownik_Laboratorium">
+      <Column Name="ID_Klab" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="Kierownik_Laboratorium_Badanie" Member="Badanies" ThisKey="ID_Klab" OtherKey="ID_Klab" Type="Badanie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Konto" Member="Kontos">
+    <Type Name="Konto">
+      <Column Name="Login" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Haslo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="rola" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Dt_wygas" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Laborant" Member="Laborants">
+    <Type Name="Laborant">
+      <Column Name="ID_lab" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="Laborant_Badanie" Member="Badanies" ThisKey="ID_lab" OtherKey="ID_lab" Type="Badanie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pacjent" Member="Pacjents">
+    <Type Name="Pacjent">
+      <Column Name="ID_pac" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Nr_ubezpieczenia" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="Pacjent_Wizyta" Member="Wizytas" ThisKey="ID_pac" OtherKey="ID_pac" Type="Wizyta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Lekarz" Member="Lekarzs">
+    <Type Name="Lekarz">
+      <Column Name="ID_lek" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="npwz" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Lekarz_Wizyta" Member="Wizytas" ThisKey="ID_lek" OtherKey="ID_lek" Type="Wizyta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rejestratorka" Member="Rejestratorkas">
+    <Type Name="Rejestratorka">
+      <Column Name="ID_rej" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PESEL" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Adres" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="Rejestratorka_Wizyta" Member="Wizytas" ThisKey="ID_rej" OtherKey="ID_rej" Type="Wizyta" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Slownik_badan" Member="Slownik_badans">
+    <Type Name="Slownik_badan">
+      <Column Name="Kod" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(254) NOT NULL" CanBeNull="false" />
+      <Association Name="Slownik_badan_Badanie" Member="Badanies" ThisKey="Kod" OtherKey="Kod" Type="Badanie" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Wizyta" Member="Wizytas">
+    <Type Name="Wizyta">
+      <Column Name="ID_wiz" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Dt_rej" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Dt_zak" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Opis" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Diagnoza" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_pac" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_rej" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_lek" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Wizyta_Badanie" Member="Badanies" ThisKey="ID_wiz" OtherKey="ID_wiz" Type="Badanie" />
+      <Association Name="Lekarz_Wizyta" Member="Lekarz" ThisKey="ID_lek" OtherKey="ID_lek" Type="Lekarz" IsForeignKey="true" />
+      <Association Name="Pacjent_Wizyta" Member="Pacjent" ThisKey="ID_pac" OtherKey="ID_pac" Type="Pacjent" IsForeignKey="true" />
+      <Association Name="Rejestratorka_Wizyta" Member="Rejestratorka" ThisKey="ID_rej" OtherKey="ID_rej" Type="Rejestratorka" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
