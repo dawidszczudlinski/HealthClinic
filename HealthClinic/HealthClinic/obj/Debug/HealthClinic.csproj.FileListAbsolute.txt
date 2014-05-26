@@ -62,3 +62,40 @@ C:\Users\Dawid\Desktop\BD-Projekt\NowyProjekt\HealthClinic\HealthClinic\obj\Debu
 H:\Projekt BD\HealthClinic\HealthClinic\HealthClinic\bin\Debug\HealthClinic.exe.config
 H:\Projekt BD\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.exe
 H:\Projekt BD\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.pdb
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\bin\Debug\HealthClinic.exe.config
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.exe
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.pdb
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\bin\Debug\HealthClinic.exe
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\bin\Debug\HealthClinic.pdb
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.csprojResolveAssemblyReference.cache
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorAddEditAccount.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorAddEditDoctor.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorAddEditExamination.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorAddEditLaboratoryAssistant.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorAddEditLeaderLaboratory.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorAddEditReceptionist.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorManageAccounts.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorManageDoctors.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorManageExamination.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorManageLaboratoryAssistant.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorManageLeaderLaboratory.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorManageReceptionist.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.AdministratorStart.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorLaboratoryExamination.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorLaboratoryExaminationMap.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorManageLaboratoryExamination.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorManageVisit.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorPhysicalExamination.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorPhysicalExaminationMap.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorRealizePhysicalExamination.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.DoctorStart.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.LaboratoryAssistantStart.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.LeaderLaboratoryStart.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.Login.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.ManageVisit.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.Properties.Resources.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.ReceptionistStart.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.RegisterVisit.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.SelectionOfDoctor.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.ShowManageVisits.resources
+H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.csproj.GenerateResource.Cache
