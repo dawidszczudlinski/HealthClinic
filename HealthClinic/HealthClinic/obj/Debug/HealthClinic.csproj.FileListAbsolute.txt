@@ -99,3 +99,6 @@ H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthCl
 H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.SelectionOfDoctor.resources
 H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.ShowManageVisits.resources
 H:\Projekt BD _ clone2\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.csproj.GenerateResource.Cache
+C:\Users\Olek\Desktop\BD\HealtClinic\HealthClinic\HealthClinic\bin\Debug\HealthClinic.exe.config
+C:\Users\Olek\Desktop\BD\HealtClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.exe
+C:\Users\Olek\Desktop\BD\HealtClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.pdb
