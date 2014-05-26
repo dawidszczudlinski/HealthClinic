@@ -33,17 +33,15 @@
             this.btn_EditDoctor = new System.Windows.Forms.Button();
             this.btn_AddDoctor = new System.Windows.Forms.Button();
             this.dgv_ListOfDoctors = new System.Windows.Forms.DataGridView();
-            this.rejestratorkaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lbl_Description = new System.Windows.Forms.Label();
-            this.lekarzBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDlekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pESELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.npwzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lekarzBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl_Description = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfDoctors)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rejestratorkaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lekarzBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,24 +96,6 @@
             this.dgv_ListOfDoctors.Size = new System.Drawing.Size(649, 150);
             this.dgv_ListOfDoctors.TabIndex = 11;
             // 
-            // rejestratorkaBindingSource
-            // 
-            this.rejestratorkaBindingSource.DataSource = typeof(HealthClinic.Rejestratorka);
-            // 
-            // lbl_Description
-            // 
-            this.lbl_Description.AutoSize = true;
-            this.lbl_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lbl_Description.Location = new System.Drawing.Point(22, 18);
-            this.lbl_Description.Name = "lbl_Description";
-            this.lbl_Description.Size = new System.Drawing.Size(133, 26);
-            this.lbl_Description.TabIndex = 10;
-            this.lbl_Description.Text = "Lista lekarzy";
-            // 
-            // lekarzBindingSource
-            // 
-            this.lekarzBindingSource.DataSource = typeof(HealthClinic.Lekarz);
-            // 
             // iDlekDataGridViewTextBoxColumn
             // 
             this.iDlekDataGridViewTextBoxColumn.DataPropertyName = "ID_lek";
@@ -158,6 +138,20 @@
             this.npwzDataGridViewTextBoxColumn.Name = "npwzDataGridViewTextBoxColumn";
             this.npwzDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // lekarzBindingSource
+            // 
+            this.lekarzBindingSource.DataSource = typeof(HealthClinic.Lekarz);
+            // 
+            // lbl_Description
+            // 
+            this.lbl_Description.AutoSize = true;
+            this.lbl_Description.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lbl_Description.Location = new System.Drawing.Point(22, 18);
+            this.lbl_Description.Name = "lbl_Description";
+            this.lbl_Description.Size = new System.Drawing.Size(133, 26);
+            this.lbl_Description.TabIndex = 10;
+            this.lbl_Description.Text = "Lista lekarzy";
+            // 
             // AdministratorManageDoctors
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,7 +165,6 @@
             this.Name = "AdministratorManageDoctors";
             this.Text = "Zarządzaj lekarzami";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfDoctors)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rejestratorkaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lekarzBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,7 +177,6 @@
         private System.Windows.Forms.Button btn_EditDoctor;
         private System.Windows.Forms.Button btn_AddDoctor;
         private System.Windows.Forms.DataGridView dgv_ListOfDoctors;
-        private System.Windows.Forms.BindingSource rejestratorkaBindingSource;
         private System.Windows.Forms.Label lbl_Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDlekDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;

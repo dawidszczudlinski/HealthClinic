@@ -30,10 +30,5 @@ namespace HealthClinic
             doctorManageLaboratoryExamination.showLaboratoryAssistantWindow();
             doctorManageLaboratoryExamination.Show();
         }
-
-        private void btn_Search_Click(object sender, EventArgs e)
-        {
-            //dateTimePicker1.Checked
-        }
     }
 }

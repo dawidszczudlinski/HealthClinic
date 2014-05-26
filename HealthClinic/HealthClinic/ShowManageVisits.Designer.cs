@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -38,16 +39,25 @@
             this.lbl_State = new System.Windows.Forms.Label();
             this.lbl_LastName = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
-            this.visits = new System.Windows.Forms.DataGridView();
-            this.col_ID_visit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_RegistrationData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_State = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ListOfVisits = new System.Windows.Forms.DataGridView();
+            this.iDwizDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtrejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtzakDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diagnozaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDpacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDrejDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDlekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lekarzDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pacjentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rejestratorkaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wizytaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.btn_CancelVisit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wizytaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -139,44 +149,118 @@
             this.lbl_Name.TabIndex = 0;
             this.lbl_Name.Text = "Imie:";
             // 
-            // visits
+            // dgv_ListOfVisits
             // 
-            this.visits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.visits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_ID_visit,
-            this.col_Name,
-            this.col_LastName,
-            this.col_RegistrationData,
-            this.col_State});
-            this.visits.Location = new System.Drawing.Point(12, 249);
-            this.visits.Name = "visits";
-            this.visits.Size = new System.Drawing.Size(587, 207);
-            this.visits.TabIndex = 1;
+            this.dgv_ListOfVisits.AutoGenerateColumns = false;
+            this.dgv_ListOfVisits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListOfVisits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDwizDataGridViewTextBoxColumn,
+            this.dtrejDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.dtzakDataGridViewTextBoxColumn,
+            this.opisDataGridViewTextBoxColumn,
+            this.diagnozaDataGridViewTextBoxColumn,
+            this.iDpacDataGridViewTextBoxColumn,
+            this.iDrejDataGridViewTextBoxColumn,
+            this.iDlekDataGridViewTextBoxColumn,
+            this.lekarzDataGridViewTextBoxColumn,
+            this.pacjentDataGridViewTextBoxColumn,
+            this.rejestratorkaDataGridViewTextBoxColumn});
+            this.dgv_ListOfVisits.DataSource = this.wizytaBindingSource;
+            this.dgv_ListOfVisits.Location = new System.Drawing.Point(12, 249);
+            this.dgv_ListOfVisits.MultiSelect = false;
+            this.dgv_ListOfVisits.Name = "dgv_ListOfVisits";
+            this.dgv_ListOfVisits.ReadOnly = true;
+            this.dgv_ListOfVisits.Size = new System.Drawing.Size(587, 207);
+            this.dgv_ListOfVisits.TabIndex = 1;
             // 
-            // col_ID_visit
+            // iDwizDataGridViewTextBoxColumn
             // 
-            this.col_ID_visit.HeaderText = "ID wizyty";
-            this.col_ID_visit.Name = "col_ID_visit";
+            this.iDwizDataGridViewTextBoxColumn.DataPropertyName = "ID_wiz";
+            this.iDwizDataGridViewTextBoxColumn.HeaderText = "ID_wiz";
+            this.iDwizDataGridViewTextBoxColumn.Name = "iDwizDataGridViewTextBoxColumn";
+            this.iDwizDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_Name
+            // dtrejDataGridViewTextBoxColumn
             // 
-            this.col_Name.HeaderText = "Imie";
-            this.col_Name.Name = "col_Name";
+            this.dtrejDataGridViewTextBoxColumn.DataPropertyName = "Dt_rej";
+            this.dtrejDataGridViewTextBoxColumn.HeaderText = "Dt_rej";
+            this.dtrejDataGridViewTextBoxColumn.Name = "dtrejDataGridViewTextBoxColumn";
+            this.dtrejDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_LastName
+            // statusDataGridViewTextBoxColumn
             // 
-            this.col_LastName.HeaderText = "Nazwisko";
-            this.col_LastName.Name = "col_LastName";
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_RegistrationData
+            // dtzakDataGridViewTextBoxColumn
             // 
-            this.col_RegistrationData.HeaderText = "Data rejestracji";
-            this.col_RegistrationData.Name = "col_RegistrationData";
+            this.dtzakDataGridViewTextBoxColumn.DataPropertyName = "Dt_zak";
+            this.dtzakDataGridViewTextBoxColumn.HeaderText = "Dt_zak";
+            this.dtzakDataGridViewTextBoxColumn.Name = "dtzakDataGridViewTextBoxColumn";
+            this.dtzakDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_State
+            // opisDataGridViewTextBoxColumn
             // 
-            this.col_State.HeaderText = "Stan";
-            this.col_State.Name = "col_State";
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // diagnozaDataGridViewTextBoxColumn
+            // 
+            this.diagnozaDataGridViewTextBoxColumn.DataPropertyName = "Diagnoza";
+            this.diagnozaDataGridViewTextBoxColumn.HeaderText = "Diagnoza";
+            this.diagnozaDataGridViewTextBoxColumn.Name = "diagnozaDataGridViewTextBoxColumn";
+            this.diagnozaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDpacDataGridViewTextBoxColumn
+            // 
+            this.iDpacDataGridViewTextBoxColumn.DataPropertyName = "ID_pac";
+            this.iDpacDataGridViewTextBoxColumn.HeaderText = "ID_pac";
+            this.iDpacDataGridViewTextBoxColumn.Name = "iDpacDataGridViewTextBoxColumn";
+            this.iDpacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDrejDataGridViewTextBoxColumn
+            // 
+            this.iDrejDataGridViewTextBoxColumn.DataPropertyName = "ID_rej";
+            this.iDrejDataGridViewTextBoxColumn.HeaderText = "ID_rej";
+            this.iDrejDataGridViewTextBoxColumn.Name = "iDrejDataGridViewTextBoxColumn";
+            this.iDrejDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // iDlekDataGridViewTextBoxColumn
+            // 
+            this.iDlekDataGridViewTextBoxColumn.DataPropertyName = "ID_lek";
+            this.iDlekDataGridViewTextBoxColumn.HeaderText = "ID_lek";
+            this.iDlekDataGridViewTextBoxColumn.Name = "iDlekDataGridViewTextBoxColumn";
+            this.iDlekDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lekarzDataGridViewTextBoxColumn
+            // 
+            this.lekarzDataGridViewTextBoxColumn.DataPropertyName = "Lekarz";
+            this.lekarzDataGridViewTextBoxColumn.HeaderText = "Lekarz";
+            this.lekarzDataGridViewTextBoxColumn.Name = "lekarzDataGridViewTextBoxColumn";
+            this.lekarzDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pacjentDataGridViewTextBoxColumn
+            // 
+            this.pacjentDataGridViewTextBoxColumn.DataPropertyName = "Pacjent";
+            this.pacjentDataGridViewTextBoxColumn.HeaderText = "Pacjent";
+            this.pacjentDataGridViewTextBoxColumn.Name = "pacjentDataGridViewTextBoxColumn";
+            this.pacjentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rejestratorkaDataGridViewTextBoxColumn
+            // 
+            this.rejestratorkaDataGridViewTextBoxColumn.DataPropertyName = "Rejestratorka";
+            this.rejestratorkaDataGridViewTextBoxColumn.HeaderText = "Rejestratorka";
+            this.rejestratorkaDataGridViewTextBoxColumn.Name = "rejestratorkaDataGridViewTextBoxColumn";
+            this.rejestratorkaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // wizytaBindingSource
+            // 
+            this.wizytaBindingSource.DataSource = typeof(HealthClinic.Wizyta);
             // 
             // btn_Confirm
             // 
@@ -186,6 +270,7 @@
             this.btn_Confirm.TabIndex = 9;
             this.btn_Confirm.Text = "OK";
             this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
             // 
             // btn_CancelVisit
             // 
@@ -203,13 +288,14 @@
             this.ClientSize = new System.Drawing.Size(620, 535);
             this.Controls.Add(this.btn_CancelVisit);
             this.Controls.Add(this.btn_Confirm);
-            this.Controls.Add(this.visits);
+            this.Controls.Add(this.dgv_ListOfVisits);
             this.Controls.Add(this.groupBox1);
             this.Name = "ShowManageVisits";
             this.Text = "Zarządzaj wizytami";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.visits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wizytaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -226,13 +312,21 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridView visits;
+        private System.Windows.Forms.DataGridView dgv_ListOfVisits;
         private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.Button btn_CancelVisit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ID_visit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_RegistrationData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_State;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDwizDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtrejDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtzakDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diagnozaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDpacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDrejDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDlekDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lekarzDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pacjentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rejestratorkaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource wizytaBindingSource;
     }
 }

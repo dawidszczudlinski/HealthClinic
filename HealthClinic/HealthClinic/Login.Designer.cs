@@ -36,9 +36,7 @@
             this.txt_Login = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
             this.kontoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loginBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.kontoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Login
@@ -57,7 +55,7 @@
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_Cancel.TabIndex = 1;
-            this.btn_Cancel.Text = "Zamknij";
+            this.btn_Cancel.Text = "Anuluj";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
@@ -98,10 +96,6 @@
             // 
             this.kontoBindingSource.DataSource = typeof(HealthClinic.Konto);
             // 
-            // loginBindingSource
-            // 
-            this.loginBindingSource.DataSource = typeof(HealthClinic.Login);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -116,7 +110,6 @@
             this.Name = "Login";
             this.Text = "Logowanie";
             ((System.ComponentModel.ISupportInitialize)(this.kontoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loginBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -131,6 +124,5 @@
         private System.Windows.Forms.TextBox txt_Login;
         private System.Windows.Forms.TextBox txt_Password;
         private System.Windows.Forms.BindingSource kontoBindingSource;
-        private System.Windows.Forms.BindingSource loginBindingSource;
     }
 }

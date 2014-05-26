@@ -35,7 +35,7 @@
             this.lbl_Pesel = new System.Windows.Forms.Label();
             this.lbl_LastName = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.calendar = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.cb_Hour = new System.Windows.Forms.ComboBox();
             this.lbl_Hour = new System.Windows.Forms.Label();
@@ -114,11 +114,11 @@
             this.lbl_Name.TabIndex = 0;
             this.lbl_Name.Text = "Imie:";
             // 
-            // monthCalendar1
+            // calendar
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(18, 191);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
+            this.calendar.Location = new System.Drawing.Point(18, 191);
+            this.calendar.Name = "calendar";
+            this.calendar.TabIndex = 1;
             // 
             // label1
             // 
@@ -223,7 +223,7 @@
             // 
             // btn_ChooseDoctor
             // 
-            this.btn_ChooseDoctor.Location = new System.Drawing.Point(227, 312);
+            this.btn_ChooseDoctor.Location = new System.Drawing.Point(227, 310);
             this.btn_ChooseDoctor.Name = "btn_ChooseDoctor";
             this.btn_ChooseDoctor.Size = new System.Drawing.Size(100, 34);
             this.btn_ChooseDoctor.TabIndex = 9;
@@ -239,6 +239,7 @@
             this.btn_Confirm.TabIndex = 10;
             this.btn_Confirm.Text = "Zatwierdź";
             this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
             // 
             // btn_Cancel
             // 
@@ -248,12 +249,13 @@
             this.btn_Cancel.TabIndex = 11;
             this.btn_Cancel.Text = "Powrót";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // ManageVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(375, 489);
+            this.ClientSize = new System.Drawing.Size(395, 501);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Confirm);
             this.Controls.Add(this.btn_ChooseDoctor);
@@ -264,7 +266,7 @@
             this.Controls.Add(this.lbl_Hour);
             this.Controls.Add(this.cb_Hour);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.calendar);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManageVisit";
             this.Text = "Zarządzaj wizytą";
@@ -284,7 +286,7 @@
         private System.Windows.Forms.TextBox txt_Pesel;
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.TextBox txt_Name;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_Hour;
         private System.Windows.Forms.Label lbl_Hour;

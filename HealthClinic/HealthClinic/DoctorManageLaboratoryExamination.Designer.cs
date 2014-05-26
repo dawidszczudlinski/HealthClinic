@@ -40,15 +40,20 @@
             this.lbl_ExaminationCode = new System.Windows.Forms.Label();
             this.lbl_IDExamination = new System.Windows.Forms.Label();
             this.tab_LaboratoryAssistant = new System.Windows.Forms.TabPage();
-            this.txt_LabResult = new System.Windows.Forms.TextBox();
-            this.lbl_LabResult = new System.Windows.Forms.Label();
+            this.tab_LaboratoryLeader = new System.Windows.Forms.TabPage();
+            this.btn_DoctorRunTest = new System.Windows.Forms.Button();
+            this.btn_DoctorClose = new System.Windows.Forms.Button();
             this.txt_LabExaminationName = new System.Windows.Forms.TextBox();
             this.txt_LabExaminationCode = new System.Windows.Forms.TextBox();
             this.txt_LabIDExamination = new System.Windows.Forms.TextBox();
             this.lbl_LabExaminationName = new System.Windows.Forms.Label();
             this.lbl_LabExaminationCode = new System.Windows.Forms.Label();
             this.lbl_LabIDExamination = new System.Windows.Forms.Label();
-            this.tab_LaboratoryLeader = new System.Windows.Forms.TabPage();
+            this.txt_LabResult = new System.Windows.Forms.TextBox();
+            this.lbl_LabResult = new System.Windows.Forms.Label();
+            this.btn_LabAssisnantClose = new System.Windows.Forms.Button();
+            this.btn_LabAssistantRealize = new System.Windows.Forms.Button();
+            this.btn_LabAssistantCancel = new System.Windows.Forms.Button();
             this.txt_LeaderExaminationDescription = new System.Windows.Forms.TextBox();
             this.lbl_LeaderExaminationDescription = new System.Windows.Forms.Label();
             this.txt_LeaderExaminationName = new System.Windows.Forms.TextBox();
@@ -57,11 +62,6 @@
             this.lbl_LeaderExaminationName = new System.Windows.Forms.Label();
             this.lbl_LeaderExaminationCode = new System.Windows.Forms.Label();
             this.lbl_LeaderIDExamination = new System.Windows.Forms.Label();
-            this.btn_DoctorRunTest = new System.Windows.Forms.Button();
-            this.btn_DoctorClose = new System.Windows.Forms.Button();
-            this.btn_LabAssisnantClose = new System.Windows.Forms.Button();
-            this.btn_LabAssistantRealize = new System.Windows.Forms.Button();
-            this.btn_LabAssistantCancel = new System.Windows.Forms.Button();
             this.btn_LeaderCancel = new System.Windows.Forms.Button();
             this.btn_LeaderClose = new System.Windows.Forms.Button();
             this.btn_LeaderConfirm = new System.Windows.Forms.Button();
@@ -113,7 +113,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(40, 133);
+            this.textBox4.Location = new System.Drawing.Point(27, 159);
             this.textBox4.Multiline = true;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(395, 120);
@@ -194,22 +194,43 @@
             this.tab_LaboratoryAssistant.Text = "Laborant";
             this.tab_LaboratoryAssistant.UseVisualStyleBackColor = true;
             // 
-            // txt_LabResult
+            // tab_LaboratoryLeader
             // 
-            this.txt_LabResult.Location = new System.Drawing.Point(25, 159);
-            this.txt_LabResult.Multiline = true;
-            this.txt_LabResult.Name = "txt_LabResult";
-            this.txt_LabResult.Size = new System.Drawing.Size(395, 120);
-            this.txt_LabResult.TabIndex = 16;
+            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderExaminationDescription);
+            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderExaminationDescription);
+            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderExaminationName);
+            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderExaminationCode);
+            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderIDExamination);
+            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderExaminationName);
+            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderExaminationCode);
+            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderIDExamination);
+            this.tab_LaboratoryLeader.Location = new System.Drawing.Point(4, 22);
+            this.tab_LaboratoryLeader.Name = "tab_LaboratoryLeader";
+            this.tab_LaboratoryLeader.Padding = new System.Windows.Forms.Padding(3);
+            this.tab_LaboratoryLeader.Size = new System.Drawing.Size(441, 285);
+            this.tab_LaboratoryLeader.TabIndex = 2;
+            this.tab_LaboratoryLeader.Text = "Kierownik Laboratorium";
+            this.tab_LaboratoryLeader.UseVisualStyleBackColor = true;
             // 
-            // lbl_LabResult
+            // btn_DoctorRunTest
             // 
-            this.lbl_LabResult.AutoSize = true;
-            this.lbl_LabResult.Location = new System.Drawing.Point(22, 133);
-            this.lbl_LabResult.Name = "lbl_LabResult";
-            this.lbl_LabResult.Size = new System.Drawing.Size(40, 13);
-            this.lbl_LabResult.TabIndex = 15;
-            this.lbl_LabResult.Text = "Wynik:";
+            this.btn_DoctorRunTest.Location = new System.Drawing.Point(218, 329);
+            this.btn_DoctorRunTest.Name = "btn_DoctorRunTest";
+            this.btn_DoctorRunTest.Size = new System.Drawing.Size(102, 41);
+            this.btn_DoctorRunTest.TabIndex = 1;
+            this.btn_DoctorRunTest.Text = "Zleć";
+            this.btn_DoctorRunTest.UseVisualStyleBackColor = true;
+            this.btn_DoctorRunTest.Click += new System.EventHandler(this.btn_DoctorRunTest_Click);
+            // 
+            // btn_DoctorClose
+            // 
+            this.btn_DoctorClose.Location = new System.Drawing.Point(355, 329);
+            this.btn_DoctorClose.Name = "btn_DoctorClose";
+            this.btn_DoctorClose.Size = new System.Drawing.Size(102, 41);
+            this.btn_DoctorClose.TabIndex = 2;
+            this.btn_DoctorClose.Text = "Powrót";
+            this.btn_DoctorClose.UseVisualStyleBackColor = true;
+            this.btn_DoctorClose.Click += new System.EventHandler(this.btn_DoctorClose_Click);
             // 
             // txt_LabExaminationName
             // 
@@ -259,23 +280,52 @@
             this.lbl_LabIDExamination.TabIndex = 9;
             this.lbl_LabIDExamination.Text = "ID badania:";
             // 
-            // tab_LaboratoryLeader
+            // txt_LabResult
             // 
-            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderExaminationDescription);
-            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderExaminationDescription);
-            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderExaminationName);
-            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderExaminationCode);
-            this.tab_LaboratoryLeader.Controls.Add(this.txt_LeaderIDExamination);
-            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderExaminationName);
-            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderExaminationCode);
-            this.tab_LaboratoryLeader.Controls.Add(this.lbl_LeaderIDExamination);
-            this.tab_LaboratoryLeader.Location = new System.Drawing.Point(4, 22);
-            this.tab_LaboratoryLeader.Name = "tab_LaboratoryLeader";
-            this.tab_LaboratoryLeader.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_LaboratoryLeader.Size = new System.Drawing.Size(441, 285);
-            this.tab_LaboratoryLeader.TabIndex = 2;
-            this.tab_LaboratoryLeader.Text = "Kierownik Laboratorium";
-            this.tab_LaboratoryLeader.UseVisualStyleBackColor = true;
+            this.txt_LabResult.Location = new System.Drawing.Point(25, 159);
+            this.txt_LabResult.Multiline = true;
+            this.txt_LabResult.Name = "txt_LabResult";
+            this.txt_LabResult.Size = new System.Drawing.Size(395, 120);
+            this.txt_LabResult.TabIndex = 16;
+            // 
+            // lbl_LabResult
+            // 
+            this.lbl_LabResult.AutoSize = true;
+            this.lbl_LabResult.Location = new System.Drawing.Point(22, 133);
+            this.lbl_LabResult.Name = "lbl_LabResult";
+            this.lbl_LabResult.Size = new System.Drawing.Size(40, 13);
+            this.lbl_LabResult.TabIndex = 15;
+            this.lbl_LabResult.Text = "Wynik:";
+            // 
+            // btn_LabAssisnantClose
+            // 
+            this.btn_LabAssisnantClose.Location = new System.Drawing.Point(355, 329);
+            this.btn_LabAssisnantClose.Name = "btn_LabAssisnantClose";
+            this.btn_LabAssisnantClose.Size = new System.Drawing.Size(102, 41);
+            this.btn_LabAssisnantClose.TabIndex = 4;
+            this.btn_LabAssisnantClose.Text = "Powrót";
+            this.btn_LabAssisnantClose.UseVisualStyleBackColor = true;
+            this.btn_LabAssisnantClose.Click += new System.EventHandler(this.btn_LabAssisnantClose_Click);
+            // 
+            // btn_LabAssistantRealize
+            // 
+            this.btn_LabAssistantRealize.Location = new System.Drawing.Point(88, 329);
+            this.btn_LabAssistantRealize.Name = "btn_LabAssistantRealize";
+            this.btn_LabAssistantRealize.Size = new System.Drawing.Size(102, 41);
+            this.btn_LabAssistantRealize.TabIndex = 3;
+            this.btn_LabAssistantRealize.Text = "Zleć";
+            this.btn_LabAssistantRealize.UseVisualStyleBackColor = true;
+            this.btn_LabAssistantRealize.Click += new System.EventHandler(this.btn_LabAssistantRealize_Click);
+            // 
+            // btn_LabAssistantCancel
+            // 
+            this.btn_LabAssistantCancel.Location = new System.Drawing.Point(218, 329);
+            this.btn_LabAssistantCancel.Name = "btn_LabAssistantCancel";
+            this.btn_LabAssistantCancel.Size = new System.Drawing.Size(102, 41);
+            this.btn_LabAssistantCancel.TabIndex = 5;
+            this.btn_LabAssistantCancel.Text = "Anuluj";
+            this.btn_LabAssistantCancel.UseVisualStyleBackColor = true;
+            this.btn_LabAssistantCancel.Click += new System.EventHandler(this.btn_LabAssistantCancel_Click);
             // 
             // txt_LeaderExaminationDescription
             // 
@@ -341,56 +391,6 @@
             this.lbl_LeaderIDExamination.Size = new System.Drawing.Size(62, 13);
             this.lbl_LeaderIDExamination.TabIndex = 17;
             this.lbl_LeaderIDExamination.Text = "ID badania:";
-            // 
-            // btn_DoctorRunTest
-            // 
-            this.btn_DoctorRunTest.Location = new System.Drawing.Point(218, 329);
-            this.btn_DoctorRunTest.Name = "btn_DoctorRunTest";
-            this.btn_DoctorRunTest.Size = new System.Drawing.Size(102, 41);
-            this.btn_DoctorRunTest.TabIndex = 1;
-            this.btn_DoctorRunTest.Text = "Zleć";
-            this.btn_DoctorRunTest.UseVisualStyleBackColor = true;
-            this.btn_DoctorRunTest.Click += new System.EventHandler(this.btn_DoctorRunTest_Click);
-            // 
-            // btn_DoctorClose
-            // 
-            this.btn_DoctorClose.Location = new System.Drawing.Point(355, 329);
-            this.btn_DoctorClose.Name = "btn_DoctorClose";
-            this.btn_DoctorClose.Size = new System.Drawing.Size(102, 41);
-            this.btn_DoctorClose.TabIndex = 2;
-            this.btn_DoctorClose.Text = "Powrót";
-            this.btn_DoctorClose.UseVisualStyleBackColor = true;
-            this.btn_DoctorClose.Click += new System.EventHandler(this.btn_DoctorClose_Click);
-            // 
-            // btn_LabAssisnantClose
-            // 
-            this.btn_LabAssisnantClose.Location = new System.Drawing.Point(355, 329);
-            this.btn_LabAssisnantClose.Name = "btn_LabAssisnantClose";
-            this.btn_LabAssisnantClose.Size = new System.Drawing.Size(102, 41);
-            this.btn_LabAssisnantClose.TabIndex = 4;
-            this.btn_LabAssisnantClose.Text = "Powrót";
-            this.btn_LabAssisnantClose.UseVisualStyleBackColor = true;
-            this.btn_LabAssisnantClose.Click += new System.EventHandler(this.btn_LabAssisnantClose_Click);
-            // 
-            // btn_LabAssistantRealize
-            // 
-            this.btn_LabAssistantRealize.Location = new System.Drawing.Point(88, 329);
-            this.btn_LabAssistantRealize.Name = "btn_LabAssistantRealize";
-            this.btn_LabAssistantRealize.Size = new System.Drawing.Size(102, 41);
-            this.btn_LabAssistantRealize.TabIndex = 3;
-            this.btn_LabAssistantRealize.Text = "Zleć";
-            this.btn_LabAssistantRealize.UseVisualStyleBackColor = true;
-            this.btn_LabAssistantRealize.Click += new System.EventHandler(this.btn_LabAssistantRealize_Click);
-            // 
-            // btn_LabAssistantCancel
-            // 
-            this.btn_LabAssistantCancel.Location = new System.Drawing.Point(218, 329);
-            this.btn_LabAssistantCancel.Name = "btn_LabAssistantCancel";
-            this.btn_LabAssistantCancel.Size = new System.Drawing.Size(102, 41);
-            this.btn_LabAssistantCancel.TabIndex = 5;
-            this.btn_LabAssistantCancel.Text = "Anuluj";
-            this.btn_LabAssistantCancel.UseVisualStyleBackColor = true;
-            this.btn_LabAssistantCancel.Click += new System.EventHandler(this.btn_LabAssistantCancel_Click);
             // 
             // btn_LeaderCancel
             // 

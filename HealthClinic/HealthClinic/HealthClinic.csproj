@@ -188,6 +188,11 @@
     <Compile Include="DoctorStart.Designer.cs">
       <DependentUpon>DoctorStart.cs</DependentUpon>
     </Compile>
+    <Compile Include="HealthClinicDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HealthClinicDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LaboratoryAssistantStart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +243,7 @@
     <Compile Include="ShowManageVisits.Designer.cs">
       <DependentUpon>ShowManageVisits.cs</DependentUpon>
     </Compile>
+    <None Include="Badanie.datasource" />
     <None Include="DataClasses1.dbml.layout">
       <DependentUpon>DataClasses1.dbml</DependentUpon>
     </None>
@@ -342,10 +348,22 @@
       <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="HealthClinicDataSet.xsc">
+      <DependentUpon>HealthClinicDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HealthClinicDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HealthClinicDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HealthClinicDataSet.xss">
+      <DependentUpon>HealthClinicDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Kierownik_Laboratorium.datasource" />
     <None Include="Konto.datasource" />
     <None Include="Laborant.datasource" />
     <None Include="Lekarz.datasource" />
+    <None Include="Pacjent.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -357,6 +375,7 @@
     </Compile>
     <None Include="Rejestratorka.datasource" />
     <None Include="Slownik_badan.datasource" />
+    <None Include="Wizyta.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txt_Pesel = new System.Windows.Forms.TextBox();
@@ -37,14 +38,18 @@
             this.lbl_Pesel = new System.Windows.Forms.Label();
             this.lbl_Imie = new System.Windows.Forms.Label();
             this.lbl_LastName = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.col_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Pesel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_ListOfPatients = new System.Windows.Forms.DataGridView();
+            this.iDpacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pESELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrubezpieczeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pacjentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Visit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfPatients)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacjentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -71,6 +76,7 @@
             this.btn_Search.TabIndex = 7;
             this.btn_Search.Text = "Szukaj";
             this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txt_Pesel
             // 
@@ -129,38 +135,70 @@
             this.lbl_LastName.TabIndex = 0;
             this.lbl_LastName.Text = "Nazwisko:";
             // 
-            // dataGridView1
+            // dgv_ListOfPatients
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_Name,
-            this.col_LastName,
-            this.col_Pesel,
-            this.col_Address});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 191);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(456, 160);
-            this.dataGridView1.TabIndex = 2;
+            this.dgv_ListOfPatients.AutoGenerateColumns = false;
+            this.dgv_ListOfPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListOfPatients.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDpacDataGridViewTextBoxColumn,
+            this.imieDataGridViewTextBoxColumn,
+            this.nazwiskoDataGridViewTextBoxColumn,
+            this.pESELDataGridViewTextBoxColumn,
+            this.adresDataGridViewTextBoxColumn,
+            this.nrubezpieczeniaDataGridViewTextBoxColumn});
+            this.dgv_ListOfPatients.DataSource = this.pacjentBindingSource;
+            this.dgv_ListOfPatients.Location = new System.Drawing.Point(12, 191);
+            this.dgv_ListOfPatients.MultiSelect = false;
+            this.dgv_ListOfPatients.Name = "dgv_ListOfPatients";
+            this.dgv_ListOfPatients.ReadOnly = true;
+            this.dgv_ListOfPatients.Size = new System.Drawing.Size(663, 153);
+            this.dgv_ListOfPatients.TabIndex = 2;
             // 
-            // col_Name
+            // iDpacDataGridViewTextBoxColumn
             // 
-            this.col_Name.HeaderText = "Imie";
-            this.col_Name.Name = "col_Name";
+            this.iDpacDataGridViewTextBoxColumn.DataPropertyName = "ID_pac";
+            this.iDpacDataGridViewTextBoxColumn.HeaderText = "ID_pac";
+            this.iDpacDataGridViewTextBoxColumn.Name = "iDpacDataGridViewTextBoxColumn";
+            this.iDpacDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_LastName
+            // imieDataGridViewTextBoxColumn
             // 
-            this.col_LastName.HeaderText = "Nazwisko";
-            this.col_LastName.Name = "col_LastName";
+            this.imieDataGridViewTextBoxColumn.DataPropertyName = "Imie";
+            this.imieDataGridViewTextBoxColumn.HeaderText = "Imie";
+            this.imieDataGridViewTextBoxColumn.Name = "imieDataGridViewTextBoxColumn";
+            this.imieDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_Pesel
+            // nazwiskoDataGridViewTextBoxColumn
             // 
-            this.col_Pesel.HeaderText = "Pesel";
-            this.col_Pesel.Name = "col_Pesel";
+            this.nazwiskoDataGridViewTextBoxColumn.DataPropertyName = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.HeaderText = "Nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn.Name = "nazwiskoDataGridViewTextBoxColumn";
+            this.nazwiskoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // col_Address
+            // pESELDataGridViewTextBoxColumn
             // 
-            this.col_Address.HeaderText = "Adres";
-            this.col_Address.Name = "col_Address";
+            this.pESELDataGridViewTextBoxColumn.DataPropertyName = "PESEL";
+            this.pESELDataGridViewTextBoxColumn.HeaderText = "PESEL";
+            this.pESELDataGridViewTextBoxColumn.Name = "pESELDataGridViewTextBoxColumn";
+            this.pESELDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // adresDataGridViewTextBoxColumn
+            // 
+            this.adresDataGridViewTextBoxColumn.DataPropertyName = "Adres";
+            this.adresDataGridViewTextBoxColumn.HeaderText = "Adres";
+            this.adresDataGridViewTextBoxColumn.Name = "adresDataGridViewTextBoxColumn";
+            this.adresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nrubezpieczeniaDataGridViewTextBoxColumn
+            // 
+            this.nrubezpieczeniaDataGridViewTextBoxColumn.DataPropertyName = "Nr_ubezpieczenia";
+            this.nrubezpieczeniaDataGridViewTextBoxColumn.HeaderText = "Nr_ubezpieczenia";
+            this.nrubezpieczeniaDataGridViewTextBoxColumn.Name = "nrubezpieczeniaDataGridViewTextBoxColumn";
+            this.nrubezpieczeniaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pacjentBindingSource
+            // 
+            this.pacjentBindingSource.DataSource = typeof(HealthClinic.Pacjent);
             // 
             // btn_Visit
             // 
@@ -176,15 +214,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 435);
+            this.ClientSize = new System.Drawing.Size(715, 435);
             this.Controls.Add(this.btn_Visit);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_ListOfPatients);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegisterVisit";
             this.Text = "Zarejestruj Wizytę";
+            this.Load += new System.EventHandler(this.RegisterVisit_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfPatients)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pacjentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -200,11 +240,14 @@
         private System.Windows.Forms.TextBox txt_Name;
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.Button btn_Search;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Pesel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_Address;
+        private System.Windows.Forms.DataGridView dgv_ListOfPatients;
         private System.Windows.Forms.Button btn_Visit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDpacDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pESELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nrubezpieczeniaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pacjentBindingSource;
     }
 }

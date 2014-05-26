@@ -54,6 +54,7 @@
             this.opisDataGridViewTextBoxColumn});
             this.dgv_ListOfExaminations.DataSource = this.slownikbadanBindingSource;
             this.dgv_ListOfExaminations.Location = new System.Drawing.Point(31, 64);
+            this.dgv_ListOfExaminations.MultiSelect = false;
             this.dgv_ListOfExaminations.Name = "dgv_ListOfExaminations";
             this.dgv_ListOfExaminations.ReadOnly = true;
             this.dgv_ListOfExaminations.Size = new System.Drawing.Size(507, 219);
