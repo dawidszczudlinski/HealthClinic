@@ -211,7 +211,7 @@
             this.lbl_Doctor.Name = "lbl_Doctor";
             this.lbl_Doctor.Size = new System.Drawing.Size(42, 13);
             this.lbl_Doctor.TabIndex = 7;
-            this.lbl_Doctor.Text = "Doktor:";
+            this.lbl_Doctor.Text = "Lekarz:";
             // 
             // txt_Doctor
             // 
@@ -227,7 +227,7 @@
             this.btn_ChooseDoctor.Name = "btn_ChooseDoctor";
             this.btn_ChooseDoctor.Size = new System.Drawing.Size(100, 34);
             this.btn_ChooseDoctor.TabIndex = 9;
-            this.btn_ChooseDoctor.Text = "Wybierz doktora";
+            this.btn_ChooseDoctor.Text = "Wybierz lekarza";
             this.btn_ChooseDoctor.UseVisualStyleBackColor = true;
             this.btn_ChooseDoctor.Click += new System.EventHandler(this.btn_ChooseDoctor_Click);
             // 
