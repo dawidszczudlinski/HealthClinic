@@ -12,21 +12,56 @@ namespace HealthClinic
 {
     public partial class DoctorPhysicalExamination : Form
     {
+        int x;
+        DoctorManageVisit dMv;
+        DataClasses1DataContext context = new DataClasses1DataContext();
         public DoctorPhysicalExamination()
         {
             InitializeComponent();
         }
 
-        private void btn_New_Click(object sender, EventArgs e)
+        public DoctorPhysicalExamination(DoctorManageVisit dMv1)
         {
-            DoctorRealizePhysicalExamination doctorRealizePhysicalExamination = new DoctorRealizePhysicalExamination();
+            this.dMv = dMv1;
+            InitializeComponent();
+        }
+        public int idV1()
+        {
+            return dMv.idV();
+         }
+            
+        private void btn_New_Click(object sender, EventArgs e)
+        { 
+            DoctorRealizePhysicalExamination doctorRealizePhysicalExamination = new DoctorRealizePhysicalExamination(this);
             doctorRealizePhysicalExamination.Show();
+            
         }
 
         private void btn_Show_Click(object sender, EventArgs e)
         {
             DoctorRealizePhysicalExamination doctorRealizePhysicalExamination = new DoctorRealizePhysicalExamination();
             doctorRealizePhysicalExamination.Show();
+        }
+
+        private void DoctorPhysicalExamination_Load(object sender, EventArgs e)
+        {
+            showActualData();
+
+        }
+        public void showActualData()
+        {
+
+            //  listOfVisits = from Wizyta wiz in context.Wizytas select wiz;
+            var sourcess = from Badanie kon in context.Badanies select kon;
+
+            dgv_PhysicalExamination.DataSource = sourcess;
+            context.SubmitChanges();
+            //  visits.DataSource = listOfVisits;
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

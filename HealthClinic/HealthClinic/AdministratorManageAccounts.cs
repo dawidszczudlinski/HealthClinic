@@ -12,6 +12,7 @@ namespace HealthClinic
 {
     public partial class AdministratorManageAccounts : Form
     {
+        DataClasses1DataContext context = new DataClasses1DataContext();
         public AdministratorManageAccounts()
         {
             InitializeComponent();
@@ -25,8 +26,7 @@ namespace HealthClinic
 
         public void showActualData()
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
-
+           
             var sourcess = from Konto kon in context.Kontos select kon;
 
             dgv_ListOfAccounts.DataSource = sourcess;
@@ -48,10 +48,8 @@ namespace HealthClinic
 
         private void btn_DeleteAccount_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
-
             Konto accountToDelete = (Konto)dgv_ListOfAccounts.CurrentRow.DataBoundItem;
-            context.Kontos.DeleteOnSubmit(accountToDelete);
+            accountToDelete.Dt_wygas = DateTime.Today;
             context.SubmitChanges();
             showActualData();
         }

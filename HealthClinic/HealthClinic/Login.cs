@@ -27,8 +27,9 @@ namespace HealthClinic
             try
             {
                 Konto currentAccount = sourcess.First();
-                if (currentAccount.Haslo == password)
+                if (currentAccount.Haslo == password && currentAccount.Dt_wygas > DateTime.Today)
                 {
+                    CurrentAccount.setAccount(currentAccount);
                     switch (currentAccount.rola)
                     {
                         case "adm":
@@ -73,7 +74,7 @@ namespace HealthClinic
                 }
                 else
                 {
-                    MessageBox.Show("Niepoprawne hasło.", "Złe dane");
+                    MessageBox.Show("Błąd logowania.", "Złe dane");
                 }
             }
             catch (InvalidOperationException exc)

@@ -21,13 +21,6 @@ namespace HealthClinic
 
         public AdministratorAddEditAccount(AdministratorManageAccounts window)
         {
-
-              
-        //      kon = 
-         //   MessageBox.Show(xxx.ToString());
-            
-
-
             InitializeComponent();
             parentWindow = window;
             isEdit = false;
@@ -63,9 +56,7 @@ namespace HealthClinic
                 accountToEdit.Dt_wygas = mc_Date.SelectionRange.Start;
             }
             else
-            {
-
-               
+            {    
                 accountToCreate = new Konto();
                 accountToCreate.Login = txt_Login.Text;
                 accountToCreate.Haslo = txt_Password.Text;

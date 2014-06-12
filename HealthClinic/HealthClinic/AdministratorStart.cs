@@ -52,11 +52,5 @@ namespace HealthClinic
             AdministratorManageLeaderLaboratory administratorManageLeaderLaboratory = new AdministratorManageLeaderLaboratory();
             administratorManageLeaderLaboratory.Show();
         }
-
-        private void btn_ManagePatient_Click(object sender, EventArgs e)
-        {
-            AdministratorManagePatient administratorManagePatient = new AdministratorManagePatient();
-            administratorManagePatient.Show();
-        }
     }
 }

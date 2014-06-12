@@ -115,6 +115,7 @@
             this.btn_OK.TabIndex = 11;
             this.btn_OK.Text = "Zatwierdź";
             this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // btn_Cancel
             // 
@@ -124,6 +125,7 @@
             this.btn_Cancel.TabIndex = 12;
             this.btn_Cancel.Text = "Powrót";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_ChoiceExamination
             // 

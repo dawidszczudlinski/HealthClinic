@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btn_ShowExamination = new System.Windows.Forms.Button();
             this.lbl_State = new System.Windows.Forms.Label();
             this.cmb_State = new System.Windows.Forms.ComboBox();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.lbl_RegistrationDate = new System.Windows.Forms.Label();
             this.btn_Search = new System.Windows.Forms.Button();
             this.txt_Pesel = new System.Windows.Forms.TextBox();
@@ -55,27 +53,17 @@
             this.iDlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDKlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDwizDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.laborantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slownikbadanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wizytaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.badanieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.healthClinicDataSet = new HealthClinic.HealthClinicDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.btn_ServicePatient = new System.Windows.Forms.Button();
+            this.badanieTableAdapter = new HealthClinic.HealthClinicDataSetTableAdapters.BadanieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_ShowExamination
-            // 
-            this.btn_ShowExamination.Location = new System.Drawing.Point(430, 460);
-            this.btn_ShowExamination.Name = "btn_ShowExamination";
-            this.btn_ShowExamination.Size = new System.Drawing.Size(96, 50);
-            this.btn_ShowExamination.TabIndex = 11;
-            this.btn_ShowExamination.Text = "Pokaż";
-            this.btn_ShowExamination.UseVisualStyleBackColor = true;
-            this.btn_ShowExamination.Click += new System.EventHandler(this.btn_ShowExamination_Click);
             // 
             // lbl_State
             // 
@@ -91,17 +79,13 @@
             this.cmb_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_State.FormattingEnabled = true;
             this.cmb_State.Items.AddRange(new object[] {
-            "Rej"});
+            "Zle",
+            "Zat",
+            "Anul"});
             this.cmb_State.Location = new System.Drawing.Point(117, 119);
             this.cmb_State.Name = "cmb_State";
             this.cmb_State.Size = new System.Drawing.Size(67, 21);
             this.cmb_State.TabIndex = 10;
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(323, 51);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 9;
             // 
             // lbl_RegistrationDate
             // 
@@ -120,6 +104,7 @@
             this.btn_Search.TabIndex = 7;
             this.btn_Search.Text = "Szukaj";
             this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // txt_Pesel
             // 
@@ -194,17 +179,12 @@
             this.kodDataGridViewTextBoxColumn,
             this.iDlabDataGridViewTextBoxColumn,
             this.iDKlabDataGridViewTextBoxColumn,
-            this.iDwizDataGridViewTextBoxColumn,
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn,
-            this.laborantDataGridViewTextBoxColumn,
-            this.slownikbadanDataGridViewTextBoxColumn,
-            this.wizytaDataGridViewTextBoxColumn});
+            this.iDwizDataGridViewTextBoxColumn});
             this.dgv_ListOfVisits.DataSource = this.badanieBindingSource;
             this.dgv_ListOfVisits.Location = new System.Drawing.Point(12, 249);
             this.dgv_ListOfVisits.MultiSelect = false;
             this.dgv_ListOfVisits.Name = "dgv_ListOfVisits";
             this.dgv_ListOfVisits.ReadOnly = true;
-            this.dgv_ListOfVisits.RowHeadersVisible = false;
             this.dgv_ListOfVisits.Size = new System.Drawing.Size(709, 196);
             this.dgv_ListOfVisits.TabIndex = 10;
             // 
@@ -292,43 +272,21 @@
             this.iDwizDataGridViewTextBoxColumn.Name = "iDwizDataGridViewTextBoxColumn";
             this.iDwizDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // kierownikLaboratoriumDataGridViewTextBoxColumn
-            // 
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.DataPropertyName = "Kierownik_Laboratorium";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.HeaderText = "Kierownik_Laboratorium";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.Name = "kierownikLaboratoriumDataGridViewTextBoxColumn";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // laborantDataGridViewTextBoxColumn
-            // 
-            this.laborantDataGridViewTextBoxColumn.DataPropertyName = "Laborant";
-            this.laborantDataGridViewTextBoxColumn.HeaderText = "Laborant";
-            this.laborantDataGridViewTextBoxColumn.Name = "laborantDataGridViewTextBoxColumn";
-            this.laborantDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // slownikbadanDataGridViewTextBoxColumn
-            // 
-            this.slownikbadanDataGridViewTextBoxColumn.DataPropertyName = "Slownik_badan";
-            this.slownikbadanDataGridViewTextBoxColumn.HeaderText = "Slownik_badan";
-            this.slownikbadanDataGridViewTextBoxColumn.Name = "slownikbadanDataGridViewTextBoxColumn";
-            this.slownikbadanDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wizytaDataGridViewTextBoxColumn
-            // 
-            this.wizytaDataGridViewTextBoxColumn.DataPropertyName = "Wizyta";
-            this.wizytaDataGridViewTextBoxColumn.HeaderText = "Wizyta";
-            this.wizytaDataGridViewTextBoxColumn.Name = "wizytaDataGridViewTextBoxColumn";
-            this.wizytaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // badanieBindingSource
             // 
-            this.badanieBindingSource.DataSource = typeof(HealthClinic.Badanie);
+            this.badanieBindingSource.DataMember = "Badanie";
+            this.badanieBindingSource.DataSource = this.healthClinicDataSet;
+            // 
+            // healthClinicDataSet
+            // 
+            this.healthClinicDataSet.DataSetName = "HealthClinicDataSet";
+            this.healthClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.lbl_State);
             this.groupBox1.Controls.Add(this.cmb_State);
-            this.groupBox1.Controls.Add(this.monthCalendar1);
             this.groupBox1.Controls.Add(this.lbl_RegistrationDate);
             this.groupBox1.Controls.Add(this.btn_Search);
             this.groupBox1.Controls.Add(this.txt_Pesel);
@@ -344,6 +302,15 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(308, 66);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 14;
+            // 
             // btn_ServicePatient
             // 
             this.btn_ServicePatient.Location = new System.Drawing.Point(552, 460);
@@ -354,19 +321,24 @@
             this.btn_ServicePatient.UseVisualStyleBackColor = true;
             this.btn_ServicePatient.Click += new System.EventHandler(this.btn_ServicePatient_Click);
             // 
+            // badanieTableAdapter
+            // 
+            this.badanieTableAdapter.ClearBeforeFill = true;
+            // 
             // LaboratoryAssistantStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 520);
             this.Controls.Add(this.btn_ServicePatient);
-            this.Controls.Add(this.btn_ShowExamination);
             this.Controls.Add(this.dgv_ListOfVisits);
             this.Controls.Add(this.groupBox1);
             this.Name = "LaboratoryAssistantStart";
             this.Text = "Wybierz badanie";
+            this.Load += new System.EventHandler(this.LaboratoryAssistantStart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -375,10 +347,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btn_ShowExamination;
         private System.Windows.Forms.Label lbl_State;
         private System.Windows.Forms.ComboBox cmb_State;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label lbl_RegistrationDate;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.TextBox txt_Pesel;
@@ -391,6 +361,9 @@
         private System.Windows.Forms.DataGridView dgv_ListOfVisits;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_ServicePatient;
+        private HealthClinicDataSet healthClinicDataSet;
+        private System.Windows.Forms.BindingSource badanieBindingSource;
+        private HealthClinicDataSetTableAdapters.BadanieTableAdapter badanieTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDbadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtzleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtwykanulDataGridViewTextBoxColumn;
@@ -403,11 +376,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDlabDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDKlabDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDwizDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kierownikLaboratoriumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn laborantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slownikbadanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wizytaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource badanieBindingSource;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
 
     }
 }

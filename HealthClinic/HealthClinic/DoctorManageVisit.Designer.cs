@@ -196,6 +196,7 @@
             this.btn_Finish.TabIndex = 10;
             this.btn_Finish.Text = "Zakończ";
             this.btn_Finish.UseVisualStyleBackColor = true;
+            this.btn_Finish.Click += new System.EventHandler(this.btn_Finish_Click);
             // 
             // btn_Cancel
             // 
@@ -205,6 +206,7 @@
             this.btn_Cancel.TabIndex = 11;
             this.btn_Cancel.Text = "Anuluj";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_Exit
             // 

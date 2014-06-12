@@ -47,6 +47,9 @@
             this.nrubezpieczeniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pacjentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Visit = new System.Windows.Forms.Button();
+            this.Zakończ = new System.Windows.Forms.Button();
+            this.btn_AddPatient = new System.Windows.Forms.Button();
+            this.btn_EditPatient = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfPatients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentBindingSource)).BeginInit();
@@ -202,7 +205,7 @@
             // 
             // btn_Visit
             // 
-            this.btn_Visit.Location = new System.Drawing.Point(333, 376);
+            this.btn_Visit.Location = new System.Drawing.Point(497, 378);
             this.btn_Visit.Name = "btn_Visit";
             this.btn_Visit.Size = new System.Drawing.Size(135, 45);
             this.btn_Visit.TabIndex = 3;
@@ -210,11 +213,44 @@
             this.btn_Visit.UseVisualStyleBackColor = true;
             this.btn_Visit.Click += new System.EventHandler(this.btn_Visit_Click);
             // 
+            // Zakończ
+            // 
+            this.Zakończ.Location = new System.Drawing.Point(339, 378);
+            this.Zakończ.Name = "Zakończ";
+            this.Zakończ.Size = new System.Drawing.Size(135, 45);
+            this.Zakończ.TabIndex = 4;
+            this.Zakończ.Text = "Zakończ";
+            this.Zakończ.UseVisualStyleBackColor = true;
+            this.Zakończ.Click += new System.EventHandler(this.Zakończ_Click);
+            // 
+            // btn_AddPatient
+            // 
+            this.btn_AddPatient.Location = new System.Drawing.Point(12, 378);
+            this.btn_AddPatient.Name = "btn_AddPatient";
+            this.btn_AddPatient.Size = new System.Drawing.Size(135, 45);
+            this.btn_AddPatient.TabIndex = 5;
+            this.btn_AddPatient.Text = "Dodaj pacjenta";
+            this.btn_AddPatient.UseVisualStyleBackColor = true;
+            this.btn_AddPatient.Click += new System.EventHandler(this.btn_AddPatient_Click);
+            // 
+            // btn_EditPatient
+            // 
+            this.btn_EditPatient.Location = new System.Drawing.Point(165, 378);
+            this.btn_EditPatient.Name = "btn_EditPatient";
+            this.btn_EditPatient.Size = new System.Drawing.Size(135, 45);
+            this.btn_EditPatient.TabIndex = 6;
+            this.btn_EditPatient.Text = "Edytuj pacjenta";
+            this.btn_EditPatient.UseVisualStyleBackColor = true;
+            this.btn_EditPatient.Click += new System.EventHandler(this.btn_EditPatient_Click);
+            // 
             // RegisterVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 435);
+            this.Controls.Add(this.btn_EditPatient);
+            this.Controls.Add(this.btn_AddPatient);
+            this.Controls.Add(this.Zakończ);
             this.Controls.Add(this.btn_Visit);
             this.Controls.Add(this.dgv_ListOfPatients);
             this.Controls.Add(this.groupBox1);
@@ -249,5 +285,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn adresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nrubezpieczeniaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource pacjentBindingSource;
+        private System.Windows.Forms.Button Zakończ;
+        private System.Windows.Forms.Button btn_AddPatient;
+        private System.Windows.Forms.Button btn_EditPatient;
     }
 }

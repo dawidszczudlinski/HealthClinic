@@ -25,17 +25,26 @@ namespace HealthClinic
 
         private void btn_Visit_Click(object sender, EventArgs e)
         {
-            Pacjent patient = (Pacjent)dgv_ListOfPatients.CurrentRow.DataBoundItem;
-            if (patient != null)
+            try
             {
-                ManageVisit manageVisit = new ManageVisit();
-                manageVisit.setPatient(patient);
-                manageVisit.Show();
+                Pacjent patient = (Pacjent)dgv_ListOfPatients.CurrentRow.DataBoundItem;
+
+                if (patient != null)
+                {
+                    ManageVisit manageVisit = new ManageVisit();
+                    manageVisit.setPatient(patient);
+                    manageVisit.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Wybierz Pacjenta");
+                }
             }
-            else
+            catch (Exception exc)
             {
-                MessageBox.Show("Wybierz Pacjenta");
+                MessageBox.Show("Wystapił błąd przy wyborze pacjenta");
             }
+            
         }
 
         private void RegisterVisit_Load(object sender, EventArgs e)
@@ -107,6 +116,25 @@ namespace HealthClinic
                     break;
             }
             dgv_ListOfPatients.DataSource = listOfPatients;
+        }
+
+        private void Zakończ_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
+        }
+
+        private void btn_AddPatient_Click(object sender, EventArgs e)
+        {
+            ReceptionistAddPatient receptionistAddPatient = new ReceptionistAddPatient(this);
+            receptionistAddPatient.Show();
+        }
+
+        private void btn_EditPatient_Click(object sender, EventArgs e)
+        {
+            Pacjent editablePatient = (Pacjent)dgv_ListOfPatients.CurrentRow.DataBoundItem;
+            
+            ReceptionistAddPatient receptionistAddPatient = new ReceptionistAddPatient(this, editablePatient);
+            receptionistAddPatient.Show();
         }
     }
 }

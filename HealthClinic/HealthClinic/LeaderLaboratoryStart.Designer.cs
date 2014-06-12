@@ -33,7 +33,6 @@
             this.cmb_State = new System.Windows.Forms.ComboBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.btn_ServicePatient = new System.Windows.Forms.Button();
-            this.btn_ShowExamination = new System.Windows.Forms.Button();
             this.dgv_ListOfVisits = new System.Windows.Forms.DataGridView();
             this.iDbadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtzleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,13 +46,12 @@
             this.iDlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDKlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDwizDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.laborantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slownikbadanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wizytaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.badanieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.healthClinicDataSet = new HealthClinic.HealthClinicDataSet();
+            this.badanieTableAdapter = new HealthClinic.HealthClinicDataSetTableAdapters.BadanieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_State
@@ -70,7 +68,10 @@
             this.cmb_State.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_State.FormattingEnabled = true;
             this.cmb_State.Items.AddRange(new object[] {
-            "Rej"});
+            "Zle",
+            "Zat",
+            "Anul",
+            "wT"});
             this.cmb_State.Location = new System.Drawing.Point(78, 16);
             this.cmb_State.Name = "cmb_State";
             this.cmb_State.Size = new System.Drawing.Size(67, 21);
@@ -84,6 +85,7 @@
             this.btn_Search.TabIndex = 7;
             this.btn_Search.Text = "Szukaj";
             this.btn_Search.UseVisualStyleBackColor = true;
+            this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
             // 
             // btn_ServicePatient
             // 
@@ -94,16 +96,6 @@
             this.btn_ServicePatient.Text = "Obsługa";
             this.btn_ServicePatient.UseVisualStyleBackColor = true;
             this.btn_ServicePatient.Click += new System.EventHandler(this.btn_ServicePatient_Click);
-            // 
-            // btn_ShowExamination
-            // 
-            this.btn_ShowExamination.Location = new System.Drawing.Point(503, 277);
-            this.btn_ShowExamination.Name = "btn_ShowExamination";
-            this.btn_ShowExamination.Size = new System.Drawing.Size(96, 50);
-            this.btn_ShowExamination.TabIndex = 13;
-            this.btn_ShowExamination.Text = "Pokaż";
-            this.btn_ShowExamination.UseVisualStyleBackColor = true;
-            this.btn_ShowExamination.Click += new System.EventHandler(this.btn_ShowExamination_Click);
             // 
             // dgv_ListOfVisits
             // 
@@ -121,11 +113,7 @@
             this.kodDataGridViewTextBoxColumn,
             this.iDlabDataGridViewTextBoxColumn,
             this.iDKlabDataGridViewTextBoxColumn,
-            this.iDwizDataGridViewTextBoxColumn,
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn,
-            this.laborantDataGridViewTextBoxColumn,
-            this.slownikbadanDataGridViewTextBoxColumn,
-            this.wizytaDataGridViewTextBoxColumn});
+            this.iDwizDataGridViewTextBoxColumn});
             this.dgv_ListOfVisits.DataSource = this.badanieBindingSource;
             this.dgv_ListOfVisits.Location = new System.Drawing.Point(12, 60);
             this.dgv_ListOfVisits.MultiSelect = false;
@@ -219,37 +207,19 @@
             this.iDwizDataGridViewTextBoxColumn.Name = "iDwizDataGridViewTextBoxColumn";
             this.iDwizDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // kierownikLaboratoriumDataGridViewTextBoxColumn
-            // 
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.DataPropertyName = "Kierownik_Laboratorium";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.HeaderText = "Kierownik_Laboratorium";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.Name = "kierownikLaboratoriumDataGridViewTextBoxColumn";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // laborantDataGridViewTextBoxColumn
-            // 
-            this.laborantDataGridViewTextBoxColumn.DataPropertyName = "Laborant";
-            this.laborantDataGridViewTextBoxColumn.HeaderText = "Laborant";
-            this.laborantDataGridViewTextBoxColumn.Name = "laborantDataGridViewTextBoxColumn";
-            this.laborantDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // slownikbadanDataGridViewTextBoxColumn
-            // 
-            this.slownikbadanDataGridViewTextBoxColumn.DataPropertyName = "Slownik_badan";
-            this.slownikbadanDataGridViewTextBoxColumn.HeaderText = "Slownik_badan";
-            this.slownikbadanDataGridViewTextBoxColumn.Name = "slownikbadanDataGridViewTextBoxColumn";
-            this.slownikbadanDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wizytaDataGridViewTextBoxColumn
-            // 
-            this.wizytaDataGridViewTextBoxColumn.DataPropertyName = "Wizyta";
-            this.wizytaDataGridViewTextBoxColumn.HeaderText = "Wizyta";
-            this.wizytaDataGridViewTextBoxColumn.Name = "wizytaDataGridViewTextBoxColumn";
-            this.wizytaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // badanieBindingSource
             // 
-            this.badanieBindingSource.DataSource = typeof(HealthClinic.Badanie);
+            this.badanieBindingSource.DataMember = "Badanie";
+            this.badanieBindingSource.DataSource = this.healthClinicDataSet;
+            // 
+            // healthClinicDataSet
+            // 
+            this.healthClinicDataSet.DataSetName = "HealthClinicDataSet";
+            this.healthClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // badanieTableAdapter
+            // 
+            this.badanieTableAdapter.ClearBeforeFill = true;
             // 
             // LeaderLaboratoryStart
             // 
@@ -258,14 +228,15 @@
             this.ClientSize = new System.Drawing.Size(746, 353);
             this.Controls.Add(this.dgv_ListOfVisits);
             this.Controls.Add(this.btn_ServicePatient);
-            this.Controls.Add(this.btn_ShowExamination);
             this.Controls.Add(this.lbl_State);
             this.Controls.Add(this.cmb_State);
             this.Controls.Add(this.btn_Search);
             this.Name = "LeaderLaboratoryStart";
             this.Text = "Wybierz badanie";
+            this.Load += new System.EventHandler(this.LeaderLaboratoryStart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -277,8 +248,10 @@
         private System.Windows.Forms.ComboBox cmb_State;
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Button btn_ServicePatient;
-        private System.Windows.Forms.Button btn_ShowExamination;
         private System.Windows.Forms.DataGridView dgv_ListOfVisits;
+        private HealthClinicDataSet healthClinicDataSet;
+        private System.Windows.Forms.BindingSource badanieBindingSource;
+        private HealthClinicDataSetTableAdapters.BadanieTableAdapter badanieTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDbadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtzleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtwykanulDataGridViewTextBoxColumn;
@@ -291,10 +264,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDlabDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDKlabDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDwizDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kierownikLaboratoriumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn laborantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slownikbadanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wizytaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource badanieBindingSource;
     }
 }

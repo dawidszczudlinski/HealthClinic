@@ -34,10 +34,13 @@
             this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slownikbadanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.healthClinicDataSet = new HealthClinic.HealthClinicDataSet();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_OK = new System.Windows.Forms.Button();
+            this.slownik_badanTableAdapter = new HealthClinic.HealthClinicDataSetTableAdapters.Slownik_badanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -79,7 +82,13 @@
             // 
             // slownikbadanBindingSource
             // 
-            this.slownikbadanBindingSource.DataSource = typeof(HealthClinic.Slownik_badan);
+            this.slownikbadanBindingSource.DataMember = "Slownik_badan";
+            this.slownikbadanBindingSource.DataSource = this.healthClinicDataSet;
+            // 
+            // healthClinicDataSet
+            // 
+            this.healthClinicDataSet.DataSetName = "HealthClinicDataSet";
+            this.healthClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_Cancel
             // 
@@ -98,6 +107,11 @@
             this.btn_OK.TabIndex = 13;
             this.btn_OK.Text = "Zatwierdź";
             this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
+            // 
+            // slownik_badanTableAdapter
+            // 
+            this.slownik_badanTableAdapter.ClearBeforeFill = true;
             // 
             // DoctorPhysicalExaminationMap
             // 
@@ -109,8 +123,10 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "DoctorPhysicalExaminationMap";
             this.Text = "Wybierz badanie";
+            this.Load += new System.EventHandler(this.DoctorPhysicalExaminationMap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,9 +136,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_OK;
+        private HealthClinicDataSet healthClinicDataSet;
+        private System.Windows.Forms.BindingSource slownikbadanBindingSource;
+        private HealthClinicDataSetTableAdapters.Slownik_badanTableAdapter slownik_badanTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn kodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource slownikbadanBindingSource;
     }
 }

@@ -32,7 +32,6 @@
             this.btn_ManageExamination = new System.Windows.Forms.Button();
             this.btn_ManageReceptionist = new System.Windows.Forms.Button();
             this.btn_ManageDoctors = new System.Windows.Forms.Button();
-            this.btn_ManagePatient = new System.Windows.Forms.Button();
             this.btn_ManageLeaderLaboratory = new System.Windows.Forms.Button();
             this.btn_ManageLaboratoraryAssistant = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -77,16 +76,6 @@
             this.btn_ManageDoctors.UseVisualStyleBackColor = true;
             this.btn_ManageDoctors.Click += new System.EventHandler(this.btn_ManageDoctors_Click);
             // 
-            // btn_ManagePatient
-            // 
-            this.btn_ManagePatient.Location = new System.Drawing.Point(22, 225);
-            this.btn_ManagePatient.Name = "btn_ManagePatient";
-            this.btn_ManagePatient.Size = new System.Drawing.Size(100, 50);
-            this.btn_ManagePatient.TabIndex = 4;
-            this.btn_ManagePatient.Text = "Zarządzaj pacjentami";
-            this.btn_ManagePatient.UseVisualStyleBackColor = true;
-            this.btn_ManagePatient.Click += new System.EventHandler(this.btn_ManagePatient_Click);
-            // 
             // btn_ManageLeaderLaboratory
             // 
             this.btn_ManageLeaderLaboratory.Location = new System.Drawing.Point(133, 158);
@@ -111,10 +100,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(253, 300);
+            this.ClientSize = new System.Drawing.Size(256, 235);
             this.Controls.Add(this.btn_ManageLaboratoraryAssistant);
             this.Controls.Add(this.btn_ManageLeaderLaboratory);
-            this.Controls.Add(this.btn_ManagePatient);
             this.Controls.Add(this.btn_ManageDoctors);
             this.Controls.Add(this.btn_ManageReceptionist);
             this.Controls.Add(this.btn_ManageExamination);
@@ -131,7 +119,6 @@
         private System.Windows.Forms.Button btn_ManageExamination;
         private System.Windows.Forms.Button btn_ManageReceptionist;
         private System.Windows.Forms.Button btn_ManageDoctors;
-        private System.Windows.Forms.Button btn_ManagePatient;
         private System.Windows.Forms.Button btn_ManageLeaderLaboratory;
         private System.Windows.Forms.Button btn_ManageLaboratoraryAssistant;
     }

@@ -35,17 +35,17 @@
             this.lbl_Pesel = new System.Windows.Forms.Label();
             this.lbl_LastName = new System.Windows.Forms.Label();
             this.lbl_Name = new System.Windows.Forms.Label();
-            this.calendar = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
-            this.cb_Hour = new System.Windows.Forms.ComboBox();
             this.lbl_Hour = new System.Windows.Forms.Label();
-            this.cb_Minute = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.lbl_Doctor = new System.Windows.Forms.Label();
             this.txt_Doctor = new System.Windows.Forms.TextBox();
             this.btn_ChooseDoctor = new System.Windows.Forms.Button();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.dtp_Data = new System.Windows.Forms.DateTimePicker();
+            this.cb_Hour = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cb_Minute = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,20 +114,80 @@
             this.lbl_Name.TabIndex = 0;
             this.lbl_Name.Text = "Imie:";
             // 
-            // calendar
-            // 
-            this.calendar.Location = new System.Drawing.Point(18, 191);
-            this.calendar.Name = "calendar";
-            this.calendar.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 169);
+            this.label1.Location = new System.Drawing.Point(75, 220);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Kalendarz:";
+            // 
+            // lbl_Hour
+            // 
+            this.lbl_Hour.AutoSize = true;
+            this.lbl_Hour.Location = new System.Drawing.Point(249, 184);
+            this.lbl_Hour.Name = "lbl_Hour";
+            this.lbl_Hour.Size = new System.Drawing.Size(80, 13);
+            this.lbl_Hour.TabIndex = 4;
+            this.lbl_Hour.Text = "Godzina wizyty:";
+            // 
+            // lbl_Doctor
+            // 
+            this.lbl_Doctor.AutoSize = true;
+            this.lbl_Doctor.Location = new System.Drawing.Point(249, 252);
+            this.lbl_Doctor.Name = "lbl_Doctor";
+            this.lbl_Doctor.Size = new System.Drawing.Size(42, 13);
+            this.lbl_Doctor.TabIndex = 7;
+            this.lbl_Doctor.Text = "Lekarz:";
+            // 
+            // txt_Doctor
+            // 
+            this.txt_Doctor.Location = new System.Drawing.Point(256, 277);
+            this.txt_Doctor.Name = "txt_Doctor";
+            this.txt_Doctor.ReadOnly = true;
+            this.txt_Doctor.Size = new System.Drawing.Size(100, 20);
+            this.txt_Doctor.TabIndex = 8;
+            // 
+            // btn_ChooseDoctor
+            // 
+            this.btn_ChooseDoctor.Location = new System.Drawing.Point(252, 345);
+            this.btn_ChooseDoctor.Name = "btn_ChooseDoctor";
+            this.btn_ChooseDoctor.Size = new System.Drawing.Size(100, 34);
+            this.btn_ChooseDoctor.TabIndex = 9;
+            this.btn_ChooseDoctor.Text = "Wybierz lekarza";
+            this.btn_ChooseDoctor.UseVisualStyleBackColor = true;
+            this.btn_ChooseDoctor.Click += new System.EventHandler(this.btn_ChooseDoctor_Click);
+            // 
+            // btn_Confirm
+            // 
+            this.btn_Confirm.Location = new System.Drawing.Point(56, 412);
+            this.btn_Confirm.Name = "btn_Confirm";
+            this.btn_Confirm.Size = new System.Drawing.Size(104, 45);
+            this.btn_Confirm.TabIndex = 10;
+            this.btn_Confirm.Text = "Zatwierdź";
+            this.btn_Confirm.UseVisualStyleBackColor = true;
+            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
+            // 
+            // btn_Cancel
+            // 
+            this.btn_Cancel.Location = new System.Drawing.Point(200, 412);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(104, 45);
+            this.btn_Cancel.TabIndex = 11;
+            this.btn_Cancel.Text = "Powrót";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
+            // 
+            // dtp_Data
+            // 
+            this.dtp_Data.CustomFormat = "";
+            this.dtp_Data.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Data.Location = new System.Drawing.Point(24, 252);
+            this.dtp_Data.Name = "dtp_Data";
+            this.dtp_Data.Size = new System.Drawing.Size(200, 20);
+            this.dtp_Data.TabIndex = 12;
+            this.dtp_Data.Value = new System.DateTime(2014, 5, 30, 0, 0, 0, 0);
             // 
             // cb_Hour
             // 
@@ -158,19 +218,20 @@
             "21",
             "22",
             "23"});
-            this.cb_Hour.Location = new System.Drawing.Point(227, 212);
+            this.cb_Hour.Location = new System.Drawing.Point(252, 212);
             this.cb_Hour.Name = "cb_Hour";
             this.cb_Hour.Size = new System.Drawing.Size(39, 21);
             this.cb_Hour.TabIndex = 3;
             // 
-            // lbl_Hour
+            // label2
             // 
-            this.lbl_Hour.AutoSize = true;
-            this.lbl_Hour.Location = new System.Drawing.Point(224, 184);
-            this.lbl_Hour.Name = "lbl_Hour";
-            this.lbl_Hour.Size = new System.Drawing.Size(80, 13);
-            this.lbl_Hour.TabIndex = 4;
-            this.lbl_Hour.Text = "Godzina wizyty:";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label2.Location = new System.Drawing.Point(297, 213);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(14, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = ":";
             // 
             // cb_Minute
             // 
@@ -189,73 +250,17 @@
             "45",
             "50",
             "55"});
-            this.cb_Minute.Location = new System.Drawing.Point(292, 212);
+            this.cb_Minute.Location = new System.Drawing.Point(317, 212);
             this.cb_Minute.Name = "cb_Minute";
             this.cb_Minute.Size = new System.Drawing.Size(39, 21);
             this.cb_Minute.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(272, 213);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(14, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = ":";
-            // 
-            // lbl_Doctor
-            // 
-            this.lbl_Doctor.AutoSize = true;
-            this.lbl_Doctor.Location = new System.Drawing.Point(224, 252);
-            this.lbl_Doctor.Name = "lbl_Doctor";
-            this.lbl_Doctor.Size = new System.Drawing.Size(42, 13);
-            this.lbl_Doctor.TabIndex = 7;
-            this.lbl_Doctor.Text = "Lekarz:";
-            // 
-            // txt_Doctor
-            // 
-            this.txt_Doctor.Location = new System.Drawing.Point(227, 274);
-            this.txt_Doctor.Name = "txt_Doctor";
-            this.txt_Doctor.ReadOnly = true;
-            this.txt_Doctor.Size = new System.Drawing.Size(100, 20);
-            this.txt_Doctor.TabIndex = 8;
-            // 
-            // btn_ChooseDoctor
-            // 
-            this.btn_ChooseDoctor.Location = new System.Drawing.Point(227, 310);
-            this.btn_ChooseDoctor.Name = "btn_ChooseDoctor";
-            this.btn_ChooseDoctor.Size = new System.Drawing.Size(100, 34);
-            this.btn_ChooseDoctor.TabIndex = 9;
-            this.btn_ChooseDoctor.Text = "Wybierz lekarza";
-            this.btn_ChooseDoctor.UseVisualStyleBackColor = true;
-            this.btn_ChooseDoctor.Click += new System.EventHandler(this.btn_ChooseDoctor_Click);
-            // 
-            // btn_Confirm
-            // 
-            this.btn_Confirm.Location = new System.Drawing.Point(56, 412);
-            this.btn_Confirm.Name = "btn_Confirm";
-            this.btn_Confirm.Size = new System.Drawing.Size(104, 45);
-            this.btn_Confirm.TabIndex = 10;
-            this.btn_Confirm.Text = "Zatwierdź";
-            this.btn_Confirm.UseVisualStyleBackColor = true;
-            this.btn_Confirm.Click += new System.EventHandler(this.btn_Confirm_Click);
-            // 
-            // btn_Cancel
-            // 
-            this.btn_Cancel.Location = new System.Drawing.Point(200, 412);
-            this.btn_Cancel.Name = "btn_Cancel";
-            this.btn_Cancel.Size = new System.Drawing.Size(104, 45);
-            this.btn_Cancel.TabIndex = 11;
-            this.btn_Cancel.Text = "Powrót";
-            this.btn_Cancel.UseVisualStyleBackColor = true;
-            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // ManageVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(395, 501);
+            this.Controls.Add(this.dtp_Data);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Confirm);
             this.Controls.Add(this.btn_ChooseDoctor);
@@ -266,7 +271,6 @@
             this.Controls.Add(this.lbl_Hour);
             this.Controls.Add(this.cb_Hour);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.calendar);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManageVisit";
             this.Text = "Zarządzaj wizytą";
@@ -286,16 +290,16 @@
         private System.Windows.Forms.TextBox txt_Pesel;
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.TextBox txt_Name;
-        private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cb_Hour;
         private System.Windows.Forms.Label lbl_Hour;
-        private System.Windows.Forms.ComboBox cb_Minute;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_Doctor;
         private System.Windows.Forms.TextBox txt_Doctor;
         private System.Windows.Forms.Button btn_ChooseDoctor;
         private System.Windows.Forms.Button btn_Confirm;
         private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.DateTimePicker dtp_Data;
+        private System.Windows.Forms.ComboBox cb_Hour;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cb_Minute;
     }
 }

@@ -30,11 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv_PhysicalExamination = new System.Windows.Forms.DataGridView();
-            this.col_IDExamination = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ExaminationCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ExaminationName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ExaminationResult = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ExaminationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDbadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtzleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtwykanulDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,29 +42,24 @@
             this.iDlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDKlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDwizDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.laborantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slownikbadanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wizytaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.badanieBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.healthClinicDataSet = new HealthClinic.HealthClinicDataSet();
             this.btn_New = new System.Windows.Forms.Button();
             this.btn_Show = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
             this.lbl_LaboratoryExamination = new System.Windows.Forms.Label();
+            this.badanieTableAdapter = new HealthClinic.HealthClinicDataSetTableAdapters.BadanieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PhysicalExamination)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_PhysicalExamination
             // 
+            this.dgv_PhysicalExamination.AllowDrop = true;
             this.dgv_PhysicalExamination.AutoGenerateColumns = false;
             this.dgv_PhysicalExamination.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_PhysicalExamination.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_IDExamination,
-            this.col_ExaminationCode,
-            this.col_ExaminationName,
-            this.col_ExaminationResult,
-            this.col_ExaminationDate,
             this.iDbadDataGridViewTextBoxColumn,
             this.dtzleDataGridViewTextBoxColumn,
             this.dtwykanulDataGridViewTextBoxColumn,
@@ -81,48 +71,14 @@
             this.kodDataGridViewTextBoxColumn,
             this.iDlabDataGridViewTextBoxColumn,
             this.iDKlabDataGridViewTextBoxColumn,
-            this.iDwizDataGridViewTextBoxColumn,
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn,
-            this.laborantDataGridViewTextBoxColumn,
-            this.slownikbadanDataGridViewTextBoxColumn,
-            this.wizytaDataGridViewTextBoxColumn});
+            this.iDwizDataGridViewTextBoxColumn});
             this.dgv_PhysicalExamination.DataSource = this.badanieBindingSource;
-            this.dgv_PhysicalExamination.Location = new System.Drawing.Point(12, 44);
+            this.dgv_PhysicalExamination.Location = new System.Drawing.Point(12, 34);
             this.dgv_PhysicalExamination.MultiSelect = false;
             this.dgv_PhysicalExamination.Name = "dgv_PhysicalExamination";
             this.dgv_PhysicalExamination.ReadOnly = true;
             this.dgv_PhysicalExamination.Size = new System.Drawing.Size(1010, 231);
             this.dgv_PhysicalExamination.TabIndex = 5;
-            // 
-            // col_IDExamination
-            // 
-            this.col_IDExamination.HeaderText = "ID badania";
-            this.col_IDExamination.Name = "col_IDExamination";
-            this.col_IDExamination.ReadOnly = true;
-            // 
-            // col_ExaminationCode
-            // 
-            this.col_ExaminationCode.HeaderText = "Kod badania";
-            this.col_ExaminationCode.Name = "col_ExaminationCode";
-            this.col_ExaminationCode.ReadOnly = true;
-            // 
-            // col_ExaminationName
-            // 
-            this.col_ExaminationName.HeaderText = "Nazwa";
-            this.col_ExaminationName.Name = "col_ExaminationName";
-            this.col_ExaminationName.ReadOnly = true;
-            // 
-            // col_ExaminationResult
-            // 
-            this.col_ExaminationResult.HeaderText = "Wynik";
-            this.col_ExaminationResult.Name = "col_ExaminationResult";
-            this.col_ExaminationResult.ReadOnly = true;
-            // 
-            // col_ExaminationDate
-            // 
-            this.col_ExaminationDate.HeaderText = "Data wykonania";
-            this.col_ExaminationDate.Name = "col_ExaminationDate";
-            this.col_ExaminationDate.ReadOnly = true;
             // 
             // iDbadDataGridViewTextBoxColumn
             // 
@@ -208,37 +164,15 @@
             this.iDwizDataGridViewTextBoxColumn.Name = "iDwizDataGridViewTextBoxColumn";
             this.iDwizDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // kierownikLaboratoriumDataGridViewTextBoxColumn
-            // 
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.DataPropertyName = "Kierownik_Laboratorium";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.HeaderText = "Kierownik_Laboratorium";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.Name = "kierownikLaboratoriumDataGridViewTextBoxColumn";
-            this.kierownikLaboratoriumDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // laborantDataGridViewTextBoxColumn
-            // 
-            this.laborantDataGridViewTextBoxColumn.DataPropertyName = "Laborant";
-            this.laborantDataGridViewTextBoxColumn.HeaderText = "Laborant";
-            this.laborantDataGridViewTextBoxColumn.Name = "laborantDataGridViewTextBoxColumn";
-            this.laborantDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // slownikbadanDataGridViewTextBoxColumn
-            // 
-            this.slownikbadanDataGridViewTextBoxColumn.DataPropertyName = "Slownik_badan";
-            this.slownikbadanDataGridViewTextBoxColumn.HeaderText = "Slownik_badan";
-            this.slownikbadanDataGridViewTextBoxColumn.Name = "slownikbadanDataGridViewTextBoxColumn";
-            this.slownikbadanDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wizytaDataGridViewTextBoxColumn
-            // 
-            this.wizytaDataGridViewTextBoxColumn.DataPropertyName = "Wizyta";
-            this.wizytaDataGridViewTextBoxColumn.HeaderText = "Wizyta";
-            this.wizytaDataGridViewTextBoxColumn.Name = "wizytaDataGridViewTextBoxColumn";
-            this.wizytaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // badanieBindingSource
             // 
-            this.badanieBindingSource.DataSource = typeof(HealthClinic.Badanie);
+            this.badanieBindingSource.DataMember = "Badanie";
+            this.badanieBindingSource.DataSource = this.healthClinicDataSet;
+            // 
+            // healthClinicDataSet
+            // 
+            this.healthClinicDataSet.DataSetName = "HealthClinicDataSet";
+            this.healthClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btn_New
             // 
@@ -258,6 +192,7 @@
             this.btn_Show.TabIndex = 8;
             this.btn_Show.Text = "Pokaż badanie";
             this.btn_Show.UseVisualStyleBackColor = true;
+            this.btn_Show.Click += new System.EventHandler(this.btn_Show_Click);
             // 
             // btn_Close
             // 
@@ -267,6 +202,7 @@
             this.btn_Close.TabIndex = 7;
             this.btn_Close.Text = "Powrót";
             this.btn_Close.UseVisualStyleBackColor = true;
+            this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
             // lbl_LaboratoryExamination
             // 
@@ -276,6 +212,10 @@
             this.lbl_LaboratoryExamination.Size = new System.Drawing.Size(196, 13);
             this.lbl_LaboratoryExamination.TabIndex = 6;
             this.lbl_LaboratoryExamination.Text = "Badania laboratoryjne związane z wizytą";
+            // 
+            // badanieTableAdapter
+            // 
+            this.badanieTableAdapter.ClearBeforeFill = true;
             // 
             // DoctorLaboratoryExamination
             // 
@@ -289,8 +229,10 @@
             this.Controls.Add(this.lbl_LaboratoryExamination);
             this.Name = "DoctorLaboratoryExamination";
             this.Text = "Badania laboratoryjne";
+            this.Load += new System.EventHandler(this.DoctorLaboratoryExamination_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PhysicalExamination)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -299,15 +241,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_PhysicalExamination;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_IDExamination;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ExaminationCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ExaminationName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ExaminationResult;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ExaminationDate;
         private System.Windows.Forms.Button btn_New;
         private System.Windows.Forms.Button btn_Show;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Label lbl_LaboratoryExamination;
+        private HealthClinicDataSet healthClinicDataSet;
+        private System.Windows.Forms.BindingSource badanieBindingSource;
+        private HealthClinicDataSetTableAdapters.BadanieTableAdapter badanieTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDbadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtzleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dtwykanulDataGridViewTextBoxColumn;
@@ -320,11 +260,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn iDlabDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDKlabDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDwizDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kierownikLaboratoriumDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn laborantDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn slownikbadanDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wizytaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource badanieBindingSource;
 
     }
 }

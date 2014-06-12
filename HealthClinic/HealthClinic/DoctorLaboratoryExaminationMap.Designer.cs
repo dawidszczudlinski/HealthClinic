@@ -36,8 +36,11 @@
             this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slownikbadanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.healthClinicDataSet = new HealthClinic.HealthClinicDataSet();
+            this.slownik_badanTableAdapter = new HealthClinic.HealthClinicDataSetTableAdapters.Slownik_badanTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LaboratoryExamination)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Cancel
@@ -48,6 +51,7 @@
             this.btn_Cancel.TabIndex = 17;
             this.btn_Cancel.Text = "Powrót";
             this.btn_Cancel.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
             // btn_OK
             // 
@@ -57,6 +61,7 @@
             this.btn_OK.TabIndex = 16;
             this.btn_OK.Text = "Zatwierdź";
             this.btn_OK.UseVisualStyleBackColor = true;
+            this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
             // dgv_LaboratoryExamination
             // 
@@ -97,7 +102,17 @@
             // 
             // slownikbadanBindingSource
             // 
-            this.slownikbadanBindingSource.DataSource = typeof(HealthClinic.Slownik_badan);
+            this.slownikbadanBindingSource.DataMember = "Slownik_badan";
+            this.slownikbadanBindingSource.DataSource = this.healthClinicDataSet;
+            // 
+            // healthClinicDataSet
+            // 
+            this.healthClinicDataSet.DataSetName = "HealthClinicDataSet";
+            this.healthClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // slownik_badanTableAdapter
+            // 
+            this.slownik_badanTableAdapter.ClearBeforeFill = true;
             // 
             // DoctorLaboratoryExaminationMap
             // 
@@ -109,8 +124,10 @@
             this.Controls.Add(this.dgv_LaboratoryExamination);
             this.Name = "DoctorLaboratoryExaminationMap";
             this.Text = "Wybierz badanie";
+            this.Load += new System.EventHandler(this.DoctorLaboratoryExaminationMap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LaboratoryExamination)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,9 +137,11 @@
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.DataGridView dgv_LaboratoryExamination;
+        private HealthClinicDataSet healthClinicDataSet;
+        private System.Windows.Forms.BindingSource slownikbadanBindingSource;
+        private HealthClinicDataSetTableAdapters.Slownik_badanTableAdapter slownik_badanTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn kodDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource slownikbadanBindingSource;
     }
 }
