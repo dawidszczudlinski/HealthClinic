@@ -12,48 +12,43 @@ namespace HealthClinic
 {
     public partial class DoctorPhysicalExaminationMap : Form
     {
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        private DoctorRealizePhysicalExamination parentWindow;
 
-        private DoctorRealizePhysicalExamination parent;
-        private IQueryable<Slownik_badan> listOfSlownik;
         public DoctorPhysicalExaminationMap(DoctorRealizePhysicalExamination parent)
         {
-            this.parent = parent;
+            this.parentWindow = parent;
             InitializeComponent();
-        }
-
-        private void DoctorPhysicalExaminationMap_Load(object sender, EventArgs e)
-        {
             showActualData();
-
         }
+
         public void showActualData()
         {
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
-            var sourcess = from Slownik_badan kon in context.Slownik_badans select kon;
+            var sourcess = from Slownik_badan slo in context.Slownik_badans 
+                           where slo.Typ == 1
+                           select slo;
 
-            dataGridView1.DataSource = sourcess;
-            context.SubmitChanges();
-
+            dgv_ListOfExaminations.DataSource = sourcess;
         }
         private void btn_OK_Click(object sender, EventArgs e)
         {
             int codeId = 0;
-            int numberOfRow = dataGridView1.CurrentCell.RowIndex;
-            codeId = Int32.Parse(dataGridView1.Rows[numberOfRow].Cells[0].Value.ToString());
+            int numberOfRow = dgv_ListOfExaminations.CurrentCell.RowIndex;
+            codeId = Int32.Parse(dgv_ListOfExaminations.Rows[numberOfRow].Cells[0].Value.ToString());
             if (codeId == 0)
             {
                 MessageBox.Show("Wybierz Badanie");
             }
             else
             {
-                DataClasses1DataContext context = new DataClasses1DataContext();
+                DataClasses2DataContext context = new DataClasses2DataContext();
                 var sourcess = from Slownik_badan sl in context.Slownik_badans
                                where sl.Kod == codeId
                                select sl;
 
                 Slownik_badan slownik = sourcess.First();
-               parent.chooseCode(slownik);
+                parentWindow.setExaminationType(slownik.Kod);
                 this.Close();
             }
         }

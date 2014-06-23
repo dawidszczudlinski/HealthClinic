@@ -21,7 +21,7 @@ namespace HealthClinic
 
         public void setDate(DateTime date)
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
             var sourcess = from Lekarz lek in context.Lekarzs
                            select new { lek.ID_lek, lek.Imie, lek.Nazwisko, counter = 
                            (from Wizyta wiz in context.Wizytas 
@@ -52,7 +52,7 @@ namespace HealthClinic
             }
             else
             {
-                DataClasses1DataContext context = new DataClasses1DataContext();
+                DataClasses2DataContext context = new DataClasses2DataContext();
                 var sourcess = from Lekarz lek in context.Lekarzs
                                where lek.ID_lek == doctorId
                                select lek;

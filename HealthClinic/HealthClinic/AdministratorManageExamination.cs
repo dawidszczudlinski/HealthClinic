@@ -20,7 +20,7 @@ namespace HealthClinic
 
         public void showActualData()
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
             var sourcess = from Slownik_badan kon in context.Slownik_badans select kon;
 
@@ -43,7 +43,7 @@ namespace HealthClinic
 
         private void btn_DeleteExamination_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
             Slownik_badan examinationToDelete = (Slownik_badan)dgv_ListOfExaminations.CurrentRow.DataBoundItem;
             context.Slownik_badans.DeleteOnSubmit(examinationToDelete);

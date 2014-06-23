@@ -90,6 +90,7 @@
             // 
             this.txt_IDExamination.Location = new System.Drawing.Point(116, 9);
             this.txt_IDExamination.Name = "txt_IDExamination";
+            this.txt_IDExamination.ReadOnly = true;
             this.txt_IDExamination.Size = new System.Drawing.Size(78, 20);
             this.txt_IDExamination.TabIndex = 8;
             // 
@@ -97,6 +98,7 @@
             // 
             this.txt_ExaminationCode.Location = new System.Drawing.Point(116, 58);
             this.txt_ExaminationCode.Name = "txt_ExaminationCode";
+            this.txt_ExaminationCode.ReadOnly = true;
             this.txt_ExaminationCode.Size = new System.Drawing.Size(78, 20);
             this.txt_ExaminationCode.TabIndex = 9;
             // 
@@ -104,6 +106,7 @@
             // 
             this.txt_ExaminationName.Location = new System.Drawing.Point(116, 106);
             this.txt_ExaminationName.Name = "txt_ExaminationName";
+            this.txt_ExaminationName.ReadOnly = true;
             this.txt_ExaminationName.Size = new System.Drawing.Size(181, 20);
             this.txt_ExaminationName.TabIndex = 10;
             // 

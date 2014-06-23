@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lbl_State = new System.Windows.Forms.Label();
             this.cmb_State = new System.Windows.Forms.ComboBox();
             this.lbl_RegistrationDate = new System.Windows.Forms.Label();
@@ -41,27 +40,10 @@
             this.lbl_Imie = new System.Windows.Forms.Label();
             this.lbl_LastName = new System.Windows.Forms.Label();
             this.dgv_ListOfVisits = new System.Windows.Forms.DataGridView();
-            this.iDbadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtzleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtwykanulDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wynikDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uwagiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtzatwanulDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDKlabDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDwizDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.badanieBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.healthClinicDataSet = new HealthClinic.HealthClinicDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_Date = new System.Windows.Forms.DateTimePicker();
             this.btn_ServicePatient = new System.Windows.Forms.Button();
-            this.badanieTableAdapter = new HealthClinic.HealthClinicDataSetTableAdapters.BadanieTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,8 +62,8 @@
             this.cmb_State.FormattingEnabled = true;
             this.cmb_State.Items.AddRange(new object[] {
             "Zle",
-            "Zat",
-            "Anul"});
+            "Wyk",
+            "Anu_l"});
             this.cmb_State.Location = new System.Drawing.Point(117, 119);
             this.cmb_State.Name = "cmb_State";
             this.cmb_State.Size = new System.Drawing.Size(67, 21);
@@ -165,22 +147,7 @@
             // 
             // dgv_ListOfVisits
             // 
-            this.dgv_ListOfVisits.AutoGenerateColumns = false;
             this.dgv_ListOfVisits.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ListOfVisits.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDbadDataGridViewTextBoxColumn,
-            this.dtzleDataGridViewTextBoxColumn,
-            this.dtwykanulDataGridViewTextBoxColumn,
-            this.opisDataGridViewTextBoxColumn,
-            this.wynikDataGridViewTextBoxColumn,
-            this.uwagiDataGridViewTextBoxColumn,
-            this.statusDataGridViewTextBoxColumn,
-            this.dtzatwanulDataGridViewTextBoxColumn,
-            this.kodDataGridViewTextBoxColumn,
-            this.iDlabDataGridViewTextBoxColumn,
-            this.iDKlabDataGridViewTextBoxColumn,
-            this.iDwizDataGridViewTextBoxColumn});
-            this.dgv_ListOfVisits.DataSource = this.badanieBindingSource;
             this.dgv_ListOfVisits.Location = new System.Drawing.Point(12, 249);
             this.dgv_ListOfVisits.MultiSelect = false;
             this.dgv_ListOfVisits.Name = "dgv_ListOfVisits";
@@ -188,103 +155,9 @@
             this.dgv_ListOfVisits.Size = new System.Drawing.Size(709, 196);
             this.dgv_ListOfVisits.TabIndex = 10;
             // 
-            // iDbadDataGridViewTextBoxColumn
-            // 
-            this.iDbadDataGridViewTextBoxColumn.DataPropertyName = "ID_bad";
-            this.iDbadDataGridViewTextBoxColumn.HeaderText = "ID_bad";
-            this.iDbadDataGridViewTextBoxColumn.Name = "iDbadDataGridViewTextBoxColumn";
-            this.iDbadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dtzleDataGridViewTextBoxColumn
-            // 
-            this.dtzleDataGridViewTextBoxColumn.DataPropertyName = "Dt_zle";
-            this.dtzleDataGridViewTextBoxColumn.HeaderText = "Dt_zle";
-            this.dtzleDataGridViewTextBoxColumn.Name = "dtzleDataGridViewTextBoxColumn";
-            this.dtzleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dtwykanulDataGridViewTextBoxColumn
-            // 
-            this.dtwykanulDataGridViewTextBoxColumn.DataPropertyName = "Dt_wyk_anul";
-            this.dtwykanulDataGridViewTextBoxColumn.HeaderText = "Dt_wyk_anul";
-            this.dtwykanulDataGridViewTextBoxColumn.Name = "dtwykanulDataGridViewTextBoxColumn";
-            this.dtwykanulDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // opisDataGridViewTextBoxColumn
-            // 
-            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
-            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
-            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
-            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // wynikDataGridViewTextBoxColumn
-            // 
-            this.wynikDataGridViewTextBoxColumn.DataPropertyName = "Wynik";
-            this.wynikDataGridViewTextBoxColumn.HeaderText = "Wynik";
-            this.wynikDataGridViewTextBoxColumn.Name = "wynikDataGridViewTextBoxColumn";
-            this.wynikDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // uwagiDataGridViewTextBoxColumn
-            // 
-            this.uwagiDataGridViewTextBoxColumn.DataPropertyName = "Uwagi";
-            this.uwagiDataGridViewTextBoxColumn.HeaderText = "Uwagi";
-            this.uwagiDataGridViewTextBoxColumn.Name = "uwagiDataGridViewTextBoxColumn";
-            this.uwagiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            this.statusDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dtzatwanulDataGridViewTextBoxColumn
-            // 
-            this.dtzatwanulDataGridViewTextBoxColumn.DataPropertyName = "Dt_zatw_anul";
-            this.dtzatwanulDataGridViewTextBoxColumn.HeaderText = "Dt_zatw_anul";
-            this.dtzatwanulDataGridViewTextBoxColumn.Name = "dtzatwanulDataGridViewTextBoxColumn";
-            this.dtzatwanulDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // kodDataGridViewTextBoxColumn
-            // 
-            this.kodDataGridViewTextBoxColumn.DataPropertyName = "Kod";
-            this.kodDataGridViewTextBoxColumn.HeaderText = "Kod";
-            this.kodDataGridViewTextBoxColumn.Name = "kodDataGridViewTextBoxColumn";
-            this.kodDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDlabDataGridViewTextBoxColumn
-            // 
-            this.iDlabDataGridViewTextBoxColumn.DataPropertyName = "ID_lab";
-            this.iDlabDataGridViewTextBoxColumn.HeaderText = "ID_lab";
-            this.iDlabDataGridViewTextBoxColumn.Name = "iDlabDataGridViewTextBoxColumn";
-            this.iDlabDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDKlabDataGridViewTextBoxColumn
-            // 
-            this.iDKlabDataGridViewTextBoxColumn.DataPropertyName = "ID_Klab";
-            this.iDKlabDataGridViewTextBoxColumn.HeaderText = "ID_Klab";
-            this.iDKlabDataGridViewTextBoxColumn.Name = "iDKlabDataGridViewTextBoxColumn";
-            this.iDKlabDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // iDwizDataGridViewTextBoxColumn
-            // 
-            this.iDwizDataGridViewTextBoxColumn.DataPropertyName = "ID_wiz";
-            this.iDwizDataGridViewTextBoxColumn.HeaderText = "ID_wiz";
-            this.iDwizDataGridViewTextBoxColumn.Name = "iDwizDataGridViewTextBoxColumn";
-            this.iDwizDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // badanieBindingSource
-            // 
-            this.badanieBindingSource.DataMember = "Badanie";
-            this.badanieBindingSource.DataSource = this.healthClinicDataSet;
-            // 
-            // healthClinicDataSet
-            // 
-            this.healthClinicDataSet.DataSetName = "HealthClinicDataSet";
-            this.healthClinicDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.dtp_Date);
             this.groupBox1.Controls.Add(this.lbl_State);
             this.groupBox1.Controls.Add(this.cmb_State);
             this.groupBox1.Controls.Add(this.lbl_RegistrationDate);
@@ -302,28 +175,25 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // dateTimePicker2
+            // dtp_Date
             // 
-            this.dateTimePicker2.CustomFormat = "";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(308, 66);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 14;
+            this.dtp_Date.CustomFormat = "";
+            this.dtp_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_Date.Location = new System.Drawing.Point(308, 66);
+            this.dtp_Date.Name = "dtp_Date";
+            this.dtp_Date.ShowCheckBox = true;
+            this.dtp_Date.Size = new System.Drawing.Size(200, 20);
+            this.dtp_Date.TabIndex = 14;
             // 
             // btn_ServicePatient
             // 
-            this.btn_ServicePatient.Location = new System.Drawing.Point(552, 460);
+            this.btn_ServicePatient.Location = new System.Drawing.Point(533, 458);
             this.btn_ServicePatient.Name = "btn_ServicePatient";
             this.btn_ServicePatient.Size = new System.Drawing.Size(96, 50);
             this.btn_ServicePatient.TabIndex = 12;
             this.btn_ServicePatient.Text = "Obsługa";
             this.btn_ServicePatient.UseVisualStyleBackColor = true;
             this.btn_ServicePatient.Click += new System.EventHandler(this.btn_ServicePatient_Click);
-            // 
-            // badanieTableAdapter
-            // 
-            this.badanieTableAdapter.ClearBeforeFill = true;
             // 
             // LaboratoryAssistantStart
             // 
@@ -335,10 +205,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "LaboratoryAssistantStart";
             this.Text = "Wybierz badanie";
-            this.Load += new System.EventHandler(this.LaboratoryAssistantStart_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.badanieBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.healthClinicDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -361,22 +228,7 @@
         private System.Windows.Forms.DataGridView dgv_ListOfVisits;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_ServicePatient;
-        private HealthClinicDataSet healthClinicDataSet;
-        private System.Windows.Forms.BindingSource badanieBindingSource;
-        private HealthClinicDataSetTableAdapters.BadanieTableAdapter badanieTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDbadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtzleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtwykanulDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wynikDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uwagiDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dtzatwanulDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kodDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDlabDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDKlabDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDwizDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtp_Date;
 
     }
 }

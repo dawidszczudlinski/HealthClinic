@@ -23,7 +23,7 @@ namespace HealthClinic
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="HealthClinic")]
-	public partial class DataClasses1DataContext : System.Data.Linq.DataContext
+	public partial class DataClasses2DataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -42,15 +42,15 @@ namespace HealthClinic
     partial void InsertLaborant(Laborant instance);
     partial void UpdateLaborant(Laborant instance);
     partial void DeleteLaborant(Laborant instance);
-    partial void InsertPacjent(Pacjent instance);
-    partial void UpdatePacjent(Pacjent instance);
-    partial void DeletePacjent(Pacjent instance);
     partial void InsertLekarz(Lekarz instance);
     partial void UpdateLekarz(Lekarz instance);
     partial void DeleteLekarz(Lekarz instance);
     partial void InsertRejestratorka(Rejestratorka instance);
     partial void UpdateRejestratorka(Rejestratorka instance);
     partial void DeleteRejestratorka(Rejestratorka instance);
+    partial void InsertPacjent(Pacjent instance);
+    partial void UpdatePacjent(Pacjent instance);
+    partial void DeletePacjent(Pacjent instance);
     partial void InsertSlownik_badan(Slownik_badan instance);
     partial void UpdateSlownik_badan(Slownik_badan instance);
     partial void DeleteSlownik_badan(Slownik_badan instance);
@@ -59,31 +59,31 @@ namespace HealthClinic
     partial void DeleteWizyta(Wizyta instance);
     #endregion
 		
-		public DataClasses1DataContext() : 
+		public DataClasses2DataContext() : 
 				base(global::HealthClinic.Properties.Settings.Default.HealthClinicConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(string connection) : 
+		public DataClasses2DataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection) : 
+		public DataClasses2DataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses2DataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public DataClasses1DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public DataClasses2DataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -121,14 +121,6 @@ namespace HealthClinic
 			}
 		}
 		
-		public System.Data.Linq.Table<Pacjent> Pacjents
-		{
-			get
-			{
-				return this.GetTable<Pacjent>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Lekarz> Lekarzs
 		{
 			get
@@ -142,6 +134,14 @@ namespace HealthClinic
 			get
 			{
 				return this.GetTable<Rejestratorka>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Pacjent> Pacjents
+		{
+			get
+			{
+				return this.GetTable<Pacjent>();
 			}
 		}
 		
@@ -1182,216 +1182,6 @@ namespace HealthClinic
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pacjent")]
-	public partial class Pacjent : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _ID_pac;
-		
-		private string _Imie;
-		
-		private string _Nazwisko;
-		
-		private string _PESEL;
-		
-		private string _Adres;
-		
-		private string _Nr_ubezpieczenia;
-		
-		private EntitySet<Wizyta> _Wizytas;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnID_pacChanging(int value);
-    partial void OnID_pacChanged();
-    partial void OnImieChanging(string value);
-    partial void OnImieChanged();
-    partial void OnNazwiskoChanging(string value);
-    partial void OnNazwiskoChanged();
-    partial void OnPESELChanging(string value);
-    partial void OnPESELChanged();
-    partial void OnAdresChanging(string value);
-    partial void OnAdresChanged();
-    partial void OnNr_ubezpieczeniaChanging(string value);
-    partial void OnNr_ubezpieczeniaChanged();
-    #endregion
-		
-		public Pacjent()
-		{
-			this._Wizytas = new EntitySet<Wizyta>(new Action<Wizyta>(this.attach_Wizytas), new Action<Wizyta>(this.detach_Wizytas));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_pac", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int ID_pac
-		{
-			get
-			{
-				return this._ID_pac;
-			}
-			set
-			{
-				if ((this._ID_pac != value))
-				{
-					this.OnID_pacChanging(value);
-					this.SendPropertyChanging();
-					this._ID_pac = value;
-					this.SendPropertyChanged("ID_pac");
-					this.OnID_pacChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imie", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Imie
-		{
-			get
-			{
-				return this._Imie;
-			}
-			set
-			{
-				if ((this._Imie != value))
-				{
-					this.OnImieChanging(value);
-					this.SendPropertyChanging();
-					this._Imie = value;
-					this.SendPropertyChanged("Imie");
-					this.OnImieChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nazwisko", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nazwisko
-		{
-			get
-			{
-				return this._Nazwisko;
-			}
-			set
-			{
-				if ((this._Nazwisko != value))
-				{
-					this.OnNazwiskoChanging(value);
-					this.SendPropertyChanging();
-					this._Nazwisko = value;
-					this.SendPropertyChanged("Nazwisko");
-					this.OnNazwiskoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PESEL", DbType="NVarChar(11)")]
-		public string PESEL
-		{
-			get
-			{
-				return this._PESEL;
-			}
-			set
-			{
-				if ((this._PESEL != value))
-				{
-					this.OnPESELChanging(value);
-					this.SendPropertyChanging();
-					this._PESEL = value;
-					this.SendPropertyChanged("PESEL");
-					this.OnPESELChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Adres", DbType="NVarChar(250)")]
-		public string Adres
-		{
-			get
-			{
-				return this._Adres;
-			}
-			set
-			{
-				if ((this._Adres != value))
-				{
-					this.OnAdresChanging(value);
-					this.SendPropertyChanging();
-					this._Adres = value;
-					this.SendPropertyChanged("Adres");
-					this.OnAdresChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nr_ubezpieczenia", DbType="NVarChar(30)")]
-		public string Nr_ubezpieczenia
-		{
-			get
-			{
-				return this._Nr_ubezpieczenia;
-			}
-			set
-			{
-				if ((this._Nr_ubezpieczenia != value))
-				{
-					this.OnNr_ubezpieczeniaChanging(value);
-					this.SendPropertyChanging();
-					this._Nr_ubezpieczenia = value;
-					this.SendPropertyChanged("Nr_ubezpieczenia");
-					this.OnNr_ubezpieczeniaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pacjent_Wizyta", Storage="_Wizytas", ThisKey="ID_pac", OtherKey="ID_pac")]
-		public EntitySet<Wizyta> Wizytas
-		{
-			get
-			{
-				return this._Wizytas;
-			}
-			set
-			{
-				this._Wizytas.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Wizytas(Wizyta entity)
-		{
-			this.SendPropertyChanging();
-			entity.Pacjent = this;
-		}
-		
-		private void detach_Wizytas(Wizyta entity)
-		{
-			this.SendPropertyChanging();
-			entity.Pacjent = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Lekarz")]
 	public partial class Lekarz : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1788,6 +1578,216 @@ namespace HealthClinic
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Pacjent")]
+	public partial class Pacjent : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ID_pac;
+		
+		private string _Imie;
+		
+		private string _Nazwisko;
+		
+		private string _PESEL;
+		
+		private string _Adres;
+		
+		private string _Nr_ubezpieczenia;
+		
+		private EntitySet<Wizyta> _Wizytas;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnID_pacChanging(int value);
+    partial void OnID_pacChanged();
+    partial void OnImieChanging(string value);
+    partial void OnImieChanged();
+    partial void OnNazwiskoChanging(string value);
+    partial void OnNazwiskoChanged();
+    partial void OnPESELChanging(string value);
+    partial void OnPESELChanged();
+    partial void OnAdresChanging(string value);
+    partial void OnAdresChanged();
+    partial void OnNr_ubezpieczeniaChanging(string value);
+    partial void OnNr_ubezpieczeniaChanged();
+    #endregion
+		
+		public Pacjent()
+		{
+			this._Wizytas = new EntitySet<Wizyta>(new Action<Wizyta>(this.attach_Wizytas), new Action<Wizyta>(this.detach_Wizytas));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID_pac", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ID_pac
+		{
+			get
+			{
+				return this._ID_pac;
+			}
+			set
+			{
+				if ((this._ID_pac != value))
+				{
+					this.OnID_pacChanging(value);
+					this.SendPropertyChanging();
+					this._ID_pac = value;
+					this.SendPropertyChanged("ID_pac");
+					this.OnID_pacChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Imie", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Imie
+		{
+			get
+			{
+				return this._Imie;
+			}
+			set
+			{
+				if ((this._Imie != value))
+				{
+					this.OnImieChanging(value);
+					this.SendPropertyChanging();
+					this._Imie = value;
+					this.SendPropertyChanged("Imie");
+					this.OnImieChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nazwisko", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Nazwisko
+		{
+			get
+			{
+				return this._Nazwisko;
+			}
+			set
+			{
+				if ((this._Nazwisko != value))
+				{
+					this.OnNazwiskoChanging(value);
+					this.SendPropertyChanging();
+					this._Nazwisko = value;
+					this.SendPropertyChanged("Nazwisko");
+					this.OnNazwiskoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PESEL", DbType="NVarChar(11)")]
+		public string PESEL
+		{
+			get
+			{
+				return this._PESEL;
+			}
+			set
+			{
+				if ((this._PESEL != value))
+				{
+					this.OnPESELChanging(value);
+					this.SendPropertyChanging();
+					this._PESEL = value;
+					this.SendPropertyChanged("PESEL");
+					this.OnPESELChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Adres", DbType="NVarChar(250)")]
+		public string Adres
+		{
+			get
+			{
+				return this._Adres;
+			}
+			set
+			{
+				if ((this._Adres != value))
+				{
+					this.OnAdresChanging(value);
+					this.SendPropertyChanging();
+					this._Adres = value;
+					this.SendPropertyChanged("Adres");
+					this.OnAdresChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nr_ubezpieczenia", DbType="NVarChar(30)")]
+		public string Nr_ubezpieczenia
+		{
+			get
+			{
+				return this._Nr_ubezpieczenia;
+			}
+			set
+			{
+				if ((this._Nr_ubezpieczenia != value))
+				{
+					this.OnNr_ubezpieczeniaChanging(value);
+					this.SendPropertyChanging();
+					this._Nr_ubezpieczenia = value;
+					this.SendPropertyChanged("Nr_ubezpieczenia");
+					this.OnNr_ubezpieczeniaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pacjent_Wizyta", Storage="_Wizytas", ThisKey="ID_pac", OtherKey="ID_pac")]
+		public EntitySet<Wizyta> Wizytas
+		{
+			get
+			{
+				return this._Wizytas;
+			}
+			set
+			{
+				this._Wizytas.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Wizytas(Wizyta entity)
+		{
+			this.SendPropertyChanging();
+			entity.Pacjent = this;
+		}
+		
+		private void detach_Wizytas(Wizyta entity)
+		{
+			this.SendPropertyChanging();
+			entity.Pacjent = null;
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Slownik_badan")]
 	public partial class Slownik_badan : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1799,6 +1799,8 @@ namespace HealthClinic
 		private string _Nazwa;
 		
 		private string _Opis;
+		
+		private int _Typ;
 		
 		private EntitySet<Badanie> _Badanies;
 		
@@ -1812,6 +1814,8 @@ namespace HealthClinic
     partial void OnNazwaChanged();
     partial void OnOpisChanging(string value);
     partial void OnOpisChanged();
+    partial void OnTypChanging(int value);
+    partial void OnTypChanged();
     #endregion
 		
 		public Slownik_badan()
@@ -1876,6 +1880,26 @@ namespace HealthClinic
 					this._Opis = value;
 					this.SendPropertyChanged("Opis");
 					this.OnOpisChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Typ", DbType="Int NOT NULL")]
+		public int Typ
+		{
+			get
+			{
+				return this._Typ;
+			}
+			set
+			{
+				if ((this._Typ != value))
+				{
+					this.OnTypChanging(value);
+					this.SendPropertyChanging();
+					this._Typ = value;
+					this.SendPropertyChanged("Typ");
+					this.OnTypChanged();
 				}
 			}
 		}

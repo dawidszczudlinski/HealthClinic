@@ -13,30 +13,40 @@ namespace HealthClinic
     
     public partial class DoctorManageLaboratoryExamination : Form
     {
-        private Slownik_badan sl;
-        DataClasses1DataContext context = new DataClasses1DataContext();
-        private Badanie badanie;
-        private Konto konto;
-        private DoctorLaboratoryExamination dMv;
-        private LaboratoryAssistantStart lAs;
-       private LeaderLaboratoryStart lLs;
+        private DoctorLaboratoryExamination windowDoctor;
+        private LaboratoryAssistantStart windowLaboratory;
+        private LeaderLaboratoryStart windowLeader;
+
+        private int role;
+        private int idVisit;
+        private int idExam;
+        private bool isEdit;
+        int examinationCode;
+
         public DoctorManageLaboratoryExamination()
         {
             InitializeComponent();
         }
-        public DoctorManageLaboratoryExamination( LaboratoryAssistantStart lAs1)
+
+        public DoctorManageLaboratoryExamination(LaboratoryAssistantStart lAs1)
         {
-            this.lAs = lAs1;
+            role = 1;
+            this.windowLaboratory = lAs1;
             InitializeComponent();
         }
+
         public DoctorManageLaboratoryExamination(LeaderLaboratoryStart lLs1)
         {
-            this.lLs = lLs1;
+            role = 2;
+            this.windowLeader = lLs1;
             InitializeComponent();
         }
-        public DoctorManageLaboratoryExamination(DoctorLaboratoryExamination dMv1)
+
+        public DoctorManageLaboratoryExamination(DoctorLaboratoryExamination dMv1, bool edit)
         {
-            this.dMv = dMv1;
+            role = 0;
+            this.isEdit = edit;
+            this.windowDoctor = dMv1;
             InitializeComponent();
         }
        
@@ -45,116 +55,220 @@ namespace HealthClinic
             DoctorLaboratoryExaminationMap doctorLaboratoryExaminationMap = new DoctorLaboratoryExaminationMap(this);
             doctorLaboratoryExaminationMap.Show();
         }
-        public void chooseCode(Slownik_badan sl)
-        {
-            textBox2.Text = sl.Kod.ToString();
-            textBox3.Text = sl.Nazwa;
-            
-            this.sl = sl;
-
-        }
-        private void btn_LeaderConfirm_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Przycisk btn_LeaderConfirm");
-            badanie.Opis =txt_LeaderExaminationDescription.Text;
-            badanie.Dt_zatw_anul = DateTime.Now;
-            badanie.ID_Klab = 1;
-
-             this.context.SubmitChanges();
-            lLs.showActualData();
-            this.Close();
-        }
-
-        private void btn_LeaderCancel_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Przycisk btn_LeaderCancel");
-        }
-
-        private void btn_LeaderClose_Click(object sender, EventArgs e)
-        {
-            //MessageBox.Show("Przycisk btn_LeaderClose");
-            this.Close();
-        }
 
         private void btn_DoctorRunTest_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show("Przycisk btn_DoctorRunTest");
-            badanie = new Badanie();
-            badanie.Dt_zle = DateTime.Now;
-            badanie.ID_wiz = dMv.idV1();
-            badanie.Dt_wyk_anul = null;
-            badanie.Opis = null;
-            badanie.Wynik = null;
-            badanie.Kod = Convert.ToInt32(textBox2.Text);
-            badanie.ID_bad = Convert.ToInt32(textBox1.Text);
-            badanie.Uwagi = textBox4.Text;
-            badanie.ID_lab = null;
-            badanie.ID_Klab = null;
-            badanie.Status = "Zle";
-            context.Badanies.InsertOnSubmit(badanie);
+            DataClasses2DataContext context = new DataClasses2DataContext();
+            if (isEdit == false)
+            {
+                Badanie badanie = new Badanie();
+
+                badanie.Dt_zle = DateTime.Now;
+                badanie.Dt_wyk_anul = null;
+                badanie.Dt_zatw_anul = null;
+
+                badanie.Opis = null;
+                badanie.Wynik = null;
+                badanie.Uwagi = txt_DoctorComment.Text;
+
+                badanie.Kod = Int32.Parse(txt_DoctorExaminationCode.Text);
+
+                badanie.ID_lab = null;
+                badanie.ID_Klab = null;
+                badanie.ID_wiz = this.idVisit;
+
+                badanie.Status = "Zle";
+
+
+                context.Badanies.InsertOnSubmit(badanie);
+            }
+            else
+            {
+                var sourcess = from Badanie bad in context.Badanies
+                               where bad.ID_bad == this.idExam
+                               select bad;
+
+                Badanie badanie = sourcess.First();
+
+                badanie.Dt_zle = DateTime.Now;
+                badanie.Uwagi = txt_DoctorComment.Text;
+                badanie.Kod = Int32.Parse(txt_DoctorExaminationCode.Text);
+                badanie.Status = "Zle";
+            }
+            
             context.SubmitChanges();
-            dMv.showActualData();
+            windowDoctor.showActualData();
             this.Close();
         }
 
         private void btn_DoctorClose_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Przycisk btn_DoctorClose");
             this.Close();
         }
 
         private void btn_LabAssistantRealize_Click(object sender, EventArgs e)
         {
-          
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
+            var sourcess = from Badanie bad in context.Badanies
+                           where bad.ID_bad == this.idExam
+                           select bad;
+
+            Badanie badanie = sourcess.First();
             badanie.Wynik = txt_LabResult.Text;
-             badanie.ID_lab = 1;
+            badanie.ID_lab = CurrentAccount.getAccount().ID;
             badanie.Dt_wyk_anul = DateTime.Now;
-            badanie.Status = "wT";
-           this.context.SubmitChanges();
-            lAs.showActualData();
-            this.Close();  
+            badanie.Status = "Wyk";
+
+            context.SubmitChanges();
+
+            windowLaboratory.showActualData();
+
+            this.Close();
         }
 
         private void btn_LabAssistantCancel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Przycisk btn_LabAssistantCancel");
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Badanie bad in context.Badanies
+                           where bad.ID_bad == this.idExam
+                           select bad;
+
+            Badanie badanie = sourcess.First();
+            badanie.Wynik = txt_LabResult.Text;
+            badanie.ID_lab = CurrentAccount.getAccount().ID;
+            badanie.Dt_wyk_anul = DateTime.Now;
+            badanie.Status = "Anu_l";
+
+            context.SubmitChanges();
+
+            windowLaboratory.showActualData();
+
+            this.Close();
         }
 
         private void btn_LabAssisnantClose_Click(object sender, EventArgs e)
         {
-           // MessageBox.Show("Przycisk btn_LabAssistantClose");
             this.Close();
         }
-        public void setVisit(Badanie visit)
+
+        private void btn_LeaderConfirm_Click(object sender, EventArgs e)
         {
-            txt_LabIDExamination.Text = visit.ID_bad.ToString();
-            txt_LabExaminationCode.Text = visit.Kod.ToString();
-            txt_LeaderIDExamination.Text = visit.ID_bad.ToString();
-            txt_LeaderExaminationCode.Text = visit.Kod.ToString();
-            var sourcess = from Slownik_badan sl in context.Slownik_badans
-                           select new
-                           {
-                               sl.Kod,
-                               sl.Nazwa,
-                               counter =
-                                   (from Badanie  wiz in context.Badanies
-                                    where wiz.Kod == sl.Kod
-                                    select sl).Count()
-                           };
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
-            foreach (var paci in sourcess)
-            {
-                txt_LabExaminationName.Text = paci.Nazwa;
-                txt_LeaderExaminationName.Text = paci.Nazwa;
+            var sourcess = from Badanie bad in context.Badanies
+                           where bad.ID_bad == this.idExam
+                           select bad;
 
-            }
+            Badanie badanie = sourcess.First();
+            badanie.Opis = txt_LeaderExaminationDescription.Text;
+            badanie.ID_Klab = CurrentAccount.getAccount().ID;
+            badanie.Dt_zatw_anul = DateTime.Now;
+            badanie.Status = "Zatw";
 
-            this.badanie = visit;
+            context.SubmitChanges();
 
+            windowLeader.showActualData();
+
+            this.Close();
         }
+
+        private void btn_LeaderCancel_Click(object sender, EventArgs e)
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Badanie bad in context.Badanies
+                           where bad.ID_bad == this.idExam
+                           select bad;
+
+            Badanie badanie = sourcess.First();
+            badanie.Opis = txt_LeaderExaminationDescription.Text;
+            badanie.ID_Klab = CurrentAccount.getAccount().ID;
+            badanie.Dt_zatw_anul = DateTime.Now;
+            badanie.Status = "Anu_k";
+
+            context.SubmitChanges();
+
+            windowLeader.showActualData();
+
+            this.Close();
+        }
+
+        private void btn_LeaderClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void setVisitId(int idVis)
+        {
+            this.idVisit = idVis;
+        }
+
+        public void setExaminationId(int examId)
+        {
+            this.idExam = examId;
+
+            this.showActualData();
+        }
+
+        public void showActualData()
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Badanie bad in context.Badanies
+                           where bad.ID_bad == this.idExam
+                           select bad;
+
+            Badanie badanie = sourcess.First();
+
+            this.setExaminationType(badanie.Kod);
+            txt_DoctorExaminationID.Text = this.idExam.ToString();
+            txt_LabIDExamination.Text = this.idExam.ToString();
+            txt_LeaderIDExamination.Text = this.idExam.ToString();
+
+            switch (this.role)
+            {
+                case 2:
+                    txt_LeaderExaminationDescription.Text = badanie.Opis;
+                    goto case 1;
+                case 1:
+                    txt_LabResult.Text = badanie.Wynik;
+                    goto case 0;
+                case 0:
+                    txt_DoctorComment.Text = badanie.Uwagi;
+                    break;
+            }
+        }
+
+        public void setExaminationType(int examination)
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            examinationCode = examination;
+
+            var sourcess2 = from Slownik_badan slo in context.Slownik_badans
+                            where slo.Kod == examinationCode
+                            select slo;
+            Slownik_badan examinationType = sourcess2.First();
+
+            txt_DoctorExaminationCode.Text = examinationType.Kod.ToString();
+            txt_DoctorExaminationName.Text = examinationType.Nazwa;
+
+            txt_LabExaminationCode.Text = examinationType.Kod.ToString();
+            txt_LabExaminationName.Text = examinationType.Nazwa;
+
+            txt_LeaderExaminationCode.Text = examinationType.Kod.ToString();
+            txt_LeaderExaminationName.Text = examinationType.Nazwa;
+        }
+       
         public void showDoctorWindow()
         {
+            txt_LabResult.ReadOnly = true;
+            txt_DoctorComment.ReadOnly = false;
+            txt_LeaderExaminationDescription.ReadOnly = true;
+
+            btn_ChoiceLaboratoryExamination.Enabled = true;
             btn_DoctorClose.Visible = true;
             btn_DoctorRunTest.Visible = true;
             btn_LabAssisnantClose.Visible = false;
@@ -168,6 +282,11 @@ namespace HealthClinic
 
         public void showLaboratoryAssistantWindow()
         {
+            txt_LabResult.ReadOnly = false;
+            txt_DoctorComment.ReadOnly = true;
+            txt_LeaderExaminationDescription.ReadOnly = true;
+
+            btn_ChoiceLaboratoryExamination.Enabled = false;
             btn_DoctorClose.Visible = false;
             btn_DoctorRunTest.Visible = false;
             btn_LabAssisnantClose.Visible = true;
@@ -181,6 +300,11 @@ namespace HealthClinic
 
         public void showLeaderWindow()
         {
+            txt_LabResult.ReadOnly = true;
+            txt_DoctorComment.ReadOnly = true;
+            txt_LeaderExaminationDescription.ReadOnly = false;
+
+            btn_ChoiceLaboratoryExamination.Enabled = false;
             btn_DoctorClose.Visible = false;
             btn_DoctorRunTest.Visible = false;
             btn_LabAssisnantClose.Visible = false;

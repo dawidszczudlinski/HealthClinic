@@ -15,7 +15,7 @@ namespace HealthClinic
         private RegisterVisit parentWindow;
         private Pacjent patientToCreate, patientToEdit;
         private bool isEdit;
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        DataClasses2DataContext context = new DataClasses2DataContext();
         public ReceptionistAddPatient(RegisterVisit window)
         {
             InitializeComponent();

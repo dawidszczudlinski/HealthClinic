@@ -12,13 +12,12 @@ namespace HealthClinic
 {
     public partial class DoctorRealizePhysicalExamination : Form
     {
-        private DoctorPhysicalExamination dMv;
-      
-        private Slownik_badan sl;
-        private Wizyta wizyt;
-        private Badanie badanie;
-        int iDwiz;
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        private DoctorPhysicalExamination parentWindow;
+
+        int idExamination;
+        int examinationCode;
+        int idVisit;
+        bool isEdit;
 
         public DoctorRealizePhysicalExamination()
         {
@@ -27,46 +26,105 @@ namespace HealthClinic
         }
         public DoctorRealizePhysicalExamination(DoctorPhysicalExamination dMv1)
         {
-            this.dMv = dMv1;
+            this.parentWindow = dMv1;
             InitializeComponent();
-
+            isEdit = false;
         }
+
+        public void setIdExam(int idExam)
+        {
+            idExamination = idExam;
+            isEdit = true;
+            showActualData();
+        }
+
+        public void setIdVisit(int idVis)
+        {
+            idVisit = idVis;
+        }
+
+        public void showActualData()
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Badanie bad in context.Badanies
+                           where idExamination == bad.ID_bad
+                           select bad;
+            Badanie exam = sourcess.First();
+
+            var sourcess2 = from Slownik_badan slo in context.Slownik_badans
+                            where exam.Kod == slo.Kod
+                            select slo;
+            Slownik_badan examinationType = sourcess2.First();
+
+            txt_IDExamination.Text = exam.ID_bad.ToString();
+            txt_ExaminationCode.Text = examinationType.Kod.ToString();
+            txt_ExaminationName.Text = examinationType.Nazwa;
+            txt_ExaminationResult.Text = exam.Wynik;
+        }
+
         private void btn_ChoiceExamination_Click(object sender, EventArgs e)
         {
             DoctorPhysicalExaminationMap doctorPhysicalExaminationMap = new DoctorPhysicalExaminationMap(this);
             doctorPhysicalExaminationMap.Show();
         }
-        public void chooseCode(Slownik_badan sl)
-        {
-            txt_ExaminationCode.Text = sl.Kod.ToString();
-            txt_ExaminationName.Text = sl.Nazwa;
-            this.sl = sl;
 
+        public void setExaminationType(int examination)
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            examinationCode = examination;
+
+            var sourcess2 = from Slownik_badan slo in context.Slownik_badans
+                            where slo.Kod == examination
+                            select slo;
+            Slownik_badan examinationType = sourcess2.First();
+
+            txt_ExaminationCode.Text = examinationType.Kod.ToString();
+            txt_ExaminationName.Text = examinationType.Nazwa;
         }
 
         private void btn_OK_Click(object sender, EventArgs e)  
         {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            Badanie examination;
+
+            if (isEdit == true)
+            {
+                var sourcess = from Badanie bad in context.Badanies
+                               where idExamination == bad.ID_bad
+                               select bad;
+                examination = sourcess.First();
+
+                examination.Wynik = txt_ExaminationResult.Text;
+                examination.Dt_zle = DateTime.Now;
+                examination.Dt_wyk_anul = DateTime.Now;
+                examination.Dt_zatw_anul = DateTime.Now;
+                examination.Kod = Int32.Parse(txt_ExaminationCode.Text);
+            }
+            else
+            {
+                examination = new Badanie();
+
+                examination.ID_wiz = idVisit;         
+                examination.Wynik = txt_ExaminationResult.Text;
+                examination.Opis = null;
+                examination.Uwagi = null;   
+                examination.Dt_zle = DateTime.Now;
+                examination.Dt_wyk_anul = DateTime.Now;
+                examination.Dt_zatw_anul = DateTime.Now;
+                examination.ID_lab = null;
+                examination.ID_Klab = null;
+                examination.Status = "Wyk";
+                examination.Kod = Int32.Parse(txt_ExaminationCode.Text);
+                context.Badanies.InsertOnSubmit(examination);
+            }
             
-           
-            badanie = new Badanie();
-            badanie.Dt_zle = DateTime.Now;
-            badanie.ID_wiz = dMv.idV1(); 
-            badanie.Dt_wyk_anul = null;
-            badanie.Opis = null;
-            badanie.Wynik = null;
-            badanie.Uwagi = null;
-            badanie.Dt_zatw_anul = null;
-            badanie.ID_lab = null;
-            badanie.ID_Klab = null;
-            badanie.Status = "Zle";
-            badanie.Kod = sl.Kod;
-            
-            context.Badanies.InsertOnSubmit(badanie);
             context.SubmitChanges();
 
-            dMv.showActualData();
-            this.Close();  
-           
+            parentWindow.showActualData();
+            this.Close();   
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)

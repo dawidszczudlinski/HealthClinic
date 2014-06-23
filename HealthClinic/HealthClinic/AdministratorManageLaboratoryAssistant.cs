@@ -20,7 +20,7 @@ namespace HealthClinic
 
         public void showActualData()
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
             var sourcess = from Laborant lab in context.Laborants select lab;
 
@@ -43,7 +43,7 @@ namespace HealthClinic
 
         private void btn_DeleteLaborant_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
             Laborant laborantToDelete = (Laborant)dgv_ListOfLaborants.CurrentRow.DataBoundItem;
             context.Laborants.DeleteOnSubmit(laborantToDelete);
             context.SubmitChanges();

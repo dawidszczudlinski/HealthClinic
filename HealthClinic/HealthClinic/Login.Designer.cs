@@ -28,15 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btn_Login = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.lbl_Name = new System.Windows.Forms.Label();
             this.lbl_Password = new System.Windows.Forms.Label();
             this.txt_Login = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
-            this.kontoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.kontoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Login
@@ -92,10 +89,6 @@
             this.txt_Password.TabIndex = 7;
             this.txt_Password.UseSystemPasswordChar = true;
             // 
-            // kontoBindingSource
-            // 
-            this.kontoBindingSource.DataSource = typeof(HealthClinic.Konto);
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,7 +102,6 @@
             this.Controls.Add(this.btn_Login);
             this.Name = "Login";
             this.Text = "Logowanie";
-            ((System.ComponentModel.ISupportInitialize)(this.kontoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,6 +115,5 @@
         private System.Windows.Forms.Label lbl_Password;
         private System.Windows.Forms.TextBox txt_Login;
         private System.Windows.Forms.TextBox txt_Password;
-        private System.Windows.Forms.BindingSource kontoBindingSource;
     }
 }

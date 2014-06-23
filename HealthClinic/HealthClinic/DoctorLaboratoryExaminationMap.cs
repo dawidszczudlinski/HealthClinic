@@ -12,28 +12,24 @@ namespace HealthClinic
 {
     public partial class DoctorLaboratoryExaminationMap : Form
     {
-        DataClasses1DataContext context = new DataClasses1DataContext();
-        private DoctorManageLaboratoryExamination parent;
-        private IQueryable<Slownik_badan> listOfSlownik;
+        private DoctorManageLaboratoryExamination parentWindow;
+
         public DoctorLaboratoryExaminationMap(DoctorManageLaboratoryExamination parent)
         {
-            this.parent = parent;
+            this.parentWindow = parent;
             InitializeComponent();
-        }
-
-        private void DoctorLaboratoryExaminationMap_Load(object sender, EventArgs e)
-        {
             showActualData();
-
         }
+
         public void showActualData()
         {
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
-            var sourcess = from Slownik_badan kon in context.Slownik_badans select kon;
+            var sourcess = from Slownik_badan slo in context.Slownik_badans
+                           where slo.Typ == 2
+                           select slo;
 
             dgv_LaboratoryExamination.DataSource = sourcess;
-            context.SubmitChanges();
-
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
@@ -47,13 +43,13 @@ namespace HealthClinic
             }
             else
             {
-                DataClasses1DataContext context = new DataClasses1DataContext();
+                DataClasses2DataContext context = new DataClasses2DataContext();
                 var sourcess = from Slownik_badan sl in context.Slownik_badans
                                where sl.Kod == codeId
                                select sl;
 
                 Slownik_badan slownik = sourcess.First();
-                parent.chooseCode(slownik);
+                parentWindow.setExaminationType(slownik.Kod);
                 this.Close();
             }
         }

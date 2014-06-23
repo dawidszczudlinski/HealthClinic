@@ -9,93 +9,115 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HealthClinic
-
 {
-    
+
     public partial class DoctorManageVisit : Form
     {
-        DataClasses1DataContext context = new DataClasses1DataContext();
         private DoctorStart parentWindow;
-        int v;
-        private Pacjent patient ;
         private Wizyta visit;
-        private IQueryable<Wizyta> listOfVisits;
-        private IQueryable<Pacjent> listOfPatients;
-        public DoctorManageVisit( DoctorStart dS)
+        public DoctorManageVisit(DoctorStart dS)
         {
             InitializeComponent();
             parentWindow = dS;
         }
-         
 
-     public void setVisit(Wizyta visit)
+
+        public void setVisit(Wizyta visitToManage)
         {
-            txt_IDVisit.Text= visit.ID_wiz.ToString();
+            DataClasses2DataContext context = new DataClasses2DataContext();
+            this.visit = visitToManage;
 
-           
             var sourcess = from Pacjent pac in context.Pacjents
-                           select new
-                           {
-                               pac.ID_pac,
-                               pac.Imie,
-                               pac.Nazwisko,
-                               counter =
-                                   (from Wizyta wiz in context.Wizytas
-                                    where wiz.ID_pac == pac.ID_pac
-                                    select pac).Count()
-                           };
+                           where pac.ID_pac == visit.ID_pac
+                           select pac;
 
-            foreach (var paci in sourcess)
-            {
-                    txt_LastName.Text = paci.Nazwisko;
-                    txt_Name.Text = paci.Imie;
-                    
-            }
-       
-           this.visit = visit;
-        
+            txt_IDVisit.Text = visit.ID_wiz.ToString();
+            txt_LastName.Text = sourcess.First().Nazwisko;
+            txt_Name.Text = sourcess.First().Imie;
+            txt_Description.Text = visit.Opis;
+            txt_Diagnosis.Text = visit.Diagnoza;
         }
-     public int idV()
-     {
-         return visit.ID_wiz;
-     }
-       
+
+        public Wizyta getVisit()
+        {
+            return visit;
+        }
+
         private void btn_PhysicalExamination_Click(object sender, EventArgs e)
         {
-           
             DoctorPhysicalExamination doctorPhysicalExamination = new DoctorPhysicalExamination(this);
+            doctorPhysicalExamination.setVisitId(visit.ID_wiz);
             doctorPhysicalExamination.Show();
+            doctorPhysicalExamination.showActualData();
         }
 
         private void btn_LaboratoryExamination_Click(object sender, EventArgs e)
         {
             DoctorLaboratoryExamination doctorLaboratoryExamination = new DoctorLaboratoryExamination();
+            doctorLaboratoryExamination.setVisitId(visit.ID_wiz);
             doctorLaboratoryExamination.Show();
+            doctorLaboratoryExamination.showActualData();
         }
-       
-        
+
+
         private void btn_Finish_Click(object sender, EventArgs e)
         {
-            
-          // var query =(from W 
-            visit.ID_wiz = this.visit.ID_wiz;
-            visit.Dt_rej = this.visit.Dt_rej;
-            visit.Status = "zak";
-            visit.Dt_zak = DateTime.Now;
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Wizyta wiz in context.Wizytas
+                           where wiz.ID_wiz == visit.ID_wiz
+                           select wiz;
+
+            visit = sourcess.First();
             visit.Opis = txt_Description.Text;
             visit.Diagnoza = txt_Diagnosis.Text;
-            visit.ID_pac = visit.ID_pac;
-            visit.ID_rej = 1;
-            visit.ID_lek = visit.ID_lek;
-               // visit = this.visit;
+            visit.Dt_zak = DateTime.Now;
+            visit.Status = "zak";
+            context.SubmitChanges();
 
-            this.context.SubmitChanges();
-            //this.context.
             this.Close();
-           
+            parentWindow.showData();
         }
 
         private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Wizyta wiz in context.Wizytas
+                           where wiz.ID_wiz == visit.ID_wiz
+                           select wiz;
+
+            visit = sourcess.First();
+            visit.Opis = txt_Description.Text;
+            visit.Diagnoza = txt_Diagnosis.Text;
+            visit.Dt_zak = DateTime.Now;
+            visit.Status = "odw";
+            context.SubmitChanges();
+
+            this.Close();
+            parentWindow.showData();
+        }
+
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+            DataClasses2DataContext context = new DataClasses2DataContext();
+
+            var sourcess = from Wizyta wiz in context.Wizytas
+                           where wiz.ID_wiz == visit.ID_wiz
+                           select wiz;
+
+            visit = sourcess.First();
+            visit.Status = "rozp";
+            context.SubmitChanges();
+        }
+
+        private void btn_Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parentWindow.showData();
+        }
+
+        private void btn_Report_Click(object sender, EventArgs e)
         {
 
         }

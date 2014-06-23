@@ -178,6 +178,7 @@
             this.btn_Report.TabIndex = 8;
             this.btn_Report.Text = "Raport";
             this.btn_Report.UseVisualStyleBackColor = true;
+            this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
             // 
             // btn_Start
             // 
@@ -187,6 +188,7 @@
             this.btn_Start.TabIndex = 9;
             this.btn_Start.Text = "Rozpocznij";
             this.btn_Start.UseVisualStyleBackColor = true;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // btn_Finish
             // 
@@ -216,6 +218,7 @@
             this.btn_Exit.TabIndex = 12;
             this.btn_Exit.Text = "Powrót";
             this.btn_Exit.UseVisualStyleBackColor = true;
+            this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
             // DoctorManageVisit
             // 

@@ -20,7 +20,7 @@ namespace HealthClinic
 
         public void showActualData()
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
             var sourcess = from Lekarz lek in context.Lekarzs select lek;
 
@@ -43,7 +43,7 @@ namespace HealthClinic
 
         private void btn_DeleteDoctor_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
             Lekarz doctorToDelete = (Lekarz)dgv_ListOfDoctors.CurrentRow.DataBoundItem;
             context.Lekarzs.DeleteOnSubmit(doctorToDelete);
             context.SubmitChanges();

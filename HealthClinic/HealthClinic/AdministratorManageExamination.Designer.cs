@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dgv_ListOfExaminations = new System.Windows.Forms.DataGridView();
-            this.kodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.slownikbadanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_Description = new System.Windows.Forms.Label();
             this.btn_DeleteExamination = new System.Windows.Forms.Button();
             this.btn_EditExamination = new System.Windows.Forms.Button();
             this.btn_AddExamination = new System.Windows.Forms.Button();
+            this.slownikbadanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.kodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfExaminations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,8 @@
             this.dgv_ListOfExaminations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.kodDataGridViewTextBoxColumn,
             this.nazwaDataGridViewTextBoxColumn,
-            this.opisDataGridViewTextBoxColumn});
+            this.opisDataGridViewTextBoxColumn,
+            this.typDataGridViewTextBoxColumn});
             this.dgv_ListOfExaminations.DataSource = this.slownikbadanBindingSource;
             this.dgv_ListOfExaminations.Location = new System.Drawing.Point(31, 64);
             this.dgv_ListOfExaminations.MultiSelect = false;
@@ -59,37 +61,6 @@
             this.dgv_ListOfExaminations.ReadOnly = true;
             this.dgv_ListOfExaminations.Size = new System.Drawing.Size(507, 219);
             this.dgv_ListOfExaminations.TabIndex = 0;
-            // 
-            // kodDataGridViewTextBoxColumn
-            // 
-            this.kodDataGridViewTextBoxColumn.DataPropertyName = "Kod";
-            this.kodDataGridViewTextBoxColumn.FillWeight = 50F;
-            this.kodDataGridViewTextBoxColumn.HeaderText = "Kod";
-            this.kodDataGridViewTextBoxColumn.Name = "kodDataGridViewTextBoxColumn";
-            this.kodDataGridViewTextBoxColumn.ReadOnly = true;
-            this.kodDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // nazwaDataGridViewTextBoxColumn
-            // 
-            this.nazwaDataGridViewTextBoxColumn.DataPropertyName = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn.FillWeight = 150F;
-            this.nazwaDataGridViewTextBoxColumn.HeaderText = "Nazwa";
-            this.nazwaDataGridViewTextBoxColumn.Name = "nazwaDataGridViewTextBoxColumn";
-            this.nazwaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nazwaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // opisDataGridViewTextBoxColumn
-            // 
-            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
-            this.opisDataGridViewTextBoxColumn.FillWeight = 250F;
-            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
-            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
-            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
-            this.opisDataGridViewTextBoxColumn.Width = 250;
-            // 
-            // slownikbadanBindingSource
-            // 
-            this.slownikbadanBindingSource.DataSource = typeof(HealthClinic.Slownik_badan);
             // 
             // lbl_Description
             // 
@@ -131,6 +102,38 @@
             this.btn_AddExamination.UseVisualStyleBackColor = true;
             this.btn_AddExamination.Click += new System.EventHandler(this.btn_AddExamination_Click);
             // 
+            // slownikbadanBindingSource
+            // 
+            this.slownikbadanBindingSource.DataSource = typeof(HealthClinic.Slownik_badan);
+            // 
+            // kodDataGridViewTextBoxColumn
+            // 
+            this.kodDataGridViewTextBoxColumn.DataPropertyName = "Kod";
+            this.kodDataGridViewTextBoxColumn.HeaderText = "Kod";
+            this.kodDataGridViewTextBoxColumn.Name = "kodDataGridViewTextBoxColumn";
+            this.kodDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nazwaDataGridViewTextBoxColumn
+            // 
+            this.nazwaDataGridViewTextBoxColumn.DataPropertyName = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn.HeaderText = "Nazwa";
+            this.nazwaDataGridViewTextBoxColumn.Name = "nazwaDataGridViewTextBoxColumn";
+            this.nazwaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // opisDataGridViewTextBoxColumn
+            // 
+            this.opisDataGridViewTextBoxColumn.DataPropertyName = "Opis";
+            this.opisDataGridViewTextBoxColumn.HeaderText = "Opis";
+            this.opisDataGridViewTextBoxColumn.Name = "opisDataGridViewTextBoxColumn";
+            this.opisDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // typDataGridViewTextBoxColumn
+            // 
+            this.typDataGridViewTextBoxColumn.DataPropertyName = "Typ";
+            this.typDataGridViewTextBoxColumn.HeaderText = "Typ";
+            this.typDataGridViewTextBoxColumn.Name = "typDataGridViewTextBoxColumn";
+            this.typDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // AdministratorManageExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,12 +157,13 @@
 
         private System.Windows.Forms.DataGridView dgv_ListOfExaminations;
         private System.Windows.Forms.Label lbl_Description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kodDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource slownikbadanBindingSource;
         private System.Windows.Forms.Button btn_DeleteExamination;
         private System.Windows.Forms.Button btn_EditExamination;
         private System.Windows.Forms.Button btn_AddExamination;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kodDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource slownikbadanBindingSource;
     }
 }

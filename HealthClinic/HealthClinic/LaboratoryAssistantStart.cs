@@ -12,75 +12,75 @@ namespace HealthClinic
 {
     public partial class LaboratoryAssistantStart : Form
     {
-        private static string text;
-        DataClasses1DataContext context = new DataClasses1DataContext();
-        private static string combo;
-        private IQueryable<Badanie> listOfBadanies;
         public LaboratoryAssistantStart()
         {
             InitializeComponent();
         }
 
-        private void btn_ShowExamination_Click(object sender, EventArgs e)
-        {
-            DoctorManageLaboratoryExamination doctorManageLaboratoryExamination = new DoctorManageLaboratoryExamination();
-            doctorManageLaboratoryExamination.showLaboratoryAssistantWindow();
-            doctorManageLaboratoryExamination.Show();
-        }
-
         private void btn_ServicePatient_Click(object sender, EventArgs e)
         {
-            Badanie visit = (Badanie)dgv_ListOfVisits.CurrentRow.DataBoundItem;
-           
-            if (visit != null)
-            {
-            DoctorManageLaboratoryExamination doctorManageLaboratoryExamination = new DoctorManageLaboratoryExamination(this);
-           
-            doctorManageLaboratoryExamination.setVisit(visit);
-            doctorManageLaboratoryExamination.showLaboratoryAssistantWindow();
-            doctorManageLaboratoryExamination.Show();
-            }
-            else
+            int idExamination = 0;
+            int numberOfRow = dgv_ListOfVisits.CurrentCell.RowIndex;
+            idExamination = Int32.Parse(dgv_ListOfVisits.Rows[numberOfRow].Cells[0].Value.ToString());
+            if (idExamination == 0)
             {
                 MessageBox.Show("Wybierz Badanie");
             }
+            else
+            {
+                DataClasses2DataContext context = new DataClasses2DataContext();
+                var sourcess = from Badanie bad in context.Badanies
+                               where bad.ID_bad == idExamination
+                               select bad;
+
+                Badanie examination = sourcess.First();
+                DoctorManageLaboratoryExamination doctorManageLaboratoryExamination = new DoctorManageLaboratoryExamination(this);
+                doctorManageLaboratoryExamination.showLaboratoryAssistantWindow();
+                doctorManageLaboratoryExamination.setVisitId(examination.ID_wiz);
+                doctorManageLaboratoryExamination.setExaminationId(examination.ID_bad);
+                doctorManageLaboratoryExamination.Show();
+            }
         }
 
-        private void LaboratoryAssistantStart_Load(object sender, EventArgs e)
-        {
-            showActualData();
-
-        }
         public void showActualData()
         {
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
-            var sourcess = from Badanie ba in context.Badanies select ba;
+            var sourcess = from Badanie bad in context.Badanies
+                           from Wizyta wiz in context.Wizytas
+                           from Pacjent pac in context.Pacjents
+                           from Slownik_badan slo in context.Slownik_badans
+                           where wiz.ID_wiz == bad.ID_wiz && 
+                                 bad.Kod == slo.Kod &&
+                                 pac.ID_pac == wiz.ID_pac &&
+                                 slo.Typ == 2
+                           select new
+                           {
+                               bad.ID_bad,
+                               slo.Kod,
+                               slo.Nazwa,
+                               pac.Imie,
+                               pac.Nazwisko,
+                               pac.PESEL,
+                               bad.Dt_zle,
+                               bad.Status
+                           };
+            if (cmb_State.Text != "")
+                sourcess = sourcess.Where(p => p.Status.Contains(cmb_State.Text));
+            if (dtp_Date.Checked == true)
+                sourcess = sourcess.Where(p => p.Dt_zle == dtp_Date.Value);
+            if (txt_LastName.Text != "")
+                sourcess = sourcess.Where(p => p.Nazwisko.Contains(cmb_State.Text));
+            if (txt_Name.Text != "")
+                sourcess = sourcess.Where(p => p.Imie.Contains(cmb_State.Text));
+            if (txt_Pesel.Text != "")
+                sourcess = sourcess.Where(p => p.PESEL.Contains(cmb_State.Text));
             dgv_ListOfVisits.DataSource = sourcess;
-            context.SubmitChanges();
         }
 
         private void btn_Search_Click(object sender, EventArgs e)
         {
-            int command = 0;
-            text = dateTimePicker2.Text;
-            combo = cmb_State.Text;
-            // MessageBox.Show(dateTimePicker2.Text);
-            if (cmb_State != null)
-                command += 2;
-            if (!("".Equals(text)))
-                command += 1;
-
-            switch (command)
-            {
-                case 1:
-                    listOfBadanies = from Badanie ba in context.Badanies where Convert.ToDateTime(text) == ba.Dt_zle select ba;
-                    break;
-                case 3:
-                    listOfBadanies = from Badanie ba in context.Badanies where combo == ba.Status && Convert.ToDateTime(text) == ba.Dt_zle select ba;
-                    break;
-                // name
-            }
-            dgv_ListOfVisits.DataSource = listOfBadanies;
+            this.showActualData();
         }
     }
 }

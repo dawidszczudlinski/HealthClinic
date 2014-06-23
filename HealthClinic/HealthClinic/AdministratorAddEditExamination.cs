@@ -17,13 +17,14 @@ namespace HealthClinic
         private Boolean isEdit;
         private Slownik_badan examinationToEdit, examinationToCreate;
 
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        DataClasses2DataContext context = new DataClasses2DataContext();
 
         public AdministratorAddEditExamination(AdministratorManageExamination window)
         {
             InitializeComponent();
             parentWindow = window;
             isEdit = false;
+            cmb_ExaminationType.SelectedIndex = 0;
         }
 
         public AdministratorAddEditExamination(AdministratorManageExamination window,
@@ -38,6 +39,14 @@ namespace HealthClinic
 
             txt_ExaminationName.Text = examinationToEdit.Nazwa;
             txt_ExaminationDescription.Text = examinationToEdit.Opis;
+            if (examinationToEdit.Typ == 1)
+            {
+                cmb_ExaminationType.SelectedItem = "Fizykalne";
+            }
+            else
+            {
+                cmb_ExaminationType.SelectedItem = "Laboratoryjne";
+            }
         }
 
         private void btn_OK_Click(object sender, EventArgs e)
@@ -46,12 +55,20 @@ namespace HealthClinic
             {
                 examinationToEdit.Nazwa = txt_ExaminationName.Text;
                 examinationToEdit.Opis = txt_ExaminationDescription.Text;
+                if (cmb_ExaminationType.SelectedItem == "Fizykalne")
+                    examinationToEdit.Typ = 1;
+                else
+                    examinationToEdit.Typ = 2;
             }
             else
             {
                 examinationToCreate = new Slownik_badan();
                 examinationToCreate.Nazwa = txt_ExaminationName.Text;
                 examinationToCreate.Opis = txt_ExaminationDescription.Text;
+                if (cmb_ExaminationType.SelectedItem == "Fizykalne")
+                    examinationToCreate.Typ = 1;
+                else
+                    examinationToCreate.Typ = 2;
                 context.Slownik_badans.InsertOnSubmit(examinationToCreate);
             }
             context.SubmitChanges();

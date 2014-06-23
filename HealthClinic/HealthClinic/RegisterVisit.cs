@@ -54,7 +54,7 @@ namespace HealthClinic
 
         public void showActualData()
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
             listOfPatients = from Pacjent pac in context.Pacjents select pac;
 
@@ -63,7 +63,7 @@ namespace HealthClinic
 
         private void btn_Search_Click(object sender, EventArgs e)
         {        
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
             int command = 0;
             lastName = txt_LastName.Text;
             name = txt_Name.Text;

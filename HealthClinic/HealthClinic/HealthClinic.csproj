@@ -75,12 +75,6 @@
     <Compile Include="AdministratorAddEditLeaderLaboratory.Designer.cs">
       <DependentUpon>AdministratorAddEditLeaderLaboratory.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministratorAddEditPatient.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdministratorAddEditPatient.Designer.cs">
-      <DependentUpon>AdministratorAddEditPatient.cs</DependentUpon>
-    </Compile>
     <Compile Include="AdministratorAddEditReceptionist.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,10 +124,10 @@
       <DependentUpon>AdministratorStart.cs</DependentUpon>
     </Compile>
     <Compile Include="CurrentAccount.cs" />
-    <Compile Include="DataClasses1.designer.cs">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-      <DesignTime>True</DesignTime>
+    <Compile Include="DataClasses2.designer.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses2.dbml</DependentUpon>
     </Compile>
     <Compile Include="DoctorLaboratoryExamination.cs">
       <SubType>Form</SubType>
@@ -187,11 +181,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>HealthClinicDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="HealthClinicDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>HealthClinicDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="LaboratoryAssistantStart.cs">
       <SubType>Form</SubType>
@@ -251,9 +240,6 @@
       <DependentUpon>ShowManageVisits.cs</DependentUpon>
     </Compile>
     <None Include="Badanie.datasource" />
-    <None Include="DataClasses1.dbml.layout">
-      <DependentUpon>DataClasses1.dbml</DependentUpon>
-    </None>
     <EmbeddedResource Include="AdministratorAddEditAccount.resx">
       <DependentUpon>AdministratorAddEditAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +279,9 @@
     <EmbeddedResource Include="AdministratorStart.resx">
       <DependentUpon>AdministratorStart.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataClasses2.dbml.layout">
+      <DependentUpon>DataClasses2.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="DoctorLaboratoryExamination.resx">
       <DependentUpon>DoctorLaboratoryExamination.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,32 +342,21 @@
     <EmbeddedResource Include="ShowManageVisits.resx">
       <DependentUpon>ShowManageVisits.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataClasses1.dbml">
+    <None Include="DataClasses2.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <LastGenOutput>DataClasses2.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="HealthClinicDataSet.xsc">
       <DependentUpon>HealthClinicDataSet.xsd</DependentUpon>
     </None>
     <None Include="HealthClinicDataSet.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>HealthClinicDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="HealthClinicDataSet.xss">
       <DependentUpon>HealthClinicDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="HealthClinicDataSet1.xsc">
-      <DependentUpon>HealthClinicDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="HealthClinicDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>HealthClinicDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="HealthClinicDataSet1.xss">
-      <DependentUpon>HealthClinicDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Kierownik_Laboratorium.datasource" />
     <None Include="Konto.datasource" />

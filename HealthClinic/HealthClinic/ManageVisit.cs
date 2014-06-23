@@ -15,7 +15,7 @@ namespace HealthClinic
         private Wizyta wizyt;
         private Pacjent patient = null;
         private Lekarz doctor = null;
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        DataClasses2DataContext context = new DataClasses2DataContext();
 
         public ManageVisit()
         {

@@ -17,7 +17,7 @@ namespace HealthClinic
         private Boolean isEdit;
         private Konto accountToEdit, accountToCreate;
 
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        DataClasses2DataContext context = new DataClasses2DataContext();
 
         public AdministratorAddEditAccount(AdministratorManageAccounts window)
         {

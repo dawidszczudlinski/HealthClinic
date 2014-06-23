@@ -16,7 +16,7 @@ namespace HealthClinic
 
         private Boolean isEdit;
         private Rejestratorka receptionistToEdit, receptionistToCreate;
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        DataClasses2DataContext context = new DataClasses2DataContext();
 
         public AdministratorAddEditReceptionist(AdministratorManageReceptionist window)
         {

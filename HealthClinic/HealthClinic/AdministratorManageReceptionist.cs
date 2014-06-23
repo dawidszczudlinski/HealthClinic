@@ -20,7 +20,7 @@ namespace HealthClinic
 
         public void showActualData()
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
 
             var sourcess = from Rejestratorka rej in context.Rejestratorkas select rej;
 
@@ -43,7 +43,7 @@ namespace HealthClinic
 
         private void btn_DeleteReceptionist_Click(object sender, EventArgs e)
         {
-            DataClasses1DataContext context = new DataClasses1DataContext();
+            DataClasses2DataContext context = new DataClasses2DataContext();
             Rejestratorka receptionistToDelete = (Rejestratorka)dgv_ListOfReceptionists.CurrentRow.DataBoundItem;
             context.Rejestratorkas.DeleteOnSubmit(receptionistToDelete);
             context.SubmitChanges();

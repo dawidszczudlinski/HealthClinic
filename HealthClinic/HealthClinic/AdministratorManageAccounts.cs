@@ -12,7 +12,7 @@ namespace HealthClinic
 {
     public partial class AdministratorManageAccounts : Form
     {
-        DataClasses1DataContext context = new DataClasses1DataContext();
+        DataClasses2DataContext context = new DataClasses2DataContext();
         public AdministratorManageAccounts()
         {
             InitializeComponent();
