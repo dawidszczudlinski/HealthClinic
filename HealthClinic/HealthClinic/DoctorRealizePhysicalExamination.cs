@@ -131,5 +131,16 @@ namespace HealthClinic
         {
             this.Close();
         }
+
+        private void DoctorRealizePhysicalExamination_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Formularz do wpisywania wyników badania fizykalnego.\n\n" 
+                    + "'Zatwierdź' zapisujewynik w bazie.\n" +
+                    "'Powrót' - wyjście bez zapisu."
+                    , "Pomoc - Obsługa badania fizykalnego");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

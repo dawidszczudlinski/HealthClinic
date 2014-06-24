@@ -50,7 +50,7 @@
             this.dgv_ListOfDoctors.MultiSelect = false;
             this.dgv_ListOfDoctors.Name = "dgv_ListOfDoctors";
             this.dgv_ListOfDoctors.ReadOnly = true;
-            this.dgv_ListOfDoctors.Size = new System.Drawing.Size(507, 196);
+            this.dgv_ListOfDoctors.Size = new System.Drawing.Size(479, 196);
             this.dgv_ListOfDoctors.TabIndex = 0;
             // 
             // col_DoctorID
@@ -101,12 +101,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(590, 277);
+            this.ClientSize = new System.Drawing.Size(504, 277);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Choice);
             this.Controls.Add(this.dgv_ListOfDoctors);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "SelectionOfDoctor";
             this.Text = "Wybierz lekarza";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SelectionOfDoctor_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfDoctors)).EndInit();
             this.ResumeLayout(false);
 

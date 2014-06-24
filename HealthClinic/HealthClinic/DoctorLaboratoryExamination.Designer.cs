@@ -45,14 +45,14 @@
             this.dgv_LaboratoryExamination.Name = "dgv_LaboratoryExamination";
             this.dgv_LaboratoryExamination.ReadOnly = true;
             this.dgv_LaboratoryExamination.Size = new System.Drawing.Size(1010, 231);
-            this.dgv_LaboratoryExamination.TabIndex = 5;
+            this.dgv_LaboratoryExamination.TabIndex = 0;
             // 
             // btn_New
             // 
             this.btn_New.Location = new System.Drawing.Point(357, 316);
             this.btn_New.Name = "btn_New";
             this.btn_New.Size = new System.Drawing.Size(103, 47);
-            this.btn_New.TabIndex = 9;
+            this.btn_New.TabIndex = 2;
             this.btn_New.Text = "Nowe badanie";
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
@@ -62,7 +62,7 @@
             this.btn_Show.Location = new System.Drawing.Point(216, 316);
             this.btn_Show.Name = "btn_Show";
             this.btn_Show.Size = new System.Drawing.Size(103, 47);
-            this.btn_Show.TabIndex = 8;
+            this.btn_Show.TabIndex = 1;
             this.btn_Show.Text = "Pokaż badanie";
             this.btn_Show.UseVisualStyleBackColor = true;
             this.btn_Show.Click += new System.EventHandler(this.btn_Show_Click);
@@ -72,7 +72,7 @@
             this.btn_Close.Location = new System.Drawing.Point(75, 316);
             this.btn_Close.Name = "btn_Close";
             this.btn_Close.Size = new System.Drawing.Size(103, 47);
-            this.btn_Close.TabIndex = 7;
+            this.btn_Close.TabIndex = 3;
             this.btn_Close.Text = "Powrót";
             this.btn_Close.UseVisualStyleBackColor = true;
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
@@ -96,8 +96,12 @@
             this.Controls.Add(this.btn_Show);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.lbl_LaboratoryExamination);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "DoctorLaboratoryExamination";
             this.Text = "Badania laboratoryjne";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorLaboratoryExamination_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LaboratoryExamination)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

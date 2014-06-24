@@ -44,7 +44,7 @@
             this.dgv_PhysicalExamination.Name = "dgv_PhysicalExamination";
             this.dgv_PhysicalExamination.ReadOnly = true;
             this.dgv_PhysicalExamination.Size = new System.Drawing.Size(552, 231);
-            this.dgv_PhysicalExamination.TabIndex = 0;
+            this.dgv_PhysicalExamination.TabIndex = 3;
             // 
             // lbl_PhysicalExamination
             // 
@@ -70,7 +70,7 @@
             this.btn_New.Location = new System.Drawing.Point(358, 343);
             this.btn_New.Name = "btn_New";
             this.btn_New.Size = new System.Drawing.Size(103, 47);
-            this.btn_New.TabIndex = 4;
+            this.btn_New.TabIndex = 0;
             this.btn_New.Text = "Nowe badanie";
             this.btn_New.UseVisualStyleBackColor = true;
             this.btn_New.Click += new System.EventHandler(this.btn_New_Click);
@@ -80,7 +80,7 @@
             this.btn_Show.Location = new System.Drawing.Point(222, 343);
             this.btn_Show.Name = "btn_Show";
             this.btn_Show.Size = new System.Drawing.Size(103, 47);
-            this.btn_Show.TabIndex = 5;
+            this.btn_Show.TabIndex = 1;
             this.btn_Show.Text = "Edytuj badanie";
             this.btn_Show.UseVisualStyleBackColor = true;
             this.btn_Show.Click += new System.EventHandler(this.btn_Show_Click);
@@ -95,8 +95,12 @@
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.lbl_PhysicalExamination);
             this.Controls.Add(this.dgv_PhysicalExamination);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "DoctorPhysicalExamination";
             this.Text = "Badania fizykalne";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorPhysicalExamination_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PhysicalExamination)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

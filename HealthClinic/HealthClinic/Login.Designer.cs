@@ -41,7 +41,7 @@
             this.btn_Login.Location = new System.Drawing.Point(172, 98);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(75, 23);
-            this.btn_Login.TabIndex = 0;
+            this.btn_Login.TabIndex = 2;
             this.btn_Login.Text = "Zaloguj";
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
@@ -51,7 +51,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(83, 98);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_Cancel.TabIndex = 1;
+            this.btn_Cancel.TabIndex = 3;
             this.btn_Cancel.Text = "Anuluj";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -79,14 +79,14 @@
             this.txt_Login.Location = new System.Drawing.Point(98, 13);
             this.txt_Login.Name = "txt_Login";
             this.txt_Login.Size = new System.Drawing.Size(149, 20);
-            this.txt_Login.TabIndex = 5;
+            this.txt_Login.TabIndex = 0;
             // 
             // txt_Password
             // 
             this.txt_Password.Location = new System.Drawing.Point(98, 52);
             this.txt_Password.Name = "txt_Password";
             this.txt_Password.Size = new System.Drawing.Size(149, 20);
-            this.txt_Password.TabIndex = 7;
+            this.txt_Password.TabIndex = 1;
             this.txt_Password.UseSystemPasswordChar = true;
             // 
             // Login
@@ -100,8 +100,13 @@
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Login);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.HelpButton = true;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Text = "Logowanie";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Login_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

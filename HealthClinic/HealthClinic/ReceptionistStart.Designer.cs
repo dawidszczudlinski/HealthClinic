@@ -59,8 +59,12 @@
             this.ClientSize = new System.Drawing.Size(286, 140);
             this.Controls.Add(this.btn_ManageVisits);
             this.Controls.Add(this.btn_RegisterVisit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "ReceptionistStart";
             this.Text = "Wybierz Opcje";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReceptionistStart_KeyDown);
             this.ResumeLayout(false);
 
         }

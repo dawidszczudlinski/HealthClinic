@@ -82,5 +82,12 @@ namespace HealthClinic
         {
             this.showActualData();
         }
+
+        private void LaboratoryAssistantStart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Pusty filtr pokazuje wszystkie badania.\nFiltry nie muszą być w pełni zgodne.\n"
+                    , "Pomoc - Główne okno laboranta");
+        }
     }
 }

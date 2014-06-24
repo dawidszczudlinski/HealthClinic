@@ -49,14 +49,14 @@
             this.dgv_visits.Name = "dgv_visits";
             this.dgv_visits.ReadOnly = true;
             this.dgv_visits.Size = new System.Drawing.Size(546, 192);
-            this.dgv_visits.TabIndex = 2;
+            this.dgv_visits.TabIndex = 0;
             // 
             // btn_ChoiceVisit
             // 
             this.btn_ChoiceVisit.Location = new System.Drawing.Point(439, 460);
             this.btn_ChoiceVisit.Name = "btn_ChoiceVisit";
             this.btn_ChoiceVisit.Size = new System.Drawing.Size(96, 50);
-            this.btn_ChoiceVisit.TabIndex = 8;
+            this.btn_ChoiceVisit.TabIndex = 1;
             this.btn_ChoiceVisit.Text = "Wybierz wizytę";
             this.btn_ChoiceVisit.UseVisualStyleBackColor = true;
             this.btn_ChoiceVisit.Click += new System.EventHandler(this.btn_ChoiceVisit_Click);
@@ -75,7 +75,7 @@
             this.btn_Search.Location = new System.Drawing.Point(217, 163);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(96, 48);
-            this.btn_Search.TabIndex = 7;
+            this.btn_Search.TabIndex = 5;
             this.btn_Search.Text = "Szukaj";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
@@ -101,7 +101,7 @@
             this.cmb_State.Location = new System.Drawing.Point(91, 76);
             this.cmb_State.Name = "cmb_State";
             this.cmb_State.Size = new System.Drawing.Size(92, 21);
-            this.cmb_State.TabIndex = 10;
+            this.cmb_State.TabIndex = 2;
             // 
             // lbl_State
             // 
@@ -134,7 +134,7 @@
             this.dtp_Date.Name = "dtp_Date";
             this.dtp_Date.ShowCheckBox = true;
             this.dtp_Date.Size = new System.Drawing.Size(200, 20);
-            this.dtp_Date.TabIndex = 13;
+            this.dtp_Date.TabIndex = 4;
             // 
             // DoctorStart
             // 
@@ -144,8 +144,12 @@
             this.Controls.Add(this.dgv_visits);
             this.Controls.Add(this.btn_ChoiceVisit);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "DoctorStart";
             this.Text = "Wybierz wizytę";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorStart_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_visits)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

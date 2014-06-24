@@ -28,5 +28,12 @@ namespace HealthClinic
             ShowManageVisits showManageVisits = new ShowManageVisits();
             showManageVisits.Show();
         }
+
+        private void ReceptionistStart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+                MessageBox.Show("Aby zarejestrować pacjenta na wizytę naciśnij 'Zarejestruj Wizytę'.\n\n" + 
+                    "Aby zarządzać wizytami naciśnij 'Zarządzaj wizytami'.", "Pomoc");
+        }
     }
 }

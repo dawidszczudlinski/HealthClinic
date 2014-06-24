@@ -95,7 +95,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(190, 223);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(107, 48);
-            this.btn_Cancel.TabIndex = 14;
+            this.btn_Cancel.TabIndex = 2;
             this.btn_Cancel.Text = "Powrót";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
@@ -104,7 +104,7 @@
             this.btn_OK.Location = new System.Drawing.Point(48, 223);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(107, 48);
-            this.btn_OK.TabIndex = 13;
+            this.btn_OK.TabIndex = 1;
             this.btn_OK.Text = "Zatwierdź";
             this.btn_OK.UseVisualStyleBackColor = true;
             this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
@@ -117,8 +117,12 @@
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.dgv_ListOfExaminations);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "DoctorPhysicalExaminationMap";
             this.Text = "Wybierz badanie";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorPhysicalExaminationMap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfExaminations)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).EndInit();
             this.ResumeLayout(false);

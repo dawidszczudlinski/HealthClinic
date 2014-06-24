@@ -75,5 +75,11 @@ namespace HealthClinic
             this.Close(); 
         }
 
+        private void ManageVisit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+                MessageBox.Show("siema");
+        }
+
     }
 }

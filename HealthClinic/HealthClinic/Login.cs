@@ -91,5 +91,13 @@ namespace HealthClinic
         {
             this.Close();
         }
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode.ToString() == "F1")
+                MessageBox.Show("Mogą zalogować się do niego tylko lekarze, rejestratorki, kierownicy laboratoriów i laboranci.\n\n" + 
+                    "Jeśli nie potrafisz się zalogować skontaktuj się z administratorem systemu.",
+                    "Pomoc - Formularz logowania");
+        }
     }
 }

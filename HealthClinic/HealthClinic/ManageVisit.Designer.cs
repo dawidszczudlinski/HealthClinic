@@ -274,6 +274,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "ManageVisit";
             this.Text = "Zarządzaj wizytą";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ManageVisit_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

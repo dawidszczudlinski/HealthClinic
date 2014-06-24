@@ -84,7 +84,7 @@
             this.txt_ExaminationResult.Name = "txt_ExaminationResult";
             this.txt_ExaminationResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_ExaminationResult.Size = new System.Drawing.Size(285, 147);
-            this.txt_ExaminationResult.TabIndex = 7;
+            this.txt_ExaminationResult.TabIndex = 1;
             // 
             // txt_IDExamination
             // 
@@ -115,7 +115,7 @@
             this.btn_OK.Location = new System.Drawing.Point(48, 354);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(107, 48);
-            this.btn_OK.TabIndex = 11;
+            this.btn_OK.TabIndex = 2;
             this.btn_OK.Text = "Zatwierdź";
             this.btn_OK.UseVisualStyleBackColor = true;
             this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
@@ -125,7 +125,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(190, 354);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(107, 48);
-            this.btn_Cancel.TabIndex = 12;
+            this.btn_Cancel.TabIndex = 3;
             this.btn_Cancel.Text = "Powrót";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -135,7 +135,7 @@
             this.btn_ChoiceExamination.Location = new System.Drawing.Point(210, 30);
             this.btn_ChoiceExamination.Name = "btn_ChoiceExamination";
             this.btn_ChoiceExamination.Size = new System.Drawing.Size(87, 48);
-            this.btn_ChoiceExamination.TabIndex = 13;
+            this.btn_ChoiceExamination.TabIndex = 0;
             this.btn_ChoiceExamination.Text = "Wybierz badanie";
             this.btn_ChoiceExamination.UseVisualStyleBackColor = true;
             this.btn_ChoiceExamination.Click += new System.EventHandler(this.btn_ChoiceExamination_Click);
@@ -156,8 +156,12 @@
             this.Controls.Add(this.lbl_ExaminationName);
             this.Controls.Add(this.lbl_ExaminationCode);
             this.Controls.Add(this.lbl_IDExamination);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "DoctorRealizePhysicalExamination";
             this.Text = "Wykonaj badanie fizykalne";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorRealizePhysicalExamination_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

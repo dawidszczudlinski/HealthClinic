@@ -68,5 +68,11 @@ namespace HealthClinic
         {
             this.showData();
         }
+
+        private void DoctorStart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Puste pola w filtrach pokazuje wszystkie badania.\n", "Pomoc - Okno główne lekarza");
+        }
     }
 }

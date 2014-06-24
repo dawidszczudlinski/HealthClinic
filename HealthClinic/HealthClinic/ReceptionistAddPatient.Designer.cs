@@ -47,7 +47,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(205, 240);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(99, 43);
-            this.btn_Cancel.TabIndex = 13;
+            this.btn_Cancel.TabIndex = 7;
             this.btn_Cancel.Text = "Anuluj";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -57,7 +57,7 @@
             this.btn_OK.Location = new System.Drawing.Point(85, 240);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(99, 43);
-            this.btn_OK.TabIndex = 12;
+            this.btn_OK.TabIndex = 6;
             this.btn_OK.Text = "OK";
             this.btn_OK.UseVisualStyleBackColor = true;
             this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
@@ -67,21 +67,21 @@
             this.txt_Addres.Location = new System.Drawing.Point(92, 158);
             this.txt_Addres.Name = "txt_Addres";
             this.txt_Addres.Size = new System.Drawing.Size(212, 20);
-            this.txt_Addres.TabIndex = 21;
+            this.txt_Addres.TabIndex = 4;
             // 
             // txt_Pesel
             // 
             this.txt_Pesel.Location = new System.Drawing.Point(92, 122);
             this.txt_Pesel.Name = "txt_Pesel";
             this.txt_Pesel.Size = new System.Drawing.Size(212, 20);
-            this.txt_Pesel.TabIndex = 20;
+            this.txt_Pesel.TabIndex = 3;
             // 
             // txt_Name
             // 
             this.txt_Name.Location = new System.Drawing.Point(92, 37);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(212, 20);
-            this.txt_Name.TabIndex = 18;
+            this.txt_Name.TabIndex = 0;
             // 
             // lbl_Addres
             // 
@@ -124,14 +124,14 @@
             this.txt_LastName.Location = new System.Drawing.Point(92, 75);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(212, 20);
-            this.txt_LastName.TabIndex = 22;
+            this.txt_LastName.TabIndex = 1;
             // 
             // txt_AssuranceNumber
             // 
             this.txt_AssuranceNumber.Location = new System.Drawing.Point(145, 199);
             this.txt_AssuranceNumber.Name = "txt_AssuranceNumber";
             this.txt_AssuranceNumber.Size = new System.Drawing.Size(159, 20);
-            this.txt_AssuranceNumber.TabIndex = 24;
+            this.txt_AssuranceNumber.TabIndex = 5;
             // 
             // lbl_AssuranceNumber
             // 
@@ -159,8 +159,12 @@
             this.Controls.Add(this.lbl_Name);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_OK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "ReceptionistAddPatient";
             this.Text = "Dodaj pacjenta";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ReceptionistAddPatient_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

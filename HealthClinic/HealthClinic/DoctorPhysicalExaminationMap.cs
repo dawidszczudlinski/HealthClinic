@@ -52,5 +52,16 @@ namespace HealthClinic
                 this.Close();
             }
         }
+
+        private void DoctorPhysicalExaminationMap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Lista prezentuje dostępne w systemie badania fizykalne.\n\n" +
+                    "Po wybraniu z listy badania kliknij 'Zatwierdź'.\n" +
+                    "Aby wyjść bez zapisu naciśnij 'Powrót'."
+                    , "Pomoc - Wybór badania fizykalnego");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

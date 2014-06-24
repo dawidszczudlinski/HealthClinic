@@ -76,7 +76,7 @@
             this.btn_Search.Location = new System.Drawing.Point(304, 58);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(96, 50);
-            this.btn_Search.TabIndex = 7;
+            this.btn_Search.TabIndex = 3;
             this.btn_Search.Text = "Szukaj";
             this.btn_Search.UseVisualStyleBackColor = true;
             this.btn_Search.Click += new System.EventHandler(this.btn_Search_Click);
@@ -86,21 +86,21 @@
             this.txt_Pesel.Location = new System.Drawing.Point(117, 100);
             this.txt_Pesel.Name = "txt_Pesel";
             this.txt_Pesel.Size = new System.Drawing.Size(148, 20);
-            this.txt_Pesel.TabIndex = 6;
+            this.txt_Pesel.TabIndex = 2;
             // 
             // txt_Name
             // 
             this.txt_Name.Location = new System.Drawing.Point(117, 74);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(148, 20);
-            this.txt_Name.TabIndex = 5;
+            this.txt_Name.TabIndex = 1;
             // 
             // txt_LastName
             // 
             this.txt_LastName.Location = new System.Drawing.Point(117, 44);
             this.txt_LastName.Name = "txt_LastName";
             this.txt_LastName.Size = new System.Drawing.Size(148, 20);
-            this.txt_LastName.TabIndex = 4;
+            this.txt_LastName.TabIndex = 0;
             // 
             // lbl_Filtr
             // 
@@ -155,7 +155,7 @@
             this.dgv_ListOfPatients.Name = "dgv_ListOfPatients";
             this.dgv_ListOfPatients.ReadOnly = true;
             this.dgv_ListOfPatients.Size = new System.Drawing.Size(663, 153);
-            this.dgv_ListOfPatients.TabIndex = 2;
+            this.dgv_ListOfPatients.TabIndex = 10;
             // 
             // iDpacDataGridViewTextBoxColumn
             // 
@@ -208,7 +208,7 @@
             this.btn_Visit.Location = new System.Drawing.Point(497, 378);
             this.btn_Visit.Name = "btn_Visit";
             this.btn_Visit.Size = new System.Drawing.Size(135, 45);
-            this.btn_Visit.TabIndex = 3;
+            this.btn_Visit.TabIndex = 8;
             this.btn_Visit.Text = "Wizyta";
             this.btn_Visit.UseVisualStyleBackColor = true;
             this.btn_Visit.Click += new System.EventHandler(this.btn_Visit_Click);
@@ -218,7 +218,7 @@
             this.Zakończ.Location = new System.Drawing.Point(339, 378);
             this.Zakończ.Name = "Zakończ";
             this.Zakończ.Size = new System.Drawing.Size(135, 45);
-            this.Zakończ.TabIndex = 4;
+            this.Zakończ.TabIndex = 7;
             this.Zakończ.Text = "Zakończ";
             this.Zakończ.UseVisualStyleBackColor = true;
             this.Zakończ.Click += new System.EventHandler(this.Zakończ_Click);
@@ -254,9 +254,13 @@
             this.Controls.Add(this.btn_Visit);
             this.Controls.Add(this.dgv_ListOfPatients);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "RegisterVisit";
             this.Text = "Zarejestruj Wizytę";
             this.Load += new System.EventHandler(this.RegisterVisit_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.RegisterVisit_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfPatients)).EndInit();

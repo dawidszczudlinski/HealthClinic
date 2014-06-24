@@ -58,6 +58,17 @@ namespace HealthClinic
         {
             this.Close();
         }
+
+        private void DoctorLaboratoryExaminationMap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Zaznacz na liscie interesujące Cię badanie.\n\n" +
+                    "Aby wybrać i wyjść naciśnij 'Zatwierdź'.\n" +
+                    "Aby wyjść bez wyboru naciśnij 'Powrót'."
+                    , "Pomoc - Wybór badania laboratoryjnego");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 
 }

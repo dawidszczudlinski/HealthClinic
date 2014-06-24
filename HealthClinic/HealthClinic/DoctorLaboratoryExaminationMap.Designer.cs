@@ -46,7 +46,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(209, 213);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(107, 48);
-            this.btn_Cancel.TabIndex = 17;
+            this.btn_Cancel.TabIndex = 2;
             this.btn_Cancel.Text = "Powrót";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -56,7 +56,7 @@
             this.btn_OK.Location = new System.Drawing.Point(67, 213);
             this.btn_OK.Name = "btn_OK";
             this.btn_OK.Size = new System.Drawing.Size(107, 48);
-            this.btn_OK.TabIndex = 16;
+            this.btn_OK.TabIndex = 1;
             this.btn_OK.Text = "Zatwierdź";
             this.btn_OK.UseVisualStyleBackColor = true;
             this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
@@ -76,7 +76,7 @@
             this.dgv_LaboratoryExamination.Name = "dgv_LaboratoryExamination";
             this.dgv_LaboratoryExamination.ReadOnly = true;
             this.dgv_LaboratoryExamination.Size = new System.Drawing.Size(461, 192);
-            this.dgv_LaboratoryExamination.TabIndex = 15;
+            this.dgv_LaboratoryExamination.TabIndex = 0;
             // 
             // kodDataGridViewTextBoxColumn
             // 
@@ -114,12 +114,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(585, 278);
+            this.ClientSize = new System.Drawing.Size(509, 278);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_OK);
             this.Controls.Add(this.dgv_LaboratoryExamination);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "DoctorLaboratoryExaminationMap";
             this.Text = "Wybierz badanie";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorLaboratoryExaminationMap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LaboratoryExamination)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).EndInit();
             this.ResumeLayout(false);

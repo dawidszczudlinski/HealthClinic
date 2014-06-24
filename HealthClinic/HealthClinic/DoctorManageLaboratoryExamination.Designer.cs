@@ -80,7 +80,7 @@
             this.tab_ManageExamination.Name = "tab_ManageExamination";
             this.tab_ManageExamination.SelectedIndex = 0;
             this.tab_ManageExamination.Size = new System.Drawing.Size(449, 392);
-            this.tab_ManageExamination.TabIndex = 0;
+            this.tab_ManageExamination.TabIndex = 9;
             // 
             // tab_Doctor
             // 
@@ -118,7 +118,7 @@
             this.btn_ChoiceLaboratoryExamination.Location = new System.Drawing.Point(323, 41);
             this.btn_ChoiceLaboratoryExamination.Name = "btn_ChoiceLaboratoryExamination";
             this.btn_ChoiceLaboratoryExamination.Size = new System.Drawing.Size(99, 36);
-            this.btn_ChoiceLaboratoryExamination.TabIndex = 8;
+            this.btn_ChoiceLaboratoryExamination.TabIndex = 0;
             this.btn_ChoiceLaboratoryExamination.Text = "Wybierz badanie";
             this.btn_ChoiceLaboratoryExamination.UseVisualStyleBackColor = true;
             this.btn_ChoiceLaboratoryExamination.Click += new System.EventHandler(this.btn_ChoiceLaboratoryExamination_Click);
@@ -227,7 +227,7 @@
             this.btn_LabAssisnantClose.Location = new System.Drawing.Point(318, 303);
             this.btn_LabAssisnantClose.Name = "btn_LabAssisnantClose";
             this.btn_LabAssisnantClose.Size = new System.Drawing.Size(102, 41);
-            this.btn_LabAssisnantClose.TabIndex = 4;
+            this.btn_LabAssisnantClose.TabIndex = 2;
             this.btn_LabAssisnantClose.Text = "Powrót";
             this.btn_LabAssisnantClose.UseVisualStyleBackColor = true;
             this.btn_LabAssisnantClose.Click += new System.EventHandler(this.btn_LabAssisnantClose_Click);
@@ -237,7 +237,7 @@
             this.btn_LabAssistantCancel.Location = new System.Drawing.Point(172, 303);
             this.btn_LabAssistantCancel.Name = "btn_LabAssistantCancel";
             this.btn_LabAssistantCancel.Size = new System.Drawing.Size(102, 41);
-            this.btn_LabAssistantCancel.TabIndex = 5;
+            this.btn_LabAssistantCancel.TabIndex = 1;
             this.btn_LabAssistantCancel.Text = "Anuluj";
             this.btn_LabAssistantCancel.UseVisualStyleBackColor = true;
             this.btn_LabAssistantCancel.Click += new System.EventHandler(this.btn_LabAssistantCancel_Click);
@@ -248,7 +248,7 @@
             this.txt_LabResult.Multiline = true;
             this.txt_LabResult.Name = "txt_LabResult";
             this.txt_LabResult.Size = new System.Drawing.Size(395, 120);
-            this.txt_LabResult.TabIndex = 16;
+            this.txt_LabResult.TabIndex = 4;
             // 
             // lbl_LabResult
             // 
@@ -346,7 +346,7 @@
             this.btn_LeaderClose.Location = new System.Drawing.Point(317, 297);
             this.btn_LeaderClose.Name = "btn_LeaderClose";
             this.btn_LeaderClose.Size = new System.Drawing.Size(102, 41);
-            this.btn_LeaderClose.TabIndex = 7;
+            this.btn_LeaderClose.TabIndex = 8;
             this.btn_LeaderClose.Text = "Powrót";
             this.btn_LeaderClose.UseVisualStyleBackColor = true;
             this.btn_LeaderClose.Click += new System.EventHandler(this.btn_LeaderClose_Click);
@@ -356,7 +356,7 @@
             this.btn_LeaderCancel.Location = new System.Drawing.Point(170, 297);
             this.btn_LeaderCancel.Name = "btn_LeaderCancel";
             this.btn_LeaderCancel.Size = new System.Drawing.Size(102, 41);
-            this.btn_LeaderCancel.TabIndex = 8;
+            this.btn_LeaderCancel.TabIndex = 7;
             this.btn_LeaderCancel.Text = "Anuluj";
             this.btn_LeaderCancel.UseVisualStyleBackColor = true;
             this.btn_LeaderCancel.Click += new System.EventHandler(this.btn_LeaderCancel_Click);
@@ -445,8 +445,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 425);
             this.Controls.Add(this.tab_ManageExamination);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
             this.Name = "DoctorManageLaboratoryExamination";
             this.Text = "Wykonaj badanie laboratoryjne";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorManageLaboratoryExamination_KeyDown);
             this.tab_ManageExamination.ResumeLayout(false);
             this.tab_Doctor.ResumeLayout(false);
             this.tab_Doctor.PerformLayout();

@@ -72,5 +72,18 @@ namespace HealthClinic
         {
             this.Close();
         }
+
+        private void ReceptionistAddPatient_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Upewnij się czy na pewno danego pacjenta nie ma w bazie.\n" +
+                    "Jeśli dany pacjent zostanie wpisany drugi raz, jego historia choroby będzie pisana od nowa a w systemie będą znajdować się 2 te same osoby.\nn" +
+                    "Wypełnij wszystkie dane zgodnie z formularzem.\n\n" +
+                    "Aby zapisać i wyjść naciśnij 'OK'.\n" +
+                    "Aby wyjść bez zapisu naciśnij 'Anuluj'.",
+                    "Pomoc - Dodawanie pacjenta");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

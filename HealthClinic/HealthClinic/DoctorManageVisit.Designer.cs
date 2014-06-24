@@ -139,7 +139,7 @@
             this.txt_Description.Name = "txt_Description";
             this.txt_Description.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Description.Size = new System.Drawing.Size(307, 89);
-            this.txt_Description.TabIndex = 4;
+            this.txt_Description.TabIndex = 0;
             // 
             // txt_Diagnosis
             // 
@@ -148,14 +148,14 @@
             this.txt_Diagnosis.Name = "txt_Diagnosis";
             this.txt_Diagnosis.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txt_Diagnosis.Size = new System.Drawing.Size(307, 89);
-            this.txt_Diagnosis.TabIndex = 5;
+            this.txt_Diagnosis.TabIndex = 1;
             // 
             // btn_PhysicalExamination
             // 
             this.btn_PhysicalExamination.Location = new System.Drawing.Point(383, 171);
             this.btn_PhysicalExamination.Name = "btn_PhysicalExamination";
             this.btn_PhysicalExamination.Size = new System.Drawing.Size(103, 36);
-            this.btn_PhysicalExamination.TabIndex = 6;
+            this.btn_PhysicalExamination.TabIndex = 2;
             this.btn_PhysicalExamination.Text = "Badania fizykalne";
             this.btn_PhysicalExamination.UseVisualStyleBackColor = true;
             this.btn_PhysicalExamination.Click += new System.EventHandler(this.btn_PhysicalExamination_Click);
@@ -165,7 +165,7 @@
             this.btn_LaboratoryExamination.Location = new System.Drawing.Point(383, 230);
             this.btn_LaboratoryExamination.Name = "btn_LaboratoryExamination";
             this.btn_LaboratoryExamination.Size = new System.Drawing.Size(103, 36);
-            this.btn_LaboratoryExamination.TabIndex = 7;
+            this.btn_LaboratoryExamination.TabIndex = 3;
             this.btn_LaboratoryExamination.Text = "Badania laboratoryjne";
             this.btn_LaboratoryExamination.UseVisualStyleBackColor = true;
             this.btn_LaboratoryExamination.Click += new System.EventHandler(this.btn_LaboratoryExamination_Click);
@@ -175,7 +175,7 @@
             this.btn_Report.Location = new System.Drawing.Point(383, 286);
             this.btn_Report.Name = "btn_Report";
             this.btn_Report.Size = new System.Drawing.Size(103, 36);
-            this.btn_Report.TabIndex = 8;
+            this.btn_Report.TabIndex = 4;
             this.btn_Report.Text = "Raport";
             this.btn_Report.UseVisualStyleBackColor = true;
             this.btn_Report.Click += new System.EventHandler(this.btn_Report_Click);
@@ -185,7 +185,7 @@
             this.btn_Start.Location = new System.Drawing.Point(15, 426);
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.Size = new System.Drawing.Size(103, 36);
-            this.btn_Start.TabIndex = 9;
+            this.btn_Start.TabIndex = 5;
             this.btn_Start.Text = "Rozpocznij";
             this.btn_Start.UseVisualStyleBackColor = true;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
@@ -195,7 +195,7 @@
             this.btn_Finish.Location = new System.Drawing.Point(139, 426);
             this.btn_Finish.Name = "btn_Finish";
             this.btn_Finish.Size = new System.Drawing.Size(103, 36);
-            this.btn_Finish.TabIndex = 10;
+            this.btn_Finish.TabIndex = 6;
             this.btn_Finish.Text = "Zakończ";
             this.btn_Finish.UseVisualStyleBackColor = true;
             this.btn_Finish.Click += new System.EventHandler(this.btn_Finish_Click);
@@ -205,7 +205,7 @@
             this.btn_Cancel.Location = new System.Drawing.Point(262, 426);
             this.btn_Cancel.Name = "btn_Cancel";
             this.btn_Cancel.Size = new System.Drawing.Size(103, 36);
-            this.btn_Cancel.TabIndex = 11;
+            this.btn_Cancel.TabIndex = 7;
             this.btn_Cancel.Text = "Anuluj";
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
@@ -215,7 +215,7 @@
             this.btn_Exit.Location = new System.Drawing.Point(383, 426);
             this.btn_Exit.Name = "btn_Exit";
             this.btn_Exit.Size = new System.Drawing.Size(103, 36);
-            this.btn_Exit.TabIndex = 12;
+            this.btn_Exit.TabIndex = 8;
             this.btn_Exit.Text = "Powrót";
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
@@ -224,7 +224,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(523, 496);
+            this.ClientSize = new System.Drawing.Size(516, 496);
             this.Controls.Add(this.btn_Exit);
             this.Controls.Add(this.btn_Cancel);
             this.Controls.Add(this.btn_Finish);
@@ -237,8 +237,11 @@
             this.Controls.Add(this.lbl_Diagnosis);
             this.Controls.Add(this.lbl_Description);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Name = "DoctorManageVisit";
             this.Text = "Obsługa pacjenta";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorManageVisit_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

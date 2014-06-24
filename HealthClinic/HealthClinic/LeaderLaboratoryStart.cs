@@ -74,5 +74,12 @@ namespace HealthClinic
         {
             this.showActualData();
         }
+
+        private void LeaderLaboratoryStart_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Lista zawiera wszystkie badania laboratoryjnek które można zaakceptować lub odrzucić."
+                    , "Pomoc - Okno główne kierownika laboratorium");
+        }
     }
 }

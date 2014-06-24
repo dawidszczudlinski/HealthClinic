@@ -85,5 +85,16 @@ namespace HealthClinic
         {
             this.Close();
         }
+
+        private void DoctorPhysicalExamination_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("'Nowe badanie' otwiera okno z wyborem nowego badania fizykalnego.\n" +
+                    "'Edytuj badanie' pokazuje i pozwala na edycję szczegółów badania.\n" +
+                    "'Powrót' - wyjście bez zapisu"
+                    , "Pomoc - Obsługa badań fizykalnych");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

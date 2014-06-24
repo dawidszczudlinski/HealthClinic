@@ -121,5 +121,15 @@ namespace HealthClinic
         {
 
         }
+
+        private void DoctorManageVisit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Po prawej stronie można przejść do dodawania badań fizykalnych, laboratoryjnych oraz zobaczyć historię choroby pacjenta.\n\n" +
+                    "Dolnymi przyciskami można zmienić status wizyty, zakończyć wizytę, anulować wizytę oraz nic nie zapisując wyjść."
+                    , "Pomoc - Obsługa wizyty");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }

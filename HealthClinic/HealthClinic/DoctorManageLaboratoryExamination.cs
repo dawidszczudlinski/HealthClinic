@@ -315,5 +315,16 @@ namespace HealthClinic
             btn_LeaderConfirm.Visible = true;
             tab_ManageExamination.SelectedIndex = 2;
         }
+
+        private void DoctorManageLaboratoryExamination_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                MessageBox.Show("Lekarz, laborant i kierownik laboratorium ma osobny panel do pracy.\n" +
+                    "Każdy z nich ma wgląd do notetk innego.\n\n" +
+                    "Przycisk 'Anuluj' odrzuca badanie i ustawia status badania na anulowane."
+                    , "Pomoc - Obsługa badania laboratoryjnego");
+            else if (e.KeyCode == Keys.Escape)
+                this.Close();
+        }
     }
 }
