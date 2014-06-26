@@ -241,6 +241,7 @@
             this.KeyPreview = true;
             this.Name = "DoctorManageVisit";
             this.Text = "Obsługa pacjenta";
+            this.Load += new System.EventHandler(this.DoctorManageVisit_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DoctorManageVisit_KeyDown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

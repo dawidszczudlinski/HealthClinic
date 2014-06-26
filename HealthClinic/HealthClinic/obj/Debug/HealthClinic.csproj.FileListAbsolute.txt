@@ -320,3 +320,6 @@ C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthCli
 C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.SelectionOfDoctor.resources
 C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.ShowManageVisits.resources
 C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.csproj.GenerateResource.Cache
+C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\HealthClinic.Raport.resources
+C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\RdlCompile.cache
+C:\Users\Olek\Desktop\HealthClinic\HealthClinic\HealthClinic\obj\Debug\RdlCompile.compiled

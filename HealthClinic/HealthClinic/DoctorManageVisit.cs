@@ -119,7 +119,8 @@ namespace HealthClinic
 
         private void btn_Report_Click(object sender, EventArgs e)
         {
-
+            Raport r = new Raport(visit.ID_pac);
+            r.Show();
         }
 
         private void DoctorManageVisit_KeyDown(object sender, KeyEventArgs e)
@@ -130,6 +131,11 @@ namespace HealthClinic
                     , "Pomoc - Obsługa wizyty");
             else if (e.KeyCode == Keys.Escape)
                 this.Close();
+        }
+
+        private void DoctorManageVisit_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
