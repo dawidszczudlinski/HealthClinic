@@ -78,7 +78,7 @@ namespace HealthClinic
         private void ManageVisit_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode.ToString() == "F1")
-                MessageBox.Show("siema");
+                Help.ShowHelp(this, helpProvider1.HelpNamespace, HelpNavigator.Topic, "");
         }
 
     }

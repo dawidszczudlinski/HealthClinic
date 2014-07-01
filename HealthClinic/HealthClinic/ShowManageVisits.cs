@@ -103,9 +103,7 @@ namespace HealthClinic
         private void ShowManageVisits_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
-                MessageBox.Show("Aby wyszukać wizytę w bazie wpisz jego dane. Dane nie muszą być pełne.\n\n" +
-                    "Aby odwołać wizytę wybierz wizytę z listy i naciśnij 'Anuluj wiytę'.\n\n"
-                    , "Pomoc - Menager wizyt");
+                Help.ShowHelp(this, helpProvider1.HelpNamespace, HelpNavigator.Topic, "");
             else if (e.KeyCode == Keys.Escape)
                 this.Close();
         }

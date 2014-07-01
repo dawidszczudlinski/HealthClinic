@@ -30,13 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataSetRaport = new HealthClinic.DataSetRaport();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetRaport = new HealthClinic.DataSetRaport();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable1TableAdapter = new HealthClinic.DataSetRaportTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetRaport)).BeginInit();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetRaport)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTable1BindingSource
+            // 
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.DataSetRaport;
+            // 
+            // DataSetRaport
+            // 
+            this.DataSetRaport.DataSetName = "DataSetRaport";
+            this.DataSetRaport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -50,19 +61,13 @@
             this.reportViewer1.Size = new System.Drawing.Size(1184, 562);
             this.reportViewer1.TabIndex = 0;
             // 
-            // DataSetRaport
-            // 
-            this.DataSetRaport.DataSetName = "DataSetRaport";
-            this.DataSetRaport.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DataTable1BindingSource
-            // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.DataSetRaport;
-            // 
             // DataTable1TableAdapter
             // 
             this.DataTable1TableAdapter.ClearBeforeFill = true;
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
             // 
             // Raport
             // 
@@ -73,8 +78,9 @@
             this.Name = "Raport";
             this.Text = "Historia choroby";
             this.Load += new System.EventHandler(this.Raport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetRaport)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Raport_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataSetRaport)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +91,6 @@
         private System.Windows.Forms.BindingSource DataTable1BindingSource;
         private DataSetRaport DataSetRaport;
         private DataSetRaportTableAdapters.DataTable1TableAdapter DataTable1TableAdapter;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

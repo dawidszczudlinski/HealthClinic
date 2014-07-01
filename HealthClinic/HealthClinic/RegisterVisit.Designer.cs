@@ -50,6 +50,7 @@
             this.Zakończ = new System.Windows.Forms.Button();
             this.btn_AddPatient = new System.Windows.Forms.Button();
             this.btn_EditPatient = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfPatients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacjentBindingSource)).BeginInit();
@@ -243,6 +244,10 @@
             this.btn_EditPatient.UseVisualStyleBackColor = true;
             this.btn_EditPatient.Click += new System.EventHandler(this.btn_EditPatient_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // RegisterVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,5 +297,6 @@
         private System.Windows.Forms.Button Zakończ;
         private System.Windows.Forms.Button btn_AddPatient;
         private System.Windows.Forms.Button btn_EditPatient;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

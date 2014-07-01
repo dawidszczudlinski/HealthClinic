@@ -34,6 +34,7 @@
             this.lbl_Password = new System.Windows.Forms.Label();
             this.txt_Login = new System.Windows.Forms.TextBox();
             this.txt_Password = new System.Windows.Forms.TextBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btn_Login
@@ -89,6 +90,10 @@
             this.txt_Password.TabIndex = 1;
             this.txt_Password.UseSystemPasswordChar = true;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,5 +125,6 @@
         private System.Windows.Forms.Label lbl_Password;
         private System.Windows.Forms.TextBox txt_Login;
         private System.Windows.Forms.TextBox txt_Password;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

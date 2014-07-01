@@ -41,6 +41,7 @@
             this.dgv_ListOfVisits = new System.Windows.Forms.DataGridView();
             this.btn_Confirm = new System.Windows.Forms.Button();
             this.btn_CancelVisit = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
             this.SuspendLayout();
@@ -176,6 +177,10 @@
             this.btn_CancelVisit.UseVisualStyleBackColor = true;
             this.btn_CancelVisit.Click += new System.EventHandler(this.btn_CancelVisit_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // ShowManageVisits
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,5 +218,6 @@
         private System.Windows.Forms.Button btn_CancelVisit;
         private System.Windows.Forms.DateTimePicker dtp_Date;
         private System.Windows.Forms.ComboBox cmb_State;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

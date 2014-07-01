@@ -71,9 +71,7 @@ namespace HealthClinic
         private void SelectionOfDoctor_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
-                MessageBox.Show("Z listy wybierz lekarza.\n\n" +
-                    "Zatwierdź naciskając 'Wybierz' lub wróć bez wybierania naciskając 'Wróć'."
-                    , "Pomoc - Wybór lekarza");
+                Help.ShowHelp(this, helpProvider1.HelpNamespace, HelpNavigator.Topic, "");
             else if (e.KeyCode == Keys.Escape)
                 this.Close();
         }

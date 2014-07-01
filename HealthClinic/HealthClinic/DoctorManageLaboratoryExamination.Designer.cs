@@ -65,6 +65,7 @@
             this.lbl_LeaderExaminationName = new System.Windows.Forms.Label();
             this.lbl_LeaderExaminationCode = new System.Windows.Forms.Label();
             this.lbl_LeaderIDExamination = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.tab_ManageExamination.SuspendLayout();
             this.tab_Doctor.SuspendLayout();
             this.tab_LaboratoryAssistant.SuspendLayout();
@@ -439,6 +440,10 @@
             this.lbl_LeaderIDExamination.TabIndex = 17;
             this.lbl_LeaderIDExamination.Text = "ID badania:";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorManageLaboratoryExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -501,5 +506,6 @@
         private System.Windows.Forms.Button btn_LeaderCancel;
         private System.Windows.Forms.Button btn_LeaderClose;
         private System.Windows.Forms.Button btn_LeaderConfirm;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

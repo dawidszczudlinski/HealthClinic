@@ -30,6 +30,7 @@
         {
             this.btn_RegisterVisit = new System.Windows.Forms.Button();
             this.btn_ManageVisits = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btn_RegisterVisit
@@ -52,6 +53,10 @@
             this.btn_ManageVisits.UseVisualStyleBackColor = true;
             this.btn_ManageVisits.Click += new System.EventHandler(this.btn_ManageVisits_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // ReceptionistStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -73,5 +78,6 @@
 
         private System.Windows.Forms.Button btn_RegisterVisit;
         private System.Windows.Forms.Button btn_ManageVisits;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

@@ -1,0 +1,25 @@
+[OPTIONS]
+Binary TOC=Yes
+Compatibility=1.1 or later
+Compiled file=Pomoc.chm
+Contents file=Table of Contents.hhc
+Default Window=Przychodnia - przyjazny system wspomagania przychodni
+Default topic=index.htm
+Display compile progress=Yes
+Full-text search=Yes
+Index file=Index.hhk
+Language=0x415 Polski (Polska)
+Title=Przychodnia
+
+[WINDOWS]
+Przychodnia - przyjazny system wspomagania przychodni="Przychodnia - przyjazny system wspomagania przychodni","Table of Contents.hhc","Index.hhk","index.htm","index.htm",,,,,0x22521,,0x306e,[50,50,1050,650],,,,,,,0
+
+
+[FILES]
+index.htm
+lek1.htm
+login.htm
+rej1.htm
+
+[INFOTYPES]
+

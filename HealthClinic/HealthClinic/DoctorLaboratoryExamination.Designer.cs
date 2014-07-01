@@ -33,6 +33,7 @@
             this.btn_Show = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
             this.lbl_LaboratoryExamination = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LaboratoryExamination)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +87,10 @@
             this.lbl_LaboratoryExamination.TabIndex = 6;
             this.lbl_LaboratoryExamination.Text = "Badania laboratoryjne związane z wizytą";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorLaboratoryExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +120,7 @@
         private System.Windows.Forms.Button btn_Show;
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Label lbl_LaboratoryExamination;
+        private System.Windows.Forms.HelpProvider helpProvider1;
 
     }
 }

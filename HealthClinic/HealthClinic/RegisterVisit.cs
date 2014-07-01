@@ -140,14 +140,15 @@ namespace HealthClinic
         private void RegisterVisit_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
-                MessageBox.Show("Aby wyszukać pacjenta w bazie danych wpisz jego nazwisko, imię, PESEL. Dane nie muszą być pełne.\n\n" +
-                    "Na liście pojawiają się wszyscy pacjenci spełniający warunki filtru. Jeśli pola 'Nazwisko', 'Imię', 'PESEL' są puste, pokazani są wszyscy pacjenci.\n\n" +
-                    "Pacjenta może usunąć z bazy tylko administrator.\n\n" +
-                    "Aby dodać nowego pacjenta naciśnij 'Dodaj pacjenta'.\n" +
-                    "Aby zmienić dane pacjenta naciśnij 'Edytuj pacjenta'.\n" +
-                    "Aby zapisać pacjenta na wizytę naciśnij 'Wizyta'.\n" +
-                    "Aby zakończyć rejestrację naciśnij 'Zakończ' lub X w prawym górnym rogu.\n",
-                    "Pomoc - Okno wyboru pacjenta");
+                Help.ShowHelp(this, helpProvider1.HelpNamespace, HelpNavigator.Topic, "rej1.htm");
+                //MessageBox.Show("Aby wyszukać pacjenta w bazie danych wpisz jego nazwisko, imię, PESEL. Dane nie muszą być pełne.\n\n" +
+                //    "Na liście pojawiają się wszyscy pacjenci spełniający warunki filtru. Jeśli pola 'Nazwisko', 'Imię', 'PESEL' są puste, pokazani są wszyscy pacjenci.\n\n" +
+                //    "Pacjenta może usunąć z bazy tylko administrator.\n\n" +
+                //    "Aby dodać nowego pacjenta naciśnij 'Dodaj pacjenta'.\n" +
+                //    "Aby zmienić dane pacjenta naciśnij 'Edytuj pacjenta'.\n" +
+                //    "Aby zapisać pacjenta na wizytę naciśnij 'Wizyta'.\n" +
+                //    "Aby zakończyć rejestrację naciśnij 'Zakończ' lub X w prawym górnym rogu.\n",
+                //    "Pomoc - Okno wyboru pacjenta");
             else if (e.KeyCode == Keys.Escape)
                 this.Close();
         }

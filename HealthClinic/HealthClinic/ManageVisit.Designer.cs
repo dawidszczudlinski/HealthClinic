@@ -46,6 +46,7 @@
             this.cb_Hour = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_Minute = new System.Windows.Forms.ComboBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -255,6 +256,10 @@
             this.cb_Minute.Size = new System.Drawing.Size(39, 21);
             this.cb_Minute.TabIndex = 5;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // ManageVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -302,5 +307,6 @@
         private System.Windows.Forms.ComboBox cb_Hour;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cb_Minute;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

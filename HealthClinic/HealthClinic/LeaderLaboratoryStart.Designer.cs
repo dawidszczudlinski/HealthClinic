@@ -33,6 +33,7 @@
             this.btn_Search = new System.Windows.Forms.Button();
             this.btn_ServicePatient = new System.Windows.Forms.Button();
             this.dgv_ListOfVisits = new System.Windows.Forms.DataGridView();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,6 +91,10 @@
             this.dgv_ListOfVisits.Size = new System.Drawing.Size(709, 196);
             this.dgv_ListOfVisits.TabIndex = 0;
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // LeaderLaboratoryStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,5 +124,6 @@
         private System.Windows.Forms.Button btn_Search;
         private System.Windows.Forms.Button btn_ServicePatient;
         private System.Windows.Forms.DataGridView dgv_ListOfVisits;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

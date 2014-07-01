@@ -46,6 +46,7 @@
             this.btn_Finish = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_Exit = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,6 +221,10 @@
             this.btn_Exit.UseVisualStyleBackColor = true;
             this.btn_Exit.Click += new System.EventHandler(this.btn_Exit_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorManageVisit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,5 +275,6 @@
         private System.Windows.Forms.Button btn_Finish;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_Exit;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

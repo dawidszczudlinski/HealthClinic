@@ -39,6 +39,7 @@
             this.btn_OK = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_ChoiceExamination = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // lbl_IDExamination
@@ -140,6 +141,10 @@
             this.btn_ChoiceExamination.UseVisualStyleBackColor = true;
             this.btn_ChoiceExamination.Click += new System.EventHandler(this.btn_ChoiceExamination_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorRealizePhysicalExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,5 +185,6 @@
         private System.Windows.Forms.Button btn_OK;
         private System.Windows.Forms.Button btn_Cancel;
         private System.Windows.Forms.Button btn_ChoiceExamination;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

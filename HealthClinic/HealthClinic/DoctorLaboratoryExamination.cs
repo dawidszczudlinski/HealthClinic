@@ -93,11 +93,7 @@ namespace HealthClinic
         private void DoctorLaboratoryExamination_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
-                MessageBox.Show("Na liście znajdują się wszystkie badania laboratoryjne związane z daną wizytą" +
-                    "Aby pokazać szczegóły badania naciśnij 'Pokaż badanie'.\n\n" +
-                    "Aby zlecić nowe badanie naciśnij 'Nowe badanie'.\n" +
-                    "Aby wyjść naciśnij 'Powrót'."
-                    , "Pomoc - Badania laboratoryjne");
+                Help.ShowHelp(this, helpProvider1.HelpNamespace, HelpNavigator.Topic, "");
             else if (e.KeyCode == Keys.Escape)
                 this.Close();
         }

@@ -37,6 +37,7 @@
             this.opisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.slownikbadanBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LaboratoryExamination)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -110,6 +111,10 @@
             // 
             this.slownikbadanBindingSource.DataSource = typeof(HealthClinic.Slownik_badan);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorLaboratoryExaminationMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,5 +144,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource slownikbadanBindingSource;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

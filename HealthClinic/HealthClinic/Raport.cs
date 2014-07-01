@@ -28,5 +28,11 @@ namespace HealthClinic
 
             this.reportViewer1.RefreshReport();
         }
+
+        private void Raport_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+                Help.ShowHelp(this, helpProvider1.HelpNamespace, HelpNavigator.Topic, "");
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.slownikbadanBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Cancel = new System.Windows.Forms.Button();
             this.btn_OK = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfExaminations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slownikbadanBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -109,6 +110,10 @@
             this.btn_OK.UseVisualStyleBackColor = true;
             this.btn_OK.Click += new System.EventHandler(this.btn_OK_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorPhysicalExaminationMap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,5 +144,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn opisDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource slownikbadanBindingSource;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

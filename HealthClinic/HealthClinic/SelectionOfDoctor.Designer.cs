@@ -35,6 +35,7 @@
             this.col_DoctorVisits = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_Choice = new System.Windows.Forms.Button();
             this.btn_Cancel = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfDoctors)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,6 +98,10 @@
             this.btn_Cancel.UseVisualStyleBackColor = true;
             this.btn_Cancel.Click += new System.EventHandler(this.btn_Cancel_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // SelectionOfDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -125,5 +130,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DoctorName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DoctorLastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_DoctorVisits;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

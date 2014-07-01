@@ -40,6 +40,7 @@
             this.txt_LastName = new System.Windows.Forms.TextBox();
             this.txt_AssuranceNumber = new System.Windows.Forms.TextBox();
             this.lbl_AssuranceNumber = new System.Windows.Forms.Label();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.SuspendLayout();
             // 
             // btn_Cancel
@@ -142,6 +143,10 @@
             this.lbl_AssuranceNumber.TabIndex = 23;
             this.lbl_AssuranceNumber.Text = "Numer ubezpieczenia:";
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // ReceptionistAddPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,5 +189,6 @@
         private System.Windows.Forms.TextBox txt_LastName;
         private System.Windows.Forms.TextBox txt_AssuranceNumber;
         private System.Windows.Forms.Label lbl_AssuranceNumber;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

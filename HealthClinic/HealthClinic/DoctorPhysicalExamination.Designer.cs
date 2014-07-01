@@ -33,6 +33,7 @@
             this.btn_Close = new System.Windows.Forms.Button();
             this.btn_New = new System.Windows.Forms.Button();
             this.btn_Show = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_PhysicalExamination)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,6 +86,10 @@
             this.btn_Show.UseVisualStyleBackColor = true;
             this.btn_Show.Click += new System.EventHandler(this.btn_Show_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // DoctorPhysicalExamination
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -114,5 +119,6 @@
         private System.Windows.Forms.Button btn_Close;
         private System.Windows.Forms.Button btn_New;
         private System.Windows.Forms.Button btn_Show;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }

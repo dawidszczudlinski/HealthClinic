@@ -43,6 +43,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_Date = new System.Windows.Forms.DateTimePicker();
             this.btn_ServicePatient = new System.Windows.Forms.Button();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListOfVisits)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -195,6 +196,10 @@
             this.btn_ServicePatient.UseVisualStyleBackColor = true;
             this.btn_ServicePatient.Click += new System.EventHandler(this.btn_ServicePatient_Click);
             // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\Olek\\Desktop\\HealthClinic\\HealthClinic\\HealthClinic\\Pomoc\\Pomoc.chm";
+            // 
             // LaboratoryAssistantStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +238,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_ServicePatient;
         private System.Windows.Forms.DateTimePicker dtp_Date;
+        private System.Windows.Forms.HelpProvider helpProvider1;
 
     }
 }
